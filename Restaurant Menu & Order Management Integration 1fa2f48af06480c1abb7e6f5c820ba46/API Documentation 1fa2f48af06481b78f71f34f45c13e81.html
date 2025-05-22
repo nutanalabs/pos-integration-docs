@@ -1,0 +1,1277 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>API Documentation</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+	margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.highlight-default_background {
+	color: rgba(50, 48, 44, 1);
+}
+.highlight-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.highlight-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(115, 114, 110, 1);
+	fill: rgba(115, 114, 110, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(205, 60, 58, 1);
+	fill: rgba(205, 60, 58, 1);
+}
+.block-color-default_background {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray_background {
+	background: rgba(248, 248, 247, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(248, 243, 252, 1);
+}
+.block-color-pink_background {
+	background: rgba(252, 241, 246, 1);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-uiBlue { background-color: undefined; }
+.select-value-color-pink { background-color: rgba(225, 136, 179, 0.27); }
+.select-value-color-purple { background-color: rgba(168, 129, 197, 0.27); }
+.select-value-color-green { background-color: rgba(123, 183, 129, 0.27); }
+.select-value-color-gray { background-color: rgba(84, 72, 49, 0.15); }
+.select-value-color-translucentGray { background-color: undefined; }
+.select-value-color-orange { background-color: rgba(224, 124, 57, 0.27); }
+.select-value-color-brown { background-color: rgba(210, 162, 141, 0.35); }
+.select-value-color-red { background-color: rgba(244, 171, 159, 0.4); }
+.select-value-color-yellow { background-color: rgba(236, 191, 66, 0.39); }
+.select-value-color-blue { background-color: rgba(93, 165, 206, 0.27); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="1fa2f48a-f064-81b7-8f71-f34f45c13e81" class="page mono"><header><img class="page-cover-image" src="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81/POS.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/swap-horizontally_green.svg"/></div><h1 class="page-title">API Documentation</h1><p class="page-description"></p></header><div class="page-body"><nav id="1fa2f48a-f064-815c-87ba-e48dc195e108" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1fa2f48a-f064-81ed-8be8-e327a225c585">Introduction</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1fa2f48a-f064-8157-8ae3-e782fe772df7">Endpoints</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1fa2f48a-f064-8119-a253-f0a180d449f8"> Menu Management</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1fa2f48a-f064-81fe-8302-cbcb6599ec55"> Order Management</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1fa2f48a-f064-818b-9c87-ff1e7ea7aa0a"> Rider Management</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1fa2f48a-f064-8157-9a8a-f0b5c1f6f17b"> Store Management</a></div></nav><p id="1fa2f48a-f064-8158-8c1a-f7af24e26ae4" class="">
+</p><h1 id="1fa2f48a-f064-81ed-8be8-e327a225c585" class="">Introduction</h1><hr id="1fa2f48a-f064-802a-bc79-e88970ea068c"/><p id="1fa2f48a-f064-80a7-8a0d-c073487e2428" class="">
+</p><p id="1fa2f48a-f064-81a0-b4bb-ef9b6b50f057" class="">The Nutana API is organised around REST framework. A REST API (also known as RESTful API) is an application programming interface (API or web API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services.</p><p id="1fa2f48a-f064-810f-927b-f516ea802973" class="">
+</p><h1 id="1fa2f48a-f064-8157-8ae3-e782fe772df7" class="">Endpoints</h1><hr id="1fa2f48a-f064-80e6-b60a-f210f7cc7c3f"/><p id="1fa2f48a-f064-80e6-9792-c36fc693b39c" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"> Menu Management</summary><div class="indented"><hr id="1fa2f48a-f064-805b-956d-ebf77b926e19"/><p id="1fa2f48a-f064-807b-a7c2-e1ecb27d585c" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"> Menu Integration</summary><div class="indented"><hr id="1fa2f48a-f064-80e6-8651-c3e2653ace69"/><p id="1fa2f48a-f064-80a7-9e2b-e80a035fe792" class="">
+</p><p id="1fa2f48a-f064-8108-8142-e15cdf390d1f" class="">API to push the menu to Nutana systems</p><p id="1fb2f48a-f064-8076-b946-c76ec6fc5981" class="">
+</p><p id="1fa2f48a-f064-81c5-ae96-f6f971da7b56" class=""><strong>Request URL</strong></p><p id="1fa2f48a-f064-815f-821a-e0cb89e53bac" class="">
+</p><p id="1fa2f48a-f064-81c3-90dc-c6c1f570210f" class=""><mark class="highlight-teal_background"><strong>POST</strong></mark><strong>/</strong>api/v1/push-menu</p><p id="1fa2f48a-f064-81f2-9388-d75482416a3d" class="">
+</p><p id="1fa2f48a-f064-81ae-b22e-c153ddb3252b" class=""><strong>Request Headers</strong></p><hr id="1fa2f48a-f064-8141-81ca-ff8696fe4259"/><p id="1fa2f48a-f064-816e-987a-cc537b4d9232" class="">
+</p><table id="1fa2f48a-f064-8115-9e1b-fc20ecbc65b1" class="simple-table"><thead class="simple-table-header"><tr id="1fa2f48a-f064-816a-b2e8-e6d6b585e3a2"><th id="^}vT" class="simple-table-header-color simple-table-header" style="width:189px">Header</th><th id="jvm_" class="simple-table-header-color simple-table-header" style="width:382px">Description</th></tr></thead><tbody><tr id="1fa2f48a-f064-8130-b6c1-d56ba5119f2e"><td id="^}vT" class="" style="width:189px">Authorization</td><td id="jvm_" class="" style="width:382px">Basic Auth</td></tr></tbody></table><p id="1fb2f48a-f064-808c-83af-dbe6a2719b1e" class="">
+</p><p id="1fa2f48a-f064-818f-9df2-e9ebe0142479" class=""><strong>Request Body</strong></p><hr id="1fa2f48a-f064-81c8-adec-f70ebf8fe69b"/><p id="1fa2f48a-f064-8104-b29a-d39d43440456" class="">
+</p><table id="1fa2f48a-f064-81b0-bd41-d8cef00b9ac6" class="simple-table"><thead class="simple-table-header"><tr id="1fa2f48a-f064-81be-9b71-ddf2e3a9e5f2"><th id="Lm_z" class="simple-table-header-color simple-table-header"><strong>Parameter</strong></th><th id="{@kP" class="simple-table-header-color simple-table-header"><strong>Type</strong></th><th id="&lt;g=I" class="simple-table-header-color simple-table-header"><strong>Description</strong></th><th id="VH@Q" class="simple-table-header-color simple-table-header">Required</th></tr></thead><tbody><tr id="1fa2f48a-f064-8141-be9e-f04a613188af"><td id="Lm_z" class=""><code>restaurant</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Restaurant Object</a></td><td id="&lt;g=I" class="">Information about the restaurant, such as id, opening timings.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-8140-ae1f-c92251602a8f"><td id="Lm_z" class=""><code>categories</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Category Object</a></td><td id="&lt;g=I" class="">A collection of menu categories, each containing detailed information about menu items and subcategories</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-8157-bb21-ff34ff4300e2"><td id="Lm_z" class=""><code>timings</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Timing Object</a></td><td id="&lt;g=I" class="">List of timings applicable at either category, restaurant</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-81ef-8ecd-ed2ec03da43b"><td id="Lm_z" class=""><code>taxes</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Tax Object</a></td><td id="&lt;g=I" class="">A detailed list of all taxes that apply to menu items, charges</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-81c7-91c7-da303c7e6a03"><td id="Lm_z" class=""><code>orderBillComponents</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Order Bill Components</a></td><td id="&lt;g=I" class="">Contains a list of charge ids applicable on order. Taxes won&#x27;t be applied directly on the order</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-8157-8743-e7273c8e21f3"><td id="Lm_z" class=""><code>billComponents</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Bill Components Object</a></td><td id="&lt;g=I" class="">Contains a list of charges and taxes</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-8173-8b4e-d3a11acf4892"><td id="Lm_z" class=""><code>variantGroups</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Variant Group Object</a></td><td id="&lt;g=I" class="">A list of variant groups, each representing a set of customisable options (e.g., sizes or flavours) for menu items.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-8113-80c4-fab12746f260"><td id="Lm_z" class=""><code>addOnGroups</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Add On Group Object</a></td><td id="&lt;g=I" class="">A list of add-on groups, each containing options like extra toppings or sides that customers can select when customising menu items.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-81f8-b96b-c691af0511ba"><td id="Lm_z" class=""><code>variants</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Variant Object</a></td><td id="&lt;g=I" class="">A detailed list of individual variants associated with menu items.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-812f-ad85-f1eabe4c9141"><td id="Lm_z" class=""><code>callbackUrl</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">string</a><br/><br/><br/></td><td id="&lt;g=I" class="">Every Menu Sync request consists of a <code>callbackUrl</code> in the payload with a unique <em>request_id</em> of the queued menu processing in it. It is expected that once the asynchronous task completes its processing of the menu request at your end, a callback request is made to the same <code>callbackUrl</code> provided in the menu payload.<br/>Example: https://&lt;host&gt;/callback/&lt;req_id&gt;<br/>Data sent: <br/><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">RequestBody</a></td><td id="VH@Q" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-814a-82cb-dd51e8475633" class="">
+</p><p id="1fa2f48a-f064-8195-bb66-ed44868dd185" class=""><strong>Bill Components Object</strong></p><p id="1fb2f48a-f064-80a3-8092-e55ce5d6d04a" class="">
+</p><table id="1fa2f48a-f064-81b9-b714-ee1877052c06" class="simple-table"><tbody><tr id="1fa2f48a-f064-81fe-8337-ed8c08f8f4db"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-8166-8f90-f19b31a611db"><td id="`jDo" class=""><code>charges</code></td><td id=";tpK" class="">array[Charge]</td><td id="{PtI" class="">A list of additional charges, such as &quot;Packaging Fee (35 rupees)&quot; or &quot;Delivery Charge (50 rupees).”</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8134-904c-ed2999f990ae"><td id="`jDo" class=""><code>taxes</code></td><td id=";tpK" class="">array[Tax]</td><td id="{PtI" class="">A list of taxes</td><td id="[az{" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-81d2-9b12-c99c9b987da8" class="">
+</p><p id="1fa2f48a-f064-8172-89af-c781b7021dca" class=""><strong>Order Bill Components Object</strong></p><p id="1fb2f48a-f064-80a1-887c-e2325b768416" class="">
+</p><table id="1fa2f48a-f064-8128-b052-e9d170595af8" class="simple-table"><tbody><tr id="1fa2f48a-f064-8168-a2c3-dd8cd740d5f7"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="LW^c" class="">Required</td></tr><tr id="1fa2f48a-f064-81f4-9d90-c8d3d2b5ad26"><td id="sTWu" class=""><code>charges</code></td><td id="=Ekd" class="">array[string]</td><td id="rYG_" class="">list of charge identifier </td><td id="LW^c" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-81f1-ae7c-fd5dfab01d7e" class="">
+</p><p id="1fa2f48a-f064-8177-b08a-d18d6a4d964e" class=""><strong>Restaurant Object</strong></p><p id="1fb2f48a-f064-80e6-b5ab-f1542e2cd4a5" class="">
+</p><table id="1fa2f48a-f064-81b8-bf85-d25629a336f7" class="simple-table"><tbody><tr id="1fa2f48a-f064-814a-8295-e180520e7730"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="LW^c" class="">Required</td></tr><tr id="1fa2f48a-f064-8116-926c-d5573720d4b7"><td id="sTWu" class=""><code>id</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">id of the restaurant</td><td id="LW^c" class="">Yes</td></tr><tr id="1fa2f48a-f064-81de-8041-fb4ebc2f8ad6"><td id="sTWu" class=""><code>minPrepTime</code></td><td id="=Ekd" class="">int</td><td id="rYG_" class="">minimum prep time of the restaurant</td><td id="LW^c" class="">No</td></tr><tr id="1fa2f48a-f064-81a1-b516-d83cf88f9c67"><td id="sTWu" class=""><code>timings</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">id of the timing</td><td id="LW^c" class="">No</td></tr></tbody></table><p id="1fa2f48a-f064-8155-983b-c67a998e8e74" class="">
+</p><p id="1fa2f48a-f064-8167-b7da-f3f9d15f7a20" class=""><strong>Category Object</strong></p><p id="1fb2f48a-f064-8070-ac6f-c0a8ccb60f8f" class="">
+</p><table id="1fa2f48a-f064-817d-bbe8-cd3fc3b94c58" class="simple-table"><tbody><tr id="1fa2f48a-f064-811b-987a-efb31fe2990e"><td id="dWL:" class=""><strong>Parameter</strong></td><td id="W&lt;Ej" class=""><strong>Type</strong></td><td id="pwQk" class=""><strong>Description</strong></td><td id="s}E}" class="">Required</td></tr><tr id="1fa2f48a-f064-81a5-b152-f20ac97d00a2"><td id="dWL:" class=""><code>id</code></td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">A unique identifier for the category.</td><td id="s}E}" class="">Yes</td></tr><tr id="1fa2f48a-f064-81a6-9f90-d97f06ada583"><td id="dWL:" class=""><code>name</code> </td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">The name of the Category.<br/>Ex: “South Indian Meals”, “Beverages” or “Soups” <br/></td><td id="s}E}" class="">Yes</td></tr><tr id="1fa2f48a-f064-8125-b6ee-e9cd79cc6a11"><td id="dWL:" class=""><code>description</code></td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">A brief description of the Category. For example, &quot;A selection of cold and hot drinks, including coffee and tea.”<br/><br/></td><td id="s}E}" class="">Yes</td></tr><tr id="1fa2f48a-f064-8161-9b79-fc1029d5497b"><td id="dWL:" class=""><code>imageUrl</code></td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">The URL of an image representing the category.</td><td id="s}E}" class="">No</td></tr><tr id="1fa2f48a-f064-81e7-8eee-f7c6d1a11f05"><td id="dWL:" class=""><code>sortOrder</code></td><td id="W&lt;Ej" class="">integer</td><td id="pwQk" class="">The order in which categories appear.<br/><br/></td><td id="s}E}" class="">Yes</td></tr><tr id="1fa2f48a-f064-81a1-8084-cd04ce258d5a"><td id="dWL:" class=""><code>items</code></td><td id="W&lt;Ej" class="">array[Item]</td><td id="pwQk" class="">A list of menu items under the category. For example, the <strong>&quot;Beverages&quot;</strong> category could include items like &quot;Latte&quot; or &quot;Iced Tea.&quot;</td><td id="s}E}" class=""><strong>Yes</strong> if there are no subcategories<br/><br/><strong>No</strong> if there are subcategories</td></tr><tr id="1fa2f48a-f064-81c0-a73c-cb037886e627"><td id="dWL:" class=""><code>subcategories</code></td><td id="W&lt;Ej" class="">array[Category]</td><td id="pwQk" class="">A list of subcategories, such as “Hot Beverages” and “Cold Beverages” under the “Beverages” category.</td><td id="s}E}" class=""><strong>Yes</strong> if there are no items<br/><br/><strong>No</strong> if there are items</td></tr><tr id="1fa2f48a-f064-810e-a7d2-c3df8e16b73a"><td id="dWL:" class=""><code>timings</code></td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">Category availability timing id.</td><td id="s}E}" class="">No</td></tr></tbody></table><p id="1fa2f48a-f064-802a-b5c4-ceb88ae0da25" class="">
+</p><p id="1fa2f48a-f064-81a4-9212-c9a9c696c73e" class=""><strong>Item Object</strong></p><p id="1fb2f48a-f064-800b-973e-d9d50f078672" class="">
+</p><table id="1fa2f48a-f064-81d4-a51c-cb47c3c4a77f" class="simple-table"><tbody><tr id="1fa2f48a-f064-81e6-9071-ccdf512dedcd"><td id="gwAt" class=""><strong>Parameter</strong></td><td id="{l^h" class=""><strong>Type</strong></td><td id="X?eW" class=""><strong>Description</strong></td><td id="tW_&gt;" class="">Required</td></tr><tr id="1fa2f48a-f064-8111-8037-d4705d6b439a"><td id="gwAt" class=""><code>id</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">A unique identifier for the menu item.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-8112-a426-dc2ef1314237"><td id="gwAt" class=""><code>name</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">The name of the menu item, like “Margherita Pizza”</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-81d9-9e83-e4c93645613c"><td id="gwAt" class=""><code>description</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">A detailed description of the item, such as &quot;Classic pizza topped with fresh mozzarella, tomatoes, and basil.”</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-814a-af59-de50d1a01569"><td id="gwAt" class=""><code>imageUrl</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">A link to an image of the item.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-8107-ab83-f17db00ba766"><td id="gwAt" class=""><code>price</code></td><td id="{l^h" class="">float</td><td id="X?eW" class="">The base price of the item, such as 200.50 rupees for a Margherita Pizza.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-81dc-904d-f8e59b3b20bf"><td id="gwAt" class=""><code>markupPrice</code></td><td id="{l^h" class="">float</td><td id="X?eW" class="">An optional higher price</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-818d-8aae-ff7d565dbf44"><td id="gwAt" class=""><code>inStock</code></td><td id="{l^h" class="">boolean</td><td id="X?eW" class="">Indicates whether the item is available. For example, true means it’s in stock.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-818d-9603-c666b1bc3057"><td id="gwAt" class=""><code>recommended</code></td><td id="{l^h" class="">boolean</td><td id="X?eW" class="">Shows whether the item is recommended. For instance, true for the restaurant&#x27;s signature dish.</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-815e-a738-d72bcb8f0c16"><td id="gwAt" class=""><code>isFavorite</code></td><td id="{l^h" class="">boolean</td><td id="X?eW" class="">Indicates whether the item is marked as a favourite by customers. For example, true for a popular burger.</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-81b4-9803-d2babade0fea"><td id="gwAt" class=""><code>foodType</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">Specifies the food type, such as &quot;Veg,&quot; &quot;Non-Veg,&quot; or &quot;Egg.”</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-8182-ae00-f501955c1b38"><td id="gwAt" class=""><code>tags</code></td><td id="{l^h" class="">array[string]</td><td id="X?eW" class="">Keywords associated with the item, like &quot;Spicy,&quot; &quot;Gluten-Free,&quot; or &quot;Vegan.”</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-81b8-be3e-c0661dd02d36"><td id="gwAt" class=""><code>variantGroupIds</code></td><td id="{l^h" class="">array[string]</td><td id="X?eW" class="">Ids that link the item to variant groups. For example, a pizza linked to a &quot;Size&quot; group with variants like Small or Large.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-811c-a088-f3951ee2fb1b"><td id="gwAt" class=""><code>addOnGroupIds</code></td><td id="{l^h" class="">array[string]</td><td id="X?eW" class="">Ids that link the item to add-on groups, such as &quot;Extra Cheese&quot; or &quot;Dips.”</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-8131-8b33-f36eaeb96f65"><td id="gwAt" class=""><code>nutritionalInfo</code></td><td id="{l^h" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Nutritional Info Object</a></td><td id="X?eW" class="">Detailed nutrition details. For example, a sandwich may contain 300 calories, 10g of protein, and 5g of fat.</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-8182-a285-fc4012383e56"><td id="gwAt" class=""><code>billComponents</code></td><td id="{l^h" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Item Bill Components Object</a></td><td id="X?eW" class="">Item-specific billing components, such as an additional &quot;Packing Charge&quot; and taxes</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-814d-aa5d-d8130a3437f2"><td id="gwAt" class=""><code>fulfillmentModes</code></td><td id="{l^h" class="">array[string]</td><td id="X?eW" class="">Indicates supported modes, such as &quot;Delivery,&quot; &quot;Pickup,&quot; or &quot;Dine-In.”</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-815c-a631-da689d1b5242"><td id="gwAt" class=""><code>sortOrder</code></td><td id="{l^h" class="">integer</td><td id="X?eW" class="">Determines the display order. For example, 1 means it’s shown at the top of the category.</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-814c-9c57-c87bf606b2f4"><td id="gwAt" class=""><code>categoryId</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">ID of the Parent subcategory.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-81f0-9255-d8ca7703a2b0"><td id="gwAt" class=""><code>subcategoryId</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">ID of the Parent subcategory.</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-818b-80cd-d26169c29809"><td id="gwAt" class=""><code>ignoreOn</code></td><td id="{l^h" class="">object</td><td id="X?eW" class="">Specifies what to ignore for a food item while billing. (For example, ignore tax)</td><td id="tW_&gt;" class=""></td></tr></tbody></table><p id="1fa2f48a-f064-80a7-9828-c00aa2a909ca" class="">
+</p><p id="1fa2f48a-f064-815b-b257-cc2c7375511f" class=""><strong>Variant Group Object</strong></p><p id="1fb2f48a-f064-80dd-9a83-fa5f7d42397c" class="">
+</p><table id="1fa2f48a-f064-8125-8bd0-ca5c1c88faba" class="simple-table"><tbody><tr id="1fa2f48a-f064-8181-861c-e41465af4b28"><td id="lxjE" class=""><strong>Parameter</strong></td><td id="[B{U" class="" style="width:140.53125px"><strong>Type</strong></td><td id="SO|Y" class=""><strong>Description</strong></td><td id="oe&lt;t" class="" style="width:161px">Required</td></tr><tr id="1fa2f48a-f064-8193-a54b-d1e1f8c6f403"><td id="lxjE" class=""><code>id</code></td><td id="[B{U" class="" style="width:140.53125px">string</td><td id="SO|Y" class="">A unique identifier for the variant group.</td><td id="oe&lt;t" class="" style="width:161px">Yes</td></tr><tr id="1fa2f48a-f064-8166-a5aa-efebd494da16"><td id="lxjE" class=""><code>name</code></td><td id="[B{U" class="" style="width:140.53125px">string</td><td id="SO|Y" class="">The name of the variant group, such as &quot;Size&quot; or &quot;Crust Type.”</td><td id="oe&lt;t" class="" style="width:161px">Yes</td></tr><tr id="1fa2f48a-f064-8176-94e9-ee51b655fcce"><td id="lxjE" class=""><code>variantIds</code></td><td id="[B{U" class="" style="width:140.53125px">array[string]</td><td id="SO|Y" class="">Ids that link the group to specific variants. For example, a &quot;Size&quot; group may have IDs referencing &quot;Small,&quot; &quot;Medium,&quot; and &quot;Large&quot; variants.</td><td id="oe&lt;t" class="" style="width:161px">Yes</td></tr><tr id="1fa2f48a-f064-8126-bd6b-fdd339d30d3a"><td id="lxjE" class=""><code>sortOrder</code></td><td id="[B{U" class="" style="width:140.53125px">integer</td><td id="SO|Y" class="">Determines the display order. For example, 1 means the variant group appears at the top of the item&#x27;s customisation options.</td><td id="oe&lt;t" class="" style="width:161px">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-8021-aac5-eda45849c0a5" class="">
+</p><p id="1fa2f48a-f064-812d-9827-c69be360b2f5" class=""><strong>Variant Object</strong></p><p id="1fb2f48a-f064-80fa-a92b-e5dfa7fdfb91" class="">
+</p><table id="1fa2f48a-f064-81cc-93be-f616a4191086" class="simple-table"><tbody><tr id="1fa2f48a-f064-81be-9624-c2a222f60903"><td id="[y:o" class=""><strong>Parameter</strong></td><td id="FC~N" class=""><strong>Type</strong></td><td id="UO:U" class=""><strong>Description</strong></td><td id="VTUY" class="">Required</td></tr><tr id="1fa2f48a-f064-8119-9b49-cbebf3f49765"><td id="[y:o" class=""><code>id</code></td><td id="FC~N" class="">string</td><td id="UO:U" class="">A unique identifier for the variant.</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8197-b1ea-d5202a5e2006"><td id="[y:o" class=""><code>name</code></td><td id="FC~N" class="">string</td><td id="UO:U" class="">The name of the variant, such as &quot;Large,&quot; &quot;Thin Crust,&quot; or &quot;Extra Spicy.”</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8149-8577-f734da3cccf7"><td id="[y:o" class=""><code>price</code></td><td id="FC~N" class="">float</td><td id="UO:U" class="">The price of the variant. For instance, 550.25 rupees for a large pizza.</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8157-ad7d-dfc07b5cfaa6"><td id="[y:o" class=""><code>markupPrice</code></td><td id="FC~N" class="">float</td><td id="UO:U" class="">An optional higher price for premium variants. For example, 600.99 rupees for a large pizza with extra cheese.</td><td id="VTUY" class="">No</td></tr><tr id="1fa2f48a-f064-8119-a1bb-eb6ea484b290"><td id="[y:o" class=""><code>inStock</code></td><td id="FC~N" class="">boolean</td><td id="UO:U" class="">Indicates whether the variant is available. For example, true for in-stock items and false for out-of-stock options.</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-812b-835a-d06a42e60ec4"><td id="[y:o" class=""><code>foodType</code></td><td id="FC~N" class="">string</td><td id="UO:U" class="">Specifies the food type, such as &quot;Veg,&quot; &quot;Non-Veg,&quot; or &quot;Egg.&quot; For instance, a variant with a chicken patty would be marked as &quot;Non-Veg.”</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8170-a968-da33951aa17d"><td id="[y:o" class=""><code>addOnGroupIds</code></td><td id="FC~N" class="">array[string]</td><td id="UO:U" class="">Links the variant to specific add-on groups. For example, a &quot;Dips&quot; group for pizza variants.</td><td id="VTUY" class="">No</td></tr><tr id="1fa2f48a-f064-81aa-8d8d-c5311abcf4a6"><td id="[y:o" class=""><code>nutritionalInfo</code></td><td id="FC~N" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Nutritional Info Object</a></td><td id="UO:U" class="">Nutritional details for the variant. For example, a large pizza variant might have 400 calories, 15g of protein, and 10g of fat.</td><td id="VTUY" class="">No</td></tr><tr id="1fa2f48a-f064-81c1-9dac-fcf005d0e6f8"><td id="[y:o" class=""><code>fulfillmentModes</code></td><td id="FC~N" class="">array[string]</td><td id="UO:U" class="">Indicates the delivery or pickup options for the variant. For instance, a variant might only be available for &quot;Dine-In.”</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8122-9ccd-fd47ad2e8b99"><td id="[y:o" class=""><code>variantGroupIds</code></td><td id="FC~N" class="">array[string]</td><td id="UO:U" class="">Links the variant to its parent group. For example, the &quot;Large&quot; variant is part of the &quot;Size&quot; group.</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-81de-8aa9-c28ee6f044f9"><td id="[y:o" class=""><code>billComponents</code></td><td id="FC~N" class="">array[string]</td><td id="UO:U" class="">Billing components for the variant, such as packing charges</td><td id="VTUY" class="">No</td></tr></tbody></table><p id="1fa2f48a-f064-805a-962b-de52d9405d62" class="">
+</p><p id="1fa2f48a-f064-8158-8ef9-cf7deb47624b" class=""><strong>Add On Group Object</strong></p><p id="1fb2f48a-f064-80cf-aa8f-c9a323e9ee6d" class="">
+</p><table id="1fa2f48a-f064-811b-89c0-ca71fba7cbd8" class="simple-table"><tbody><tr id="1fa2f48a-f064-8130-941f-c87642696c7d"><td id="OpKY" class=""><strong>Parameter</strong></td><td id="EM:Z" class=""><strong>Type</strong></td><td id="V=OP" class=""><strong>Description</strong></td><td id="NcQ_" class="" style="width:137px">Required</td></tr><tr id="1fa2f48a-f064-8113-b287-c6f00782ea85"><td id="OpKY" class=""><code>id</code></td><td id="EM:Z" class="">string</td><td id="V=OP" class="">A unique identifier for the add-on group.</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr><tr id="1fa2f48a-f064-810e-b8a8-db03a58f8a7c"><td id="OpKY" class=""><code>name</code></td><td id="EM:Z" class="">string</td><td id="V=OP" class="">The name of the add-on group, such as &quot;Dips,&quot; &quot;Extra Toppings,&quot; or &quot;Drinks.”</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr><tr id="1fa2f48a-f064-817a-9758-fdeba80dc6a0"><td id="OpKY" class=""><code>minimumNeeded</code></td><td id="EM:Z" class="">integer</td><td id="V=OP" class="">The minimum number of selections required. For example, a &quot;Toppings&quot; group might require at least 1 selection.</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr><tr id="1fa2f48a-f064-814f-b431-d28654aa86db"><td id="OpKY" class=""><code>maximumAllowed</code></td><td id="EM:Z" class="">integer</td><td id="V=OP" class="">The maximum number of selections allowed. For instance, the &quot;Dips&quot; group might allow up to 3 selections.</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr><tr id="1fa2f48a-f064-8108-8f16-e5c59e78c9f6"><td id="OpKY" class=""><code>addOns</code></td><td id="EM:Z" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Add On Object</a></td><td id="V=OP" class="">A list of available add-ons. For example, a &quot;Toppings&quot; group might include &quot;Mushrooms,&quot; &quot;Olives,&quot; and &quot;Jalapeños.”</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-8091-a8cd-ccc9970dc8d3" class="">
+</p><p id="1fa2f48a-f064-8123-b31f-c93838a7ad9b" class=""><strong>Add On Object</strong></p><p id="1fb2f48a-f064-80b9-a648-df7bb46ecd8c" class="">
+</p><table id="1fa2f48a-f064-813f-80d0-d216ec8a0fff" class="simple-table"><tbody><tr id="1fa2f48a-f064-811a-9638-e38a60dab887"><td id="SZd@" class=""><strong>Parameter</strong></td><td id="{vRv" class=""><strong>Type</strong></td><td id="qoNi" class=""><strong>Description</strong></td><td id="dU^{" class="">Required</td></tr><tr id="1fa2f48a-f064-8172-a259-e752db5eacf9"><td id="SZd@" class=""><code>id</code></td><td id="{vRv" class="">string</td><td id="qoNi" class="">A unique identifier for the add-on.</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8199-b8d9-ccda6524ab7b"><td id="SZd@" class=""><code>name</code></td><td id="{vRv" class="">string</td><td id="qoNi" class="">The name of the add-on, such as &quot;Extra Cheese,&quot; &quot;BBQ Sauce,&quot; or &quot;Garlic Bread.”</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8198-8f24-dcdb1572a8f2"><td id="SZd@" class=""><code>price</code></td><td id="{vRv" class="">float</td><td id="qoNi" class="">The price of the add-on. For example, 20 rupees for &quot;Extra Cheese.”</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8132-8fb2-c50a57f0ba6c"><td id="SZd@" class=""><code>inStock</code></td><td id="{vRv" class="">boolean</td><td id="qoNi" class="">Indicates whether the add-on is available. For instance, true means it’s in stock.</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8140-88a8-cb06fdefe418"><td id="SZd@" class=""><code>foodType</code></td><td id="{vRv" class="">string</td><td id="qoNi" class="">Specifies the type of food, such as &quot;Veg,&quot; &quot;Non-Veg,&quot; or &quot;Egg.&quot; For example, a bacon add-on would be marked as &quot;Non-Veg.”</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-815e-baaf-cf0313009a38"><td id="SZd@" class=""><code>nutritionalInfo</code></td><td id="{vRv" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Nutritional Info Object</a></td><td id="qoNi" class="">Detailed nutritional information. For example, &quot;Extra Cheese&quot; might have 100 calories and 8g of fat.</td><td id="dU^{" class=""></td></tr><tr id="1fa2f48a-f064-8107-b2d6-ecffd0fbf24a"><td id="SZd@" class=""><code>fulfillmentModes</code></td><td id="{vRv" class="">array[string]</td><td id="qoNi" class="">Indicates how the add-on can be ordered. For example, a beverage add-on might be limited to &quot;Dine-In&quot; and &quot;Pickup.”</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-813f-bc11-d0f5ccf1302c"><td id="SZd@" class=""><code>sortOrder</code></td><td id="{vRv" class="">integer</td><td id="qoNi" class="">Determines the display order. For instance, 1 means the add-on appears at the top of the options list.</td><td id="dU^{" class=""></td></tr></tbody></table><p id="1fa2f48a-f064-8011-b151-f5470313d2cb" class="">
+</p><p id="1fa2f48a-f064-81db-8519-ed4474edd634" class=""><strong>Item Bill Components Object</strong></p><p id="1fb2f48a-f064-80b8-827a-c79564569c30" class="">
+</p><table id="1fa2f48a-f064-81fe-94f1-ff3218b58952" class="simple-table"><tbody><tr id="1fa2f48a-f064-8112-9c3c-d2739d22355d"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class="" style="width:147.53125px"><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="" style="width:161px">Required</td></tr><tr id="1fa2f48a-f064-81d5-8ef4-c1e81a58b42e"><td id="`jDo" class=""><code>charges</code></td><td id=";tpK" class="" style="width:147.53125px">array[string]</td><td id="{PtI" class="">List of charge identifiers applicable to the item</td><td id="[az{" class="" style="width:161px">Yes</td></tr><tr id="1fa2f48a-f064-81e7-a6f8-f0be1beb7749"><td id="`jDo" class=""><code>taxes</code></td><td id=";tpK" class="" style="width:147.53125px">array[string]</td><td id="{PtI" class="">A list of taxes identifiers</td><td id="[az{" class="" style="width:161px">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-8008-9e0f-f74e4d660d1f" class="">
+</p><p id="1fa2f48a-f064-81cd-8167-c9f87490881f" class=""><strong>Nutritional Info Object</strong></p><p id="1fb2f48a-f064-802c-bea6-cceaefc93eef" class="">
+</p><table id="1fa2f48a-f064-81d6-972b-c8eb9f8b4e67" class="simple-table"><tbody><tr id="1fa2f48a-f064-8110-a8f3-fe15efe7706e"><td id="bSEX" class=""><strong>Parameter</strong></td><td id="wf\;" class=""><strong>Type</strong></td><td id="Jkn&lt;" class=""><strong>Description</strong></td><td id="XBEY" class="" style="width:120px">Required</td></tr><tr id="1fa2f48a-f064-81a3-a184-f5e779d2a8b5"><td id="bSEX" class=""><code>carbohydrate</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The carbohydrate content in the food. For example, 30g of carbohydrates in a serving of pasta.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-811e-aa09-ce68476c2aac"><td id="bSEX" class=""><code>fiber</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The dietary fiber content. For instance, 5g of fiber in a salad bowl.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81e1-b072-db13c4f29d6a"><td id="bSEX" class=""><code>protein</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The protein content in the food item. For example, 20g of protein in a chicken breast.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81b1-bc5c-da193df2cc08"><td id="bSEX" class=""><code>calories</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The total caloric value. For instance, 400 kcal for a slice of pizza.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81e4-bae9-c2c10532b3ba"><td id="bSEX" class=""><code>sodium</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The sodium content. For example, 200mg in a bowl of soup.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-817f-865d-e8075d2a45d9"><td id="bSEX" class=""><code>cholesterol</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The cholesterol content. For example, 50mg in a cheese sandwich.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-8149-9bd1-c87b9f601e8f"><td id="bSEX" class=""><code>foodAmount</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Amount of food. Merchant needs to provide these information in g, kg, ml or l.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-8197-a73b-d31551208a07"><td id="bSEX" class=""><code>minerals</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Information about mineral content, like 50mg of calcium or 20mg of iron.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81d0-93d2-d960e8ce9356"><td id="bSEX" class=""><code>totalSugar</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The total sugar content, such as 10g in a cookie.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81b6-a766-ffa2cf439c80"><td id="bSEX" class=""><code>addedSugar</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The additional sugar added during preparation. For instance, 5g in a soft drink.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-812c-b518-e22e7670590f"><td id="bSEX" class=""><code>totalFat</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The total fat content, such as 15g in a burger.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81eb-a303-e11e66b98f7b"><td id="bSEX" class=""><code>saturatedFat</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The saturated fat content. For instance, 5g in a buttery croissant.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-810e-bbd9-c11ae365c5f1"><td id="bSEX" class=""><code>transFat</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The trans fat content. For example, 1g in deep-fried snacks.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-812d-b2f2-d8392dc2e3d1"><td id="bSEX" class=""><code>vitamins</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Information about vitamins, like Vitamin C (20mg) or Vitamin D (5mg).</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81cf-b29e-ea6e5a3225b6"><td id="bSEX" class=""><code>servingInfo</code></td><td id="wf\;" class="">string</td><td id="Jkn&lt;" class="">Additional serving information, such as &quot;1 cup&quot; or &quot;2 pieces.”</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81b5-a3ce-f4bacb4e71e3"><td id="bSEX" class=""><code>additiveMap</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Details about additives, such as “Contains artificial sweeteners”<strong>.</strong></td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81f7-9c4b-c93da70b9527"><td id="bSEX" class=""><code>allergens</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Information about allergens. For example, &quot;Contains peanuts.”</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81d0-b295-cad313b42608"><td id="bSEX" class=""><code>additionalInfo</code> </td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Any other relevant nutritional details, like &quot;Gluten-free&quot; or &quot;Low sodium.”</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-815a-b507-fd3178a1b889"><td id="bSEX" class=""><code>salt</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The salt content in the item. For instance, <strong>1.5g</strong> of salt in chips.</td><td id="XBEY" class="" style="width:120px">No</td></tr></tbody></table><p id="1fa2f48a-f064-8048-99d1-f6feca6da379" class="">
+</p><p id="1fa2f48a-f064-8136-acfa-e16e9f5aa00e" class=""><strong>Nutritional Value Object</strong></p><p id="1fb2f48a-f064-80e6-9288-f4ff67030ae7" class="">
+</p><table id="1fa2f48a-f064-8123-9707-c0f80c61b123" class="simple-table"><tbody><tr id="1fa2f48a-f064-8118-8592-fc2dcfb2cfc8"><td id="EiZe" class=""><strong>Parameter</strong></td><td id="vc\?" class=""><strong>Type</strong></td><td id="}w{=" class=""><strong>Description</strong></td><td id="SmjD" class="">Required</td></tr><tr id="1fa2f48a-f064-8155-a1ce-d749c535e8b9"><td id="EiZe" class=""><code>value</code></td><td id="vc\?" class="">float</td><td id="}w{=" class="">The numerical value of the nutrient. For instance, 200 for calories.</td><td id="SmjD" class="">No</td></tr><tr id="1fa2f48a-f064-8160-91ec-d8b574f630ee"><td id="EiZe" class=""><code>unit</code></td><td id="vc\?" class="">string</td><td id="}w{=" class="">The unit of measurement, such as g (grams), mg (milligrams), or kcal (kilocalories).</td><td id="SmjD" class="">No</td></tr><tr id="1fa2f48a-f064-81cc-a135-d0619b302a2e"><td id="EiZe" class=""><code>name</code></td><td id="vc\?" class="">string</td><td id="}w{=" class="">The name of the nutrient, such as &quot;Protein&quot; or &quot;Vitamin A.”</td><td id="SmjD" class="">No</td></tr></tbody></table><p id="1fa2f48a-f064-80ee-84b9-e62deef12ac0" class="">
+</p><p id="1fa2f48a-f064-81ad-bc7a-d9fffbb6d524" class=""><strong>Charge Object</strong></p><p id="1fb2f48a-f064-80f7-9657-cccb1712753b" class="">
+</p><table id="1fa2f48a-f064-811b-ac69-f844955591b2" class="simple-table"><tbody><tr id="1fa2f48a-f064-81a3-8ed5-dfebf3b6f8b3"><td id="}n]k" class=""><strong>Parameter</strong></td><td id="DICH" class=""><strong>Type</strong></td><td id="&lt;lTU" class=""><strong>Description</strong></td><td id="zi&gt;\" class="">Required</td></tr><tr id="1fa2f48a-f064-8167-b429-faf19e407f2b"><td id="}n]k" class=""><code>id</code></td><td id="DICH" class="">string</td><td id="&lt;lTU" class="">A unique identifier for the charge.</td><td id="zi&gt;\" class="">Yes</td></tr><tr id="1fa2f48a-f064-818e-b30b-cb0ba2bce159"><td id="}n]k" class=""><code>name</code></td><td id="DICH" class="">string</td><td id="&lt;lTU" class="">The name of the charge, such as &quot;Delivery Fee&quot; or &quot;Convenience Charge.”</td><td id="zi&gt;\" class="">Yes</td></tr><tr id="1fa2f48a-f064-811e-88b3-d2140e6875f6"><td id="}n]k" class=""><code>description</code></td><td id="DICH" class="">string</td><td id="&lt;lTU" class="">Additional details about the charge.</td><td id="zi&gt;\" class=""></td></tr><tr id="1fa2f48a-f064-81c4-8bf7-dcafe21dc780"><td id="}n]k" class=""><code>value</code></td><td id="DICH" class="">float</td><td id="&lt;lTU" class="">The value of the charge.</td><td id="zi&gt;\" class="">Yes</td></tr><tr id="1fa2f48a-f064-8156-af2f-c2f9c453ce4a"><td id="}n]k" class=""><code>type</code></td><td id="DICH" class="">string</td><td id="&lt;lTU" class="">The type of charge, such as &quot;Fixed&quot; (e.g., 20 rupees per order) or &quot;Percentage&quot; (e.g., 5% of the order total).</td><td id="zi&gt;\" class=""></td></tr><tr id="1fa2f48a-f064-8109-af35-df93e82fea23"><td id="}n]k" class=""><code>fulfillmentModes</code></td><td id="DICH" class="">array[string]</td><td id="&lt;lTU" class="">Specifies where the charge applies. For example, a &quot;Delivery Fee&quot; might only apply to &quot;Delivery&quot; orders.</td><td id="zi&gt;\" class="">Yes</td></tr><tr id="1fa2f48a-f064-8107-bb95-cb293f51b1e7"><td id="}n]k" class=""><code>taxes</code></td><td id="DICH" class="">array[string]</td><td id="&lt;lTU" class="">Links the charge to applicable tax IDs. For example, a &quot;Service Charge&quot; might have &quot;TAX002&quot; applied.</td><td id="zi&gt;\" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-80d2-8d70-d62e87bb5945" class="">
+</p><p id="1fa2f48a-f064-818f-a9d9-c12f7d2c6989" class=""><strong>Tax Object</strong></p><p id="1fb2f48a-f064-80af-b3bd-e954764065e6" class="">
+</p><table id="1fa2f48a-f064-8116-86c8-ccab171261d1" class="simple-table"><tbody><tr id="1fa2f48a-f064-8196-bc95-fd664c1edabc"><td id="GK`&gt;" class=""><strong>Parameter</strong></td><td id="[p:;" class="" style="width:139.734375px"><strong>Type</strong></td><td id="]UMs" class=""><strong>Description</strong></td><td id="PR=x" class="">Required</td></tr><tr id="1fa2f48a-f064-8135-9788-c2160da8e822"><td id="GK`&gt;" class=""><code>id</code></td><td id="[p:;" class="" style="width:139.734375px">string</td><td id="]UMs" class="">A unique identifier for the tax.</td><td id="PR=x" class="">Yes</td></tr><tr id="1fa2f48a-f064-815b-a80a-cfc751f9d54e"><td id="GK`&gt;" class=""><code>name</code></td><td id="[p:;" class="" style="width:139.734375px">string</td><td id="]UMs" class="">The name of the tax, such as &quot;CGST&quot; or &quot;SGST.”</td><td id="PR=x" class=""></td></tr><tr id="1fa2f48a-f064-8132-89e3-d39370196f05"><td id="GK`&gt;" class=""><code>description</code></td><td id="[p:;" class="" style="width:139.734375px">string</td><td id="]UMs" class="">Additional details about the tax. For example, &quot;Applies to all food items.”</td><td id="PR=x" class="">Yes</td></tr><tr id="1fa2f48a-f064-81db-9109-c8257d9690aa"><td id="GK`&gt;" class=""><code>value</code></td><td id="[p:;" class="" style="width:139.734375px">float</td><td id="]UMs" class="">The tax rate. For instance, 2.5% for CGST.</td><td id="PR=x" class="">Yes</td></tr><tr id="1fa2f48a-f064-8109-83c3-d158464c05db"><td id="GK`&gt;" class=""><code>fulfillmentModes</code></td><td id="[p:;" class="" style="width:139.734375px">array[string]</td><td id="]UMs" class="">Specifies where the tax is applicable. For example, a &quot;Luxury Tax&quot; might only apply to &quot;Dine-In&quot; orders.</td><td id="PR=x" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-8023-a850-edcaeef6b64b" class="">
+</p><p id="1fa2f48a-f064-8119-bcfc-e0e09b849b35" class=""><strong>Timing Object</strong></p><p id="1fb2f48a-f064-806f-a7cb-c2c8a58dcabc" class="">
+</p><table id="1fa2f48a-f064-8194-8c31-d0f352e0c75b" class="simple-table"><tbody><tr id="1fa2f48a-f064-81e8-a3cc-d2fcfda769e0"><td id="xEhl" class=""><strong>Parameter</strong></td><td id="GWhv" class=""><strong>Type</strong></td><td id="bWA\" class=""><strong>Description</strong></td><td id="K=~e" class="" style="width:157px">Required</td></tr><tr id="1fa2f48a-f064-81c3-819b-f4bebce432a2"><td id="xEhl" class=""><code>id</code></td><td id="GWhv" class="">string</td><td id="bWA\" class="">A unique identifier for the timing.</td><td id="K=~e" class="" style="width:157px">Yes</td></tr><tr id="1fa2f48a-f064-815d-8d56-e07330dc1531"><td id="xEhl" class=""><code>days</code></td><td id="GWhv" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Day Object</a></td><td id="bWA\" class="">A list of day-wise availability. For example, the restaurant might offer &quot;Breakfast: Mon-Fri&quot; and &quot;Dinner: Sat-Sun.”</td><td id="K=~e" class="" style="width:157px">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-80e4-ab4c-c0821ad1e365" class="">
+</p><p id="1fa2f48a-f064-8155-9326-d925f61d06c9" class=""><strong>Day Object</strong></p><p id="1fb2f48a-f064-80fc-9400-eb6b0e372a3c" class="">
+</p><table id="1fa2f48a-f064-819d-b8d4-e7b19a70b89d" class="simple-table"><tbody><tr id="1fa2f48a-f064-8173-a485-ef046e25fd81"><td id="iy}y" class=""><strong>Parameter</strong></td><td id="?biY" class=""><strong>Type</strong></td><td id="vsfC" class=""><strong>Description</strong></td><td id="s=;~" class="">Required</td></tr><tr id="1fa2f48a-f064-8171-822c-e98762997612"><td id="iy}y" class=""><code>day</code></td><td id="?biY" class="">string</td><td id="vsfC" class="">The day of the week. For instance, &quot;Monday&quot;, &quot;Tuesday&quot;, etc.</td><td id="s=;~" class="">Yes</td></tr><tr id="1fa2f48a-f064-81ca-af48-d7e219e5ab2f"><td id="iy}y" class=""><code>slots</code></td><td id="?biY" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Slot Object</a></td><td id="vsfC" class="">A list of time slots for the day. For example, breakfast on Monday might have a time slot of &quot;08:00 AM - 11:00 AM.”</td><td id="s=;~" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-8095-96a1-f8025be12b7c" class="">
+</p><p id="1fa2f48a-f064-812a-8afd-da36d2735deb" class=""><strong>Slot Object</strong></p><p id="1fb2f48a-f064-80cb-a801-ebe2da7f2697" class="">
+</p><table id="1fa2f48a-f064-81cc-8b6f-efc8720837ff" class="simple-table"><tbody><tr id="1fa2f48a-f064-813b-9b2a-e8a4d047ea34"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="Favt" class="">Required</td></tr><tr id="1fa2f48a-f064-8174-8739-e923b24afd29"><td id="sTWu" class=""><code>startTime</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">The starting time for the slot in HH:MM format. For example, &quot;09:00&quot; for breakfast service.</td><td id="Favt" class="">Yes</td></tr><tr id="1fa2f48a-f064-8148-ae2d-db6a30f9de4c"><td id="sTWu" class=""><code>endTime</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">The ending time for the slot in HH:MM format. For example, &quot;11:30&quot; when breakfast ends.</td><td id="Favt" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-80dc-84b1-e78681fb7c30" class="">
+</p><p id="1fa2f48a-f064-8129-84a2-c7dfc63e534c" class=""><strong>Allergen Info Object</strong></p><p id="1fb2f48a-f064-807b-b5a1-d002686ef261" class="">
+</p><table id="1fa2f48a-f064-8158-8802-f489a0aaafd2" class="simple-table"><tbody><tr id="1fa2f48a-f064-81da-87b0-d6aef1184e8d"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="twrU" class="">Required</td></tr><tr id="1fa2f48a-f064-8153-9feb-ef4d541950af"><td id="sTWu" class=""><code>allergen</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">The name of the allergen. For example, &quot;Peanuts&quot;, &quot;Gluten&quot;, or &quot;Dairy.”</td><td id="twrU" class=""></td></tr><tr id="1fa2f48a-f064-81ae-b653-c417f330dc2e"><td id="sTWu" class=""><code>allergenDesc</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">A detailed description of the allergen. For instance, &quot;Contains peanuts as an ingredient in the sauce.”</td><td id="twrU" class=""></td></tr></tbody></table><p id="1fa2f48a-f064-80ca-815b-c175f8fd70b1" class="">
+</p><p id="1fa2f48a-f064-8156-8186-fb3617393a1a" class=""><strong>Additional Info Object</strong></p><p id="1fb2f48a-f064-8075-959a-d55c0a39dcba" class="">
+</p><table id="1fa2f48a-f064-8137-8b67-e791d2bac53f" class="simple-table"><tbody><tr id="1fa2f48a-f064-817d-8f10-c5015e9932c7"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="EdUs" class="">Required</td></tr><tr id="1fa2f48a-f064-813a-b48e-c188dfffd83e"><td id="sTWu" class=""><code>info</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">Any additional information about the food item. For example, &quot;This dish is part of the Keto diet.”</td><td id="EdUs" class=""></td></tr><tr id="1fa2f48a-f064-8131-841d-ea038caa9c1d"><td id="sTWu" class=""><code>remark</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">Remarks or warnings about the food item. For instance, &quot;Spicy level: High.&quot; or &quot;Not suitable for children under 3 years.”</td><td id="EdUs" class=""></td></tr></tbody></table><p id="1fa2f48a-f064-80ff-bcce-d7dde1f75d9c" class="">
+</p><p id="1fa2f48a-f064-815a-b6f5-f247f5eeed65" class=""><strong>Ignore On Object</strong></p><p id="1fb2f48a-f064-803e-be02-df0e0a384246" class="">
+</p><table id="1fa2f48a-f064-81ec-b33c-e6e1c98714c3" class="simple-table"><tbody><tr id="1fa2f48a-f064-8159-bfea-f93768fbcfb5"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="U^N@" class="">Required</td></tr><tr id="1fa2f48a-f064-815e-adc3-d307198142e2"><td id="sTWu" class=""><code>tax</code></td><td id="=Ekd" class="">bool</td><td id="rYG_" class="">True/False, to determine whether to consider tax on the food item for billing. For instance, if true, no tax will be added for the item.</td><td id="U^N@" class="">No</td></tr><tr id="1fa2f48a-f064-8173-bc62-ca3cd622f9c9"><td id="sTWu" class=""><code>discounts</code></td><td id="=Ekd" class="">bool</td><td id="rYG_" class="">Specifies whether the item is excluded from discounts. For example, if true, a premium dish marked as &quot;Chef’s Special&quot; will not receive any discounts even during promotions.</td><td id="U^N@" class="">No</td></tr></tbody></table><p id="1fa2f48a-f064-8084-94b5-dd816fc1e61f" class="">
+</p><h3 id="1fa2f48a-f064-81e4-aa17-f3dd7e3c083c" class="">Callback URL Request body</h3><p id="1fb2f48a-f064-8056-8d7c-d1bf41ab735f" class="">
+</p><table id="1fa2f48a-f064-81c3-ae30-e0bd603dd3eb" class="simple-table"><tbody><tr id="1fa2f48a-f064-81ee-999d-f7075755b37c"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="U^N@" class="">Required</td></tr><tr id="1fa2f48a-f064-81c4-84be-c85b80626ed8"><td id="sTWu" class=""><code>request_id</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">Request ID of the queued menu processing</td><td id="U^N@" class="">Yes</td></tr><tr id="1fa2f48a-f064-81c2-9b9c-e3a77f2abbbd"><td id="sTWu" class=""><code>success</code></td><td id="=Ekd" class="">bool</td><td id="rYG_" class="">status of the request</td><td id="U^N@" class="">Yes</td></tr><tr id="1fa2f48a-f064-8113-88bf-fc4a20ddd93e"><td id="sTWu" class=""><code>error_msgs</code></td><td id="=Ekd" class="">array[string]</td><td id="rYG_" class="">Generic error message</td><td id="U^N@" class="">No</td></tr><tr id="1fa2f48a-f064-8112-8656-fa77a8ba00c1"><td id="sTWu" class=""><code>data</code></td><td id="=Ekd" class="">array[<a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Error</a>]</td><td id="rYG_" class="">List of resources which failed with type of error, ref_id of catalogue entity and reason</td><td id="U^N@" class="">No</td></tr></tbody></table><p id="1fa2f48a-f064-804a-9c27-eee42ddd8faf" class="">
+</p><h3 id="1fa2f48a-f064-81fb-94a5-c731f0129b33" class="">Error</h3><p id="1fb2f48a-f064-80fd-a86d-f4bd1de58018" class="">
+</p><table id="1fa2f48a-f064-8164-aad7-f75e61e7067d" class="simple-table"><tbody><tr id="1fa2f48a-f064-8131-b523-ff6d2de7d2e1"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="U^N@" class="">Required</td></tr><tr id="1fa2f48a-f064-816a-81f8-f624a5156c40"><td id="sTWu" class=""><code>resource_id</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">Id of resource failed</td><td id="U^N@" class="">Yes</td></tr><tr id="1fa2f48a-f064-8143-89e8-e8c9fa1ffbea"><td id="sTWu" class=""><code>type</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">Resource Type<br/><br/><strong>Allowed Value:</strong><br/>category<br/>subcategory<br/>item<br/>variantGroup<br/>addonGroup<br/>variant<br/>addon<br/>tax<br/>charge<br/></td><td id="U^N@" class="">Yes</td></tr><tr id="1fa2f48a-f064-8124-869e-ec64fabe0058"><td id="sTWu" class=""><code>reason</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">The reason why it failed</td><td id="U^N@" class="">Yes</td></tr></tbody></table><hr id="1fa2f48a-f064-8139-9288-e17bb822cf5a"/><p id="1fa2f48a-f064-8155-a90f-f504ea14ed15" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Request Body</summary><div class="indented"><p id="1fb2f48a-f064-80a1-8267-e760d460cc95" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-811e-a7bf-fb1ed7a9ce42" class="code"><code class="language-JSON">{
+    &quot;bill_components&quot;: {
+        &quot;charges&quot;: [
+            {
+                &quot;description&quot;: &quot;&quot;,
+                &quot;fulfillment_modes&quot;: [
+                    &quot;delivery&quot;
+                ],
+                &quot;ref_id&quot;: &quot;7795&quot;,
+                &quot;taxes&quot;: [
+                    &quot;12764&quot;
+                ],
+                &quot;title&quot;: &quot;Packing Charge&quot;,
+                &quot;type&quot;: &quot;FIXED&quot;,
+                &quot;value&quot;: 20
+            },
+            {
+                &quot;description&quot;: &quot;&quot;,
+                &quot;ref_id&quot;: &quot;7796&quot;,
+                &quot;taxes&quot;: [
+                    &quot;12763&quot;
+                ],
+                &quot;title&quot;: &quot;Delivery Charge&quot;,
+                &quot;type&quot;: &quot;FIXED&quot;,
+                &quot;value&quot;: 30
+            }
+        ],
+        &quot;taxes&quot;: [
+            {
+                &quot;description&quot;: &quot;&quot;,
+                &quot;ref_id&quot;: &quot;12761&quot;,
+                &quot;title&quot;: &quot;CGST&quot;,
+                &quot;value&quot;: 2.5
+            },
+            {
+                &quot;description&quot;: &quot;&quot;,
+                &quot;ref_id&quot;: &quot;12762&quot;,
+                &quot;title&quot;: &quot;SGST&quot;,
+                &quot;value&quot;: 2.5
+            },
+            {
+                &quot;description&quot;: &quot;&quot;,
+                &quot;ref_id&quot;: &quot;12763&quot;,
+                &quot;title&quot;: &quot;Delivery Charge Tax&quot;,
+                &quot;value&quot;: 18
+            },
+            {
+                &quot;description&quot;: &quot;&quot;,
+                &quot;ref_id&quot;: &quot;12764&quot;,
+                &quot;title&quot;: &quot;Packing Charge&quot;,
+                &quot;value&quot;: 5
+            },
+            {
+                &quot;description&quot;: &quot;&quot;,
+                &quot;ref_id&quot;: &quot;12814&quot;,
+                &quot;title&quot;: &quot;SGST&quot;,
+                &quot;value&quot;: 2.5
+            },
+            {
+                &quot;description&quot;: &quot;&quot;,
+                &quot;ref_id&quot;: &quot;12815&quot;,
+                &quot;title&quot;: &quot;CGST&quot;,
+                &quot;value&quot;: 2.5
+            }
+        ]
+    },
+    &quot;callback_url&quot;: &quot;https://staging.nutanat.com/ext/api/v1/generic/menu/callback/c746a5cbeae74287b5b959b68a5f4d5d/&quot;,
+    &quot;location&quot;: {
+        &quot;min_delivery_time&quot;: &quot;00:45&quot;,
+        &quot;min_pickup_time&quot;: &quot;00:45&quot;,
+        &quot;ref_id&quot;: &quot;53350&quot;,
+        &quot;timings&quot;: &quot;&quot;
+    },
+    &quot;menu&quot;: {
+        &quot;categories&quot;: [
+            {
+                &quot;description&quot;: &quot;&quot;,
+                &quot;image_url&quot;: &quot;http://s3-ap-southeast-1.amazonaws.com/staging.nutana.com/media/bizmedia/2025/05/17/V6TEp-312afac1-4ef4-47a2-b586-ca858f586392.jpg&quot;,
+                &quot;items&quot;: [],
+                &quot;ref_id&quot;: &quot;139690&quot;,
+                &quot;sort_order&quot;: 2,
+                &quot;subcategories&quot;: [
+                    {
+                        &quot;description&quot;: &quot;&quot;,
+                        &quot;image_url&quot;: &quot;http://s3-ap-southeast-1.amazonaws.com/staging.nutana.com/media/bizmedia/2025/05/17/NOrCxdmq-17ac9a76-39dc-4948-ba0a-18c501d6521d.jpg&quot;,
+                        &quot;items&quot;: [
+                            {
+                                &quot;add_on_groups&quot;: [
+                                    {
+                                        &quot;addons&quot;: [
+                                            {
+                                                &quot;food_type&quot;: 1,
+                                                &quot;image_url&quot;: &quot;&quot;,
+                                                &quot;in_stock&quot;: true,
+                                                &quot;merchant_ref_id&quot;: &quot;1571&quot;,
+                                                &quot;nutritional_info&quot;: {},
+                                                &quot;price&quot;: 30,
+                                                &quot;ref_id&quot;: &quot;1595195&quot;,
+                                                &quot;sort_order&quot;: 1,
+                                                &quot;title&quot;: &quot;Crunchy Onion&quot;,
+                                                &quot;translations&quot;: []
+                                            }
+                                        ],
+                                        &quot;maximum_allowed&quot;: 11,
+                                        &quot;minimum_needed&quot;: 0,
+                                        &quot;ref_id&quot;: &quot;440073&quot;,
+                                        &quot;sort_order&quot;: 3,
+                                        &quot;title&quot;: &quot;Veg Toppings ( Giant Slice)&quot;,
+                                        &quot;translations&quot;: []
+                                    }
+                                ],
+                                &quot;bill_components&quot;: {
+                                    &quot;charges&quot;: [
+                                        &quot;7795&quot;
+                                    ],
+                                    &quot;taxes&quot;: [
+                                        &quot;12761&quot;,
+                                        &quot;12762&quot;,
+                                        &quot;12814&quot;,
+                                        &quot;12815&quot;
+                                    ]
+                                },
+                                &quot;canonical_id&quot;: &quot;1141515&quot;,
+                                &quot;category_ref_id&quot;: &quot;139690&quot;,
+                                &quot;description&quot;: &quot;Golden Corn , Jalapeno , Red Paprika \u0026 Pinapple Nutritional Information As Per 100 Gms (calories 309.9 Kacl , Fat 16.1 , Cholesterol 10 , Carbohydrate 31.9 , Sugar 5.27 , Protien 9.35 )&quot;,
+                                &quot;discounts&quot;: [],
+                                &quot;food_type&quot;: 1,
+                                &quot;fulfillment_modes&quot;: [],
+                                &quot;image_url&quot;: &quot;&quot;,
+                                &quot;in_stock&quot;: true,
+                                &quot;merchant_ref_id&quot;: &quot;147732&quot;,
+                                &quot;nutritional_info&quot;: {},
+                                &quot;price&quot;: 0,
+                                &quot;recommended&quot;: false,
+                                &quot;ref_id&quot;: &quot;7011646&quot;,
+                                &quot;sort_order&quot;: 218,
+                                &quot;sub_category_ref_id&quot;: &quot;139701&quot;,
+                                &quot;tags&quot;: [
+                                    &quot;info-services&quot;
+                                ],
+                                &quot;title&quot;: &quot;Sweet Heat Pizza&quot;,
+                                &quot;translations&quot;: [],
+                                &quot;variant_groups&quot;: [
+                                    {
+                                        &quot;ref_id&quot;: &quot;440051&quot;,
+                                        &quot;sort_order&quot;: 0,
+                                        &quot;title&quot;: &quot;Variation&quot;,
+                                        &quot;translations&quot;: [],
+                                        &quot;variants&quot;: [
+                                            {
+                                                &quot;food_type&quot;: 1,
+                                                &quot;image_url&quot;: &quot;&quot;,
+                                                &quot;in_stock&quot;: true,
+                                                &quot;merchant_ref_id&quot;: &quot;170635&quot;,
+                                                &quot;nutritional_info&quot;: {},
+                                                &quot;price&quot;: 889,
+                                                &quot;ref_id&quot;: &quot;1595446&quot;,
+                                                &quot;sort_order&quot;: 205,
+                                                &quot;title&quot;: &quot;Large (8 Slices, 31.7 Cm, Serves 4)&quot;
+                                            }
+                                        ]
+                                    }
+                                ]
+                            }
+                        ],
+                        &quot;ref_id&quot;: &quot;139701&quot;,
+                        &quot;sort_order&quot;: 3,
+                        &quot;title&quot;: &quot;Exotic( Veg Pizza )&quot;,
+                        &quot;translations&quot;: []
+                    }
+                ],
+                &quot;timings&quot;: &quot;58719&quot;,
+                &quot;title&quot;: &quot;Veg Pizzas&quot;,
+                &quot;translations&quot;: []
+            }
+        ]
+    },
+    &quot;order_bill_components&quot;: {
+        &quot;charges&quot;: [
+            &quot;7796&quot;
+        ]
+    },
+    &quot;timings&quot;: [
+        {
+            &quot;days&quot;: [
+                {
+                    &quot;day&quot;: &quot;Monday&quot;,
+                    &quot;slots&quot;: [
+                        {
+                            &quot;end_time&quot;: &quot;16:00&quot;,
+                            &quot;start_time&quot;: &quot;11:30&quot;
+                        }
+                    ]
+                },
+                {
+                    &quot;day&quot;: &quot;Tuesday&quot;,
+                    &quot;slots&quot;: [
+                        {
+                            &quot;end_time&quot;: &quot;16:00&quot;,
+                            &quot;start_time&quot;: &quot;11:30&quot;
+                        }
+                    ]
+                },
+                {
+                    &quot;day&quot;: &quot;Wednesday&quot;,
+                    &quot;slots&quot;: [
+                        {
+                            &quot;end_time&quot;: &quot;16:00&quot;,
+                            &quot;start_time&quot;: &quot;11:30&quot;
+                        }
+                    ]
+                },
+                {
+                    &quot;day&quot;: &quot;Thursday&quot;,
+                    &quot;slots&quot;: [
+                        {
+                            &quot;end_time&quot;: &quot;16:00&quot;,
+                            &quot;start_time&quot;: &quot;11:30&quot;
+                        }
+                    ]
+                },
+                {
+                    &quot;day&quot;: &quot;Friday&quot;,
+                    &quot;slots&quot;: [
+                        {
+                            &quot;end_time&quot;: &quot;16:00&quot;,
+                            &quot;start_time&quot;: &quot;11:30&quot;
+                        }
+                    ]
+                },
+                {
+                    &quot;day&quot;: &quot;Saturday&quot;,
+                    &quot;slots&quot;: [
+                        {
+                            &quot;end_time&quot;: &quot;16:30&quot;,
+                            &quot;start_time&quot;: &quot;12:00&quot;
+                        }
+                    ]
+                },
+                {
+                    &quot;day&quot;: &quot;Sunday&quot;,
+                    &quot;slots&quot;: [
+                        {
+                            &quot;end_time&quot;: &quot;16:30&quot;,
+                            &quot;start_time&quot;: &quot;12:00&quot;
+                        }
+                    ]
+                }
+            ],
+            &quot;ref_id&quot;: &quot;58719&quot;,
+            &quot;title&quot;: &quot;Lunch&quot;
+        }
+    ]
+}</code></pre></div></details><hr id="1fa2f48a-f064-8069-bd0e-dcae19c4777c"/><p id="1fa2f48a-f064-809b-933f-e5ef140c3520" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Response Body</summary><div class="indented"><hr id="1fa2f48a-f064-80b7-80f2-c27f7d4462ea"/><p id="1fa2f48a-f064-8090-850e-d9d029977398" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-default_background"> </mark><mark class="highlight-teal_background">200</mark></summary><div class="indented"><p id="1fb2f48a-f064-80db-ac44-dac0976939b1" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-814f-ad8b-d72eccc6af75" class="code"><code class="language-JSON">{
+    &quot;message&quot;: &quot;Menu published successfully&quot;,
+}</code></pre></div></details><hr id="1fa2f48a-f064-803b-a619-d00089710efa"/><p id="1fa2f48a-f064-8008-901a-d17e9921201f" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-default_background"> </mark><mark class="highlight-red_background">400</mark></summary><div class="indented"><p id="1fb2f48a-f064-80d0-9c16-ce96d1431193" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-8186-8851-d789af2371a7" class="code"><code class="language-JSON">{
+    &quot;message&quot;: &quot;error message&quot;,
+    &quot;code&quot; : &quot;400&quot;
+}</code></pre></div></details></div></details><p id="1fa2f48a-f064-805d-93a3-fbe1564597b5" class="">
+</p></div></details><hr id="1fb2f48a-f064-800f-8bee-eb43721ef0fe"/><p id="1fb2f48a-f064-8023-94aa-d7caeca8520c" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"> Inventory Update</summary><div class="indented"><hr id="1fa2f48a-f064-8056-ba0d-f4d0c6d64619"/><p id="1fa2f48a-f064-8024-b343-fc9a95243cc5" class="">
+</p><p id="1fa2f48a-f064-817f-bc12-faf7023101e6" class="">API to update the inventory details in Nutana Systems.</p><p id="1fa2f48a-f064-8119-9eaa-ddc3ee584a0c" class="">
+</p><p id="1fa2f48a-f064-81f8-b4a2-eee9ddd61c02" class="">This endpoint can be used to update the inventory for items and options in the menu.</p><p id="1fa2f48a-f064-81dd-98c2-e4e1fb7d8acc" class="">
+</p><p id="1fa2f48a-f064-81c6-a11d-f2d158b74a4a" class=""><strong>Request URL</strong></p><p id="1fa2f48a-f064-81dd-89fa-f737ca12025a" class="">
+</p><p id="1fa2f48a-f064-8154-b127-fbc09f1fcdbe" class=""><mark class="highlight-teal_background"><strong>POST</strong></mark><strong>/</strong>api/v1/inventory</p><p id="1fa2f48a-f064-816c-b0ca-c05e471a5ceb" class="">
+</p><p id="1fa2f48a-f064-817d-a9d1-c64a10629fa4" class=""><strong>Request Headers</strong></p><hr id="1fa2f48a-f064-8154-91f2-e32bd72287ce"/><p id="1fa2f48a-f064-813a-8bb9-d5331a059e9a" class="">
+</p><table id="1fa2f48a-f064-8119-88b4-f64732340419" class="simple-table"><thead class="simple-table-header"><tr id="1fa2f48a-f064-8147-845c-c5ed0ee3d90c"><th id="^}vT" class="simple-table-header-color simple-table-header" style="width:189px">Header</th><th id="jvm_" class="simple-table-header-color simple-table-header" style="width:382px">Description</th></tr></thead><tbody><tr id="1fa2f48a-f064-81e7-bff7-ce1e62526d34"><td id="^}vT" class="" style="width:189px">Authorization</td><td id="jvm_" class="" style="width:382px">Basic Auth</td></tr></tbody></table><p id="1fa2f48a-f064-8193-8c1c-ea47b722d258" class="">
+</p><p id="1fa2f48a-f064-8191-bedd-c6204c6c53b5" class=""><strong>Request Body</strong></p><hr id="1fa2f48a-f064-81d0-8ffa-d04d50a05a37"/><p id="1fb2f48a-f064-8059-be84-d487ddd9d602" class="">
+</p><table id="1fa2f48a-f064-81a3-8f75-c940837e50d5" class="simple-table"><tbody><tr id="1fa2f48a-f064-8147-90c9-cc6012e4e4b8"><td id="r{vN" class=""><strong>Parameter</strong></td><td id="CzhF" class="" style="width:145.5390625px"><strong>Type</strong></td><td id="nnGj" class=""><strong>Description</strong></td><td id="]V~h" class="">Required</td></tr><tr id="1fa2f48a-f064-81c2-8f1a-c3b738f84af2"><td id="r{vN" class=""><code>restId</code></td><td id="CzhF" class="" style="width:145.5390625px">string</td><td id="nnGj" class="">The unique identifier for the restaurant.</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-8163-ba03-da9384a7ed2c"><td id="r{vN" class=""><code>addOns</code> </td><td id="CzhF" class="" style="width:145.5390625px">array[string]</td><td id="nnGj" class="">List of add-on identifiers whose stock status needs to be updated.</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-81a5-9d5a-e61a9e0fa147"><td id="r{vN" class=""><code>inStock</code></td><td id="CzhF" class="" style="width:145.5390625px">boolean</td><td id="nnGj" class="">Indicates the availability status. Example: true means available, false means out of stock. Applies to all specified items, variants, and add-ons.</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-81ff-9788-e01b6979ff4d"><td id="r{vN" class=""><code>items</code></td><td id="CzhF" class="" style="width:145.5390625px">array[string]</td><td id="nnGj" class="">List of menu item identifiers whose stock status is changing.</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-81df-b338-dc7988c91915"><td id="r{vN" class=""><code>variants</code></td><td id="CzhF" class="" style="width:145.5390625px">array[string]</td><td id="nnGj" class="">List of variant identifiers whose stock status needs an update.</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-817e-bb28-f183b71437b3"><td id="r{vN" class=""><code>nextAvailableAt</code></td><td id="CzhF" class="" style="width:145.5390625px">integer</td><td id="nnGj" class="">A timestamp for when the out-of-stock food items will be restocked.</td><td id="]V~h" class="">Yes</td></tr></tbody></table><hr id="1fa2f48a-f064-8045-bd0d-fd190932684d"/><p id="1fa2f48a-f064-8049-ab63-c5ba9d558639" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Request Body</summary><div class="indented"><p id="1fb2f48a-f064-8006-8a0e-c5fbd3c56dcf" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-81fc-90ff-feb3623c0615" class="code"><code class="language-JSON">{
+    &quot;restID&quot;: &quot;b7hi36eg&quot;,
+    &quot;inStock&quot;: false,
+    &quot;itemID&quot;: [
+        &quot;10454115&quot;
+    ],
+    &quot;type&quot;: &quot;item&quot;,
+    &quot;autoTurnOnTime&quot;: &quot;custom&quot;,
+    &quot;customTurnOnTime&quot;: &quot;2020-02-24 18:00&quot;
+}</code></pre></div></details><hr id="1fa2f48a-f064-80ba-8d35-d14d5c62db55"/><p id="1fa2f48a-f064-805c-a30d-e568142ddf31" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Response Body</summary><div class="indented"><p id="1fb2f48a-f064-80d1-ac00-fd1ca0150971" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-default_background"> </mark><mark class="highlight-teal_background">200</mark></summary><div class="indented"><p id="1fb2f48a-f064-8012-8014-c6f2f5aa2044" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-81bf-9911-d89b06a4691b" class="code"><code class="language-JSON">{
+    &quot;message&quot;: &quot;Item Inventory updated successfully&quot;
+}</code></pre></div></details><p id="1fb2f48a-f064-8048-a49f-f4cd9545f1af" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-default_background"> </mark><mark class="highlight-red_background">400</mark></summary><div class="indented"><p id="1fb2f48a-f064-8050-96a2-df42268479f2" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-81ce-9336-c503d0dd0603" class="code"><code class="language-JSON">{
+    &quot;error&quot;: &quot;error message&quot;
+}</code></pre></div></details></div></details><p id="1fa2f48a-f064-8138-a01a-d10e242c5e42" class="">
+</p></div></details><hr id="1fa2f48a-f064-807d-aa1f-ed7705341f63"/></div></details><p id="1fb2f48a-f064-80ee-a3bd-d307fe7d9f25" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"> Order Management</summary><div class="indented"><hr id="1fa2f48a-f064-8049-8290-c90bd798ed1f"/><p id="1fa2f48a-f064-802e-af18-e72a07277ff0" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"> Order Relay</summary><div class="indented"><hr id="1fa2f48a-f064-80b8-b585-e3c1d2f99f44"/><p id="1fa2f48a-f064-81f5-9137-d3ae1f55b4e0" class="">
+</p><p id="1fa2f48a-f064-8144-a0cf-cdd154862462" class="">API to relay the information of a new order placed by the end user on Nutana System to POS provider.</p><p id="1fa2f48a-f064-814f-ad31-e0e64768507e" class="">
+</p><p id="1fa2f48a-f064-8101-91a0-db28a6a46bfd" class=""><strong>Request URL</strong></p><p id="1fa2f48a-f064-81a3-a83b-c4e4c6fb9312" class="">
+</p><p id="1fa2f48a-f064-81ba-83c8-c8b82b9b22fc" class=""><mark class="highlight-teal_background"><strong>POST</strong></mark><strong>/</strong>api/v1/order/</p><p id="1fa2f48a-f064-8153-810c-c3fe661cd192" class="">
+</p><p id="1fa2f48a-f064-8166-9d57-cc65edf732ec" class=""><strong>Request Headers</strong></p><hr id="1fa2f48a-f064-8107-a7a9-fb20d976b981"/><p id="1fa2f48a-f064-81f8-8fb0-fcbb2224d245" class="">
+</p><table id="1fa2f48a-f064-8131-ad8b-c7cf62819877" class="simple-table"><thead class="simple-table-header"><tr id="1fa2f48a-f064-8126-9353-d9d4217db1a7"><th id="^}vT" class="simple-table-header-color simple-table-header" style="width:189px">Header</th><th id="jvm_" class="simple-table-header-color simple-table-header" style="width:382px">Description</th></tr></thead><tbody><tr id="1fa2f48a-f064-81b1-a49e-c1d441904494"><td id="^}vT" class="" style="width:189px">Authorization</td><td id="jvm_" class="" style="width:382px">Basic Auth</td></tr></tbody></table><p id="1fa2f48a-f064-81c2-ae7c-c125471745b3" class="">
+</p><p id="1fa2f48a-f064-81cd-89f5-d31bebdd7ebc" class=""><strong>Request Body</strong></p><hr id="1fa2f48a-f064-8140-9722-c0947d0394f6"/><p id="1fb2f48a-f064-8023-8ed2-db414d574a21" class="">
+</p><table id="1fa2f48a-f064-812d-8c85-fc0eb6073fec" class="simple-table"><tbody><tr id="1fa2f48a-f064-815d-a995-d578a294e154"><td id="r{vN" class=""><strong>Parameter</strong></td><td id="CzhF" class=""><strong>Type</strong></td><td id="nnGj" class=""><strong>Description</strong></td><td id="]V~h" class="">Required</td></tr><tr id="1fa2f48a-f064-81a1-859c-d0adcf2f1275"><td id="r{vN" class=""><code>orderInfo</code> </td><td id="CzhF" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Order Info Object</a></td><td id="nnGj" class="">The orderInfo object holds the key details about the order itself, such as the order ID, restaurant ID, order type (e.g., delivery, takeaway), and charges like subtotal, taxes, and total. It also includes information like payment mode, preparation time, and delivery mode.</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-8113-9ae0-ea741ab81b6d"><td id="r{vN" class=""><code>payment</code></td><td id="CzhF" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Payment Object</a></td><td id="nnGj" class="">The payment object outlines the payment details for the order, including the method of payment (e.g., cash, card, UPI), the payment status (e.g., paid, unpaid), and amounts (paid, balance).</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-81c7-8261-f7e770249ac3"><td id="r{vN" class=""><code>customer</code></td><td id="CzhF" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Customer Object</a></td><td id="nnGj" class="">The customer object contains personal details about the customer placing the order, such as their first name and last name. This helps identify the customer.</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-81b7-91ca-f79d799ce079"><td id="r{vN" class=""><code>item</code> </td><td id="CzhF" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Item Object</a></td><td id="nnGj" class="">The item object provides detailed information about the individual menu items in the order, including the item ID, name, quantity, price, and associated charges or instructions.<br/><br/></td><td id="]V~h" class="">Yes</td></tr></tbody></table><p id="1fb2f48a-f064-80cb-91a1-e8af35e2d4ad" class="">
+</p><p id="1fa2f48a-f064-8109-a1bf-e3ce28f974f7" class=""><strong>Order Info Object</strong></p><p id="1fb2f48a-f064-80a7-ac11-cb59eb2989f3" class="">
+</p><table id="1fa2f48a-f064-818d-a7b6-dcb39792113d" class="simple-table"><tbody><tr id="1fa2f48a-f064-819c-9cc9-e7c90e86cdd8"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-81d1-a760-ef31787711d6"><td id="`jDo" class=""><code>orderId</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The unique identifier for the order.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-812f-aa7e-c156abdbc59b"><td id="`jDo" class=""><code>restId</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The unique identifier for the restaurant.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8125-8dfe-fd467124ffb3"><td id="`jDo" class=""><code>type</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The type of order. Possible values: &quot;dine-in&quot;, &quot;takeaway&quot;, &quot;delivery&quot;. For example, &quot;delivery&quot;.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8127-91f4-c8b9714cd3e3"><td id="`jDo" class=""><code>instruction</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">Special instructions provided by the customer. For example, &quot;Please make it extra spicy&quot;.</td><td id="[az{" class="">No</td></tr><tr id="1fa2f48a-f064-8128-972a-e47d7f5103c7"><td id="`jDo" class=""><code>status</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The current status of the order. Possible values: &quot;pending&quot;</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8138-a6bd-c96556beed86"><td id="`jDo" class=""><code>subTotal</code></td><td id=";tpK" class="">float</td><td id="{PtI" class="">The subtotal amount of the order. For example, 500.00 rupees.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8188-a737-fc49a365a127"><td id="`jDo" class=""><code>total</code></td><td id=";tpK" class="">float</td><td id="{PtI" class="">The total amount after adding taxes and charges. For example, 550.00 rupees.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8110-b0e1-d9e5a77dab2b"><td id="`jDo" class=""><code>totalTaxes</code></td><td id=";tpK" class="">float</td><td id="{PtI" class="">The total tax amount. For example, 50.00 rupees.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-818f-9e7a-d7a3f40a8ae2"><td id="`jDo" class=""><code>createdAt</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The timestamp when the order was created.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8142-a3d2-ccfa13eed8a2"><td id="`jDo" class=""><code>deliveryCharge</code></td><td id=";tpK" class="">float</td><td id="{PtI" class="">The charge for delivery. For example, 30.00 rupees.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8105-9d5c-ede20990441e"><td id="`jDo" class=""><code>packingCharge</code></td><td id=";tpK" class="">float</td><td id="{PtI" class="">The charge for packing. For example, 20.00 rupees.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-819f-b725-d0102529bdca"><td id="`jDo" class=""><code>deliveryMode</code></td><td id=";tpK" class="">float</td><td id="{PtI" class="">The mode of delivery. Possible values: “self-pickup”,  “delivery”</td><td id="[az{" class="">Yes</td></tr></tbody></table><p id="1fb2f48a-f064-806a-bcd3-d19e0a80da6e" class="">
+</p><p id="1fa2f48a-f064-81f4-a731-e15975d5c91c" class=""><strong>Payment Object</strong></p><p id="1fb2f48a-f064-8029-92c5-ea0c52591c8c" class="">
+</p><table id="1fa2f48a-f064-81fb-88ea-d29ba327f0da" class="simple-table"><tbody><tr id="1fa2f48a-f064-81f7-b491-f724b5f421ab"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-8197-80f2-c019685e9b1a"><td id="`jDo" class=""><code>mode</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The mode of payment used. For example, &quot;card&quot;, &quot;cash&quot;, &quot;UPI&quot;.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8106-bf90-f79fce9a1968"><td id="`jDo" class=""><code>status</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The current payment status. Possible values: &quot;paid&quot;, &quot;unpaid&quot;.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8147-9806-d91ec4bb0397"><td id="`jDo" class=""><code>amountPaid</code></td><td id=";tpK" class="">float</td><td id="{PtI" class="">The amount paid by the customer. For example, 500.00 rupees.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8163-b4f4-d8ee84f4af7e"><td id="`jDo" class=""><code>amountBalance</code></td><td id=";tpK" class="">float</td><td id="{PtI" class="">The balance amount, if any. For example, 50.00 rupees for cash on delivery.</td><td id="[az{" class="">Yes</td></tr></tbody></table><p id="1fb2f48a-f064-80b8-b057-d6963b3cef32" class="">
+</p><p id="1fa2f48a-f064-81f0-bf93-e1d842718f5d" class=""><strong>Customer Object</strong></p><p id="1fb2f48a-f064-805b-95a4-f1ccecf30fba" class="">
+</p><table id="1fa2f48a-f064-81c7-8367-cda4035b7a22" class="simple-table"><tbody><tr id="1fa2f48a-f064-81f2-8d4f-ff8f6a30ee8b"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-8184-962b-ef5ef6e49457"><td id="`jDo" class=""><code>firstName</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The customer&#x27;s first name. For example, &quot;John&quot;.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-818c-be1d-d47c499bda79"><td id="`jDo" class=""><code>lastName</code> </td><td id=";tpK" class="">string</td><td id="{PtI" class="">The customer&#x27;s last name. For example, &quot;Doe&quot;.</td><td id="[az{" class="">Yes</td></tr></tbody></table><p id="1fb2f48a-f064-805c-afe0-ca889b3e6d1b" class="">
+</p><p id="1fa2f48a-f064-816f-9eb1-d765de31a5ff" class=""><strong>Item Object</strong></p><p id="1fb2f48a-f064-80bd-8f83-e440e49129b1" class="">
+</p><table id="1fa2f48a-f064-81cb-8056-e2eaa4ed084a" class="simple-table"><tbody><tr id="1fa2f48a-f064-8156-9177-edd03b94e5cc"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-8179-809c-d623a9f02ea7"><td id="`jDo" class=""><code>itemId</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The unique identifier for the item.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8101-9103-c4ce5d5dbc59"><td id="`jDo" class=""><code>name</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The name of the item. For example, &quot;Chicken Biryani&quot;.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-819a-a977-d4c33f642f22"><td id="`jDo" class=""><code>quantity</code></td><td id=";tpK" class="">integer</td><td id="{PtI" class="">The quantity of the item. For example, 2.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-81fa-8bc6-dd99f47e9230"><td id="`jDo" class=""><code>description</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">A detailed description of the food item.</td><td id="[az{" class="">No</td></tr><tr id="1fa2f48a-f064-81ee-9d74-eaeb2584fca8"><td id="`jDo" class=""><code>unitPrice</code></td><td id=";tpK" class="">float</td><td id="{PtI" class="">The price per unit of the item. For example, 250.00 rupees. </td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8112-9391-fa925247c9d6"><td id="`jDo" class=""><code>taxes</code></td><td id=";tpK" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Taxes Object</a></td><td id="{PtI" class="">The tax details for the item.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-810d-b882-cc700654444e"><td id="`jDo" class=""><code>charges</code> </td><td id=";tpK" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Charges Object</a></td><td id="{PtI" class="">Additional charges applicable for the item.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8193-8e87-ec4d60d992a5"><td id="`jDo" class=""><code>instruction</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">Special instructions for the item. For example, “Extra Spicy”.</td><td id="[az{" class="">No</td></tr><tr id="1fa2f48a-f064-815d-b2fa-ca0d08fd43d6"><td id="`jDo" class=""><code>variants</code></td><td id=";tpK" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Variants Object</a></td><td id="{PtI" class="">The variant details for the item (e.g., size or type).</td><td id="[az{" class="">Optional Condition</td></tr><tr id="1fa2f48a-f064-8163-84b3-c9c655d6080a"><td id="`jDo" class=""><code>addOns</code></td><td id=";tpK" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Add On Object</a></td><td id="{PtI" class="">Add Ons that can be associated with the food item.</td><td id="[az{" class="">Optional Condition</td></tr></tbody></table><p id="1fb2f48a-f064-80b8-927c-dc79e07f0c02" class="">
+</p><p id="1fa2f48a-f064-81d3-b46d-c74ee1b2f972" class=""><strong>Variants Object</strong></p><p id="1fb2f48a-f064-80df-9264-e6a194d1c188" class="">
+</p><table id="1fa2f48a-f064-818b-ab8e-c128449eaeeb" class="simple-table"><tbody><tr id="1fa2f48a-f064-8102-ac99-f4ffeaca927e"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-817c-8da8-d4b4b5eb70d6"><td id="`jDo" class=""><code>id</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The unique identifier for the variant.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-816f-9588-d4c6bf0f679a"><td id="`jDo" class=""><code>name</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The name of the variant. For example, &quot;Large&quot;.</td><td id="[az{" class=""></td></tr><tr id="1fa2f48a-f064-81d0-9d7e-c6398d7d4bcc"><td id="`jDo" class=""><code>unitPrice</code></td><td id=";tpK" class="">float</td><td id="{PtI" class="">The price of the variant. For example, 100.00 rupees.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8183-b489-c216d6f2dbd7"><td id="`jDo" class=""><code>variants</code></td><td id=";tpK" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Variants Object</a></td><td id="{PtI" class="">Nested variant details.</td><td id="[az{" class="">Optional Condition</td></tr><tr id="1fa2f48a-f064-815d-90a3-e0bf042a480e"><td id="`jDo" class=""><code>addOns</code> </td><td id=";tpK" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Add On Object</a></td><td id="{PtI" class="">Additional Add Ons associated with the variant.</td><td id="[az{" class="">Optional Condition</td></tr></tbody></table><p id="1fb2f48a-f064-80f0-8824-e4e9e0c3fc1a" class="">
+</p><p id="1fa2f48a-f064-8102-9945-f5fbe74c3818" class=""><strong>Add On Object</strong></p><p id="1fb2f48a-f064-805d-a83e-fb562d90d24c" class="">
+</p><table id="1fa2f48a-f064-8164-8ea5-ca7742da69b1" class="simple-table"><tbody><tr id="1fa2f48a-f064-8152-89e5-cc7e738cfca9"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-8155-bb45-c398a7dd82b2"><td id="`jDo" class=""><code>id</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The unique identifier for the add-on.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8144-801f-c76445c7b0ba"><td id="`jDo" class=""><code>name</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The name of the add-on. For example, &quot;Extra Cheese&quot;.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-813a-a7ec-f5fb8770a1bf"><td id="`jDo" class=""><code>unitPrice</code> </td><td id=";tpK" class="">float</td><td id="{PtI" class="">The price of the add-on. For example, 50.00 rupees.</td><td id="[az{" class="">Yes</td></tr></tbody></table><p id="1fb2f48a-f064-80d5-ad68-c837aff9ecc8" class="">
+</p><p id="1fa2f48a-f064-81d2-9a4e-de55dce56fdd" class=""><strong>Taxes Object</strong></p><p id="1fb2f48a-f064-8081-9335-e284044460bd" class="">
+</p><table id="1fa2f48a-f064-81c3-839c-eff6ea67a7df" class="simple-table"><tbody><tr id="1fa2f48a-f064-8119-8de5-e589e18a18cd"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-81fa-85a0-f4987bbab0ba"><td id="`jDo" class=""><code>title</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The name of the tax. For example, &quot;SGST&quot;.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8125-9895-c051db18f9eb"><td id="`jDo" class=""><code>value</code></td><td id=";tpK" class="">float</td><td id="{PtI" class="">The tax amount. For example, 25.00 rupees.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-819f-a78a-ea44bd70e9d2"><td id="`jDo" class=""><code>percentage</code> </td><td id=";tpK" class="">float</td><td id="{PtI" class="">The tax percentage. For example, 2.50.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-811e-8c48-c74f7f135b6f"><td id="`jDo" class=""><code>liability_on</code></td><td id=";tpK" class="">string</td><td id="{PtI" class=""><code>restaurant</code> or <code>aggregator</code></td><td id="[az{" class="">Yes</td></tr></tbody></table><p id="1fb2f48a-f064-8082-b591-e6d71d91b714" class="">
+</p><p id="1fa2f48a-f064-81bf-91bf-e929f4ee3e55" class=""><strong>Charges Object</strong></p><p id="1fb2f48a-f064-80a5-a99e-f07baaf7271a" class="">
+</p><table id="1fa2f48a-f064-8186-b9f6-c4862f582aa4" class="simple-table"><tbody><tr id="1fa2f48a-f064-814b-bdb3-cb6672ff414c"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-81aa-bfb5-efb10077eb8c"><td id="`jDo" class=""><code>title</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The name of the charge. For example, &quot;Delivery Charge&quot;.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8166-94d5-c34eb0964691"><td id="`jDo" class=""><code>value</code> </td><td id=";tpK" class="">float</td><td id="{PtI" class="">The amount of the charge. For example, 30.00 rupees. </td><td id="[az{" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-809b-a987-d4a855be977a" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Request Body</summary><div class="indented"><p id="1fb2f48a-f064-8063-90b3-fc9e3f719731" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-8112-8119-d4897f015993" class="code"><code class="language-JSON">{
+  &quot;orderInfo&quot;: {
+    &quot;orderId&quot;: &quot;3456789&quot;,
+    &quot;restId&quot;: &quot;987654&quot;,
+    &quot;type&quot;: &quot;delivery&quot;,
+    &quot;instruction&quot;: &quot;Please ring doorbell twice&quot;,
+    &quot;status&quot;: &quot;confirmed&quot;,
+    &quot;paymentMode&quot;: &quot;UPI&quot;,
+    &quot;subTotal&quot;: 850.00,
+    &quot;total&quot;: 1012.50,
+    &quot;totalTaxes&quot;: 42.50,
+    &quot;createdAt&quot;: &quot;2024-03-19T14:30:00Z&quot;,
+    &quot;deliveryCharge&quot;: 50.00,
+    &quot;packingCharge&quot;: 20.00,
+    &quot;deliveryMode&quot;: &quot;delivery&quot;,
+    &quot;collectCash&quot;: false,
+    &quot;amountToBeCollected&quot;: 0.00
+  },
+  &quot;payment&quot;: {
+    &quot;mode&quot;: &quot;UPI&quot;,
+    &quot;status&quot;: &quot;paid&quot;,
+    &quot;amountPaid&quot;: 1012.50,
+    &quot;amountBalance&quot;: 0.00
+  },
+  &quot;customer&quot;: {
+    &quot;firstName&quot;: &quot;John&quot;,
+    &quot;lastName&quot;: &quot;Doe&quot;
+  },
+  &quot;items&quot;: [
+    {
+      &quot;itemId&quot;: &quot;111001&quot;,
+      &quot;name&quot;: &quot;Chicken Biryani&quot;,
+      &quot;quantity&quot;: 2,
+      &quot;description&quot;: &quot;Aromatic basmati rice cooked with tender chicken pieces and special spices&quot;,
+      &quot;unitPrice&quot;: 250.00,
+      &quot;taxes&quot;: [
+        {
+          &quot;title&quot;: &quot;CGST&quot;,
+          &quot;value&quot;: 12.50,
+          &quot;percentage&quot;: 2.50
+        },
+        {
+          &quot;title&quot;: &quot;SGST&quot;,
+          &quot;value&quot;: 12.50,
+          &quot;percentage&quot;: 2.50
+        }
+      ],
+      &quot;charges&quot;: [
+        {
+          &quot;title&quot;: &quot;Container Charge&quot;,
+          &quot;value&quot;: 10.00
+        }
+      ],
+      &quot;instruction&quot;: &quot;Extra spicy&quot;,
+      &quot;variants&quot;: {
+        &quot;id&quot;: &quot;7701&quot;,
+        &quot;name&quot;: &quot;Family Pack&quot;,
+        &quot;unitPrice&quot;: 250.00
+      },
+      &quot;addOns&quot;: [
+        {
+          &quot;id&quot;: &quot;8001&quot;,
+          &quot;name&quot;: &quot;Extra Raita&quot;,
+          &quot;unitPrice&quot;: 25.00
+        }
+      ]
+    },
+    {
+      &quot;itemId&quot;: &quot;111002&quot;,
+      &quot;name&quot;: &quot;Butter Naan&quot;,
+      &quot;quantity&quot;: 4,
+      &quot;description&quot;: &quot;Soft Indian bread made with refined flour and butter&quot;,
+      &quot;unitPrice&quot;: 40.00,
+      &quot;taxes&quot;: [
+        {
+          &quot;title&quot;: &quot;CGST&quot;,
+          &quot;value&quot;: 2.00,
+          &quot;percentage&quot;: 2.50
+        },
+        {
+          &quot;title&quot;: &quot;SGST&quot;,
+          &quot;value&quot;: 2.00,
+          &quot;percentage&quot;: 2.50
+        }
+      ],
+      &quot;charges&quot;: [],
+      &quot;instruction&quot;: &quot;Make it soft&quot;
+    },
+    {
+      &quot;itemId&quot;: &quot;111003&quot;,
+      &quot;name&quot;: &quot;Chocolate Milkshake&quot;,
+      &quot;quantity&quot;: 2,
+      &quot;description&quot;: &quot;Rich chocolate milkshake topped with whipped cream&quot;,
+      &quot;unitPrice&quot;: 120.00,
+      &quot;taxes&quot;: [
+        {
+          &quot;title&quot;: &quot;CGST&quot;,
+          &quot;value&quot;: 6.00,
+          &quot;percentage&quot;: 2.50
+        },
+        {
+          &quot;title&quot;: &quot;SGST&quot;,
+          &quot;value&quot;: 6.00,
+          &quot;percentage&quot;: 2.50
+        }
+      ],
+      &quot;charges&quot;: [],
+      &quot;variants&quot;: {
+        &quot;id&quot;: &quot;77002&quot;,
+        &quot;name&quot;: &quot;Large&quot;,
+        &quot;unitPrice&quot;: 120.00
+      },
+      &quot;addOns&quot;: [
+        {
+          &quot;id&quot;: &quot;88002&quot;,
+          &quot;name&quot;: &quot;Extra Chocolate Sauce&quot;,
+          &quot;unitPrice&quot;: 15.00
+        }
+      ]
+    }
+  ]
+} </code></pre></div></details><p id="1fa2f48a-f064-8066-85f9-c1ffbf65eaec" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Response Body</summary><div class="indented"><p id="1fb2f48a-f064-803b-af4e-e3dc99253830" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-default_background"> </mark><mark class="highlight-teal_background">200</mark></summary><div class="indented"><p id="1fb2f48a-f064-80e6-bb6f-f0fcbf499b1d" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-8132-96f5-c59117ca7151" class="code"><code class="language-JSON">{
+    &quot;message&quot;: &quot;Order Details successfully communicated.&quot;
+}</code></pre></div></details><p id="1fb2f48a-f064-80ff-8609-fbe75eeccea3" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-default_background"> </mark><mark class="highlight-red_background">400</mark></summary><div class="indented"><p id="1fb2f48a-f064-80b1-a549-c53504b3fb70" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-81a7-932b-c8f748e0e702" class="code"><code class="language-JSON">{
+    &quot;error&quot;: &quot;error message&quot;
+}</code></pre></div></details><p id="1fb2f48a-f064-805c-bb71-ec4146878ad3" class="">
+</p></div></details></div></details><hr id="1fa2f48a-f064-8029-9a0e-c5d44b1996b0"/><p id="1fa2f48a-f064-801f-8d13-e6bdba6f0560" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"> Order Status Exchange</summary><div class="indented"><hr id="1fa2f48a-f064-8018-835f-c06acd663cfd"/><p id="1fa2f48a-f064-80b6-830c-f4a407002acc" class="">
+</p><p id="1fa2f48a-f064-8141-bb59-c370d243dc02" class="">API to exchange the order status between the Nutana system and downstream system. Both system will expose status APIs to exchange status of the order</p><p id="1fa2f48a-f064-815c-9175-ebc58426767a" class="">
+</p><p id="1fa2f48a-f064-812c-94ba-ef1404e3215c" class=""><strong>Request URL</strong></p><p id="1fb2f48a-f064-802c-908d-deab93bc8f07" class="">
+</p><p id="1fa2f48a-f064-81ed-a9a4-db07af0d3465" class=""><mark class="highlight-teal_background"><strong>POST</strong></mark><strong>/</strong>api/v1/order-status</p><p id="1fa2f48a-f064-8186-9bdb-e19e822c4afa" class="">
+</p><p id="1fa2f48a-f064-81fc-9ae3-d2abbcb05aa5" class=""><strong>Request Headers</strong></p><hr id="1fa2f48a-f064-8175-ac03-e3f1f1af4937"/><p id="1fa2f48a-f064-8128-bffb-fb2504a449a6" class="">
+</p><table id="1fa2f48a-f064-8167-9b00-c34d1e2fb8c6" class="simple-table"><thead class="simple-table-header"><tr id="1fa2f48a-f064-8128-bc0e-e256d0c238b1"><th id="^}vT" class="simple-table-header-color simple-table-header" style="width:189px">Header</th><th id="jvm_" class="simple-table-header-color simple-table-header" style="width:382px">Description</th></tr></thead><tbody><tr id="1fa2f48a-f064-8161-b86a-d665dde36362"><td id="^}vT" class="" style="width:189px">Authorization</td><td id="jvm_" class="" style="width:382px">Basic Auth</td></tr></tbody></table><p id="1fa2f48a-f064-81b0-bfee-e56a502013ec" class="">
+</p><p id="1fa2f48a-f064-8156-8331-c5a1035608e8" class=""><strong>Request Body</strong></p><hr id="1fa2f48a-f064-8128-a2e3-e511e8adfc36"/><p id="1fb2f48a-f064-8094-9a76-ed9a0972faba" class="">
+</p><table id="1fa2f48a-f064-81f6-8c70-eefc1f0ed62d" class="simple-table"><tbody><tr id="1fa2f48a-f064-81ea-9de0-f21b9f95456d"><td id="r{vN" class=""><strong>Parameter</strong></td><td id="CzhF" class=""><strong>Type</strong></td><td id="nnGj" class=""><strong>Description</strong></td><td id="]V~h" class="">Required</td></tr><tr id="1fa2f48a-f064-815a-b880-f382910d907a"><td id="r{vN" class=""><code>orderId</code> </td><td id="CzhF" class="">string</td><td id="nnGj" class="">Nutana orderId</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-81ed-a10f-fd8673d6ccc9"><td id="r{vN" class=""><code>status</code></td><td id="CzhF" class="">string</td><td id="nnGj" class="">Contains the new status of the order. <br/><br/><strong>Allowed values:</strong> accepted, food_ready, dispatched, completed, and cancelled.</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-81df-8fcf-e792f947a167"><td id="r{vN" class=""><code>reason</code></td><td id="CzhF" class="">string</td><td id="nnGj" class="">A custom message explaining why the order was canceled. This is required when the newStatus is &quot;cancelled&quot;. Allowed values include: item_out_of_stock, store_closed, store_busy, rider_not_available, out_of_delivery_radius<br/>connectivity_issue<br/>total_missmatch<br/>invalid_item<br/>option_out_of_stock<br/>invalid_option<br/>customer_cancellation<br/>unspecified.<br/></td><td id="]V~h" class="">Conditional (Required for cancelled status)</td></tr></tbody></table><p id="1fb2f48a-f064-8025-bc7d-d7c625d34474" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Request Body</summary><div class="indented"><p id="1fb2f48a-f064-80d2-bae8-c04181b52134" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-8189-bbd7-f840e98e90a1" class="code"><code class="language-JSON">{
+  &quot;orderId&quot;: &quot;b7hi36eg&quot;,
+  &quot;restId&quot;: &quot;10454115&quot;,
+  &quot;status&quot;: &quot;cancelled&quot;,
+  &quot;cancelReason&quot;: &quot;item_out_of_stock&quot;
+}
+</code></pre></div></details><p id="1fb2f48a-f064-80a2-b49e-d091cfea53d4" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Response Body</summary><div class="indented"><p id="1fb2f48a-f064-80d6-99ad-c4ce68aed21e" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-default_background"> </mark><mark class="highlight-teal_background">200</mark></summary><div class="indented"><p id="1fb2f48a-f064-8010-b345-cd67873a6331" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-814b-94cb-c35b92e315ec" class="code"><code class="language-JSON">{
+    &quot;message&quot;: &quot;Order Status exchanged successfully&quot;
+}</code></pre></div></details><p id="1fb2f48a-f064-803e-a59e-eb1b41ecc1e1" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-default_background"> </mark><mark class="highlight-red_background">400</mark></summary><div class="indented"><p id="1fb2f48a-f064-80da-a7e9-e730710bd1d3" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-8173-bba4-ca83043f030f" class="code"><code class="language-JSON">{
+    &quot;message&quot;: &quot;error message&quot;
+}</code></pre></div></details></div></details><p id="1fa2f48a-f064-81f6-970e-d61cf3b5aa5c" class="">
+</p></div></details><hr id="1fa2f48a-f064-8053-90a6-f5847f640abf"/></div></details><p id="1fb2f48a-f064-8066-8b49-c20c101a7cc1" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"> Rider Management</summary><div class="indented"><hr id="1fa2f48a-f064-806f-ab84-cdc407fcbafe"/><p id="1fa2f48a-f064-8063-9291-f07802da2277" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"> Rider Status Update</summary><div class="indented"><hr id="1fa2f48a-f064-806b-aa5a-d894355b680b"/><p id="1fa2f48a-f064-8072-92fe-f083e75e2b84" class="">
+</p><p id="1fa2f48a-f064-8157-aa7a-ef2203edeb16" class="">API for updating the order delivery status from Nutana Systems.</p><p id="1fa2f48a-f064-81fd-b203-d44fee020db4" class="">
+</p><p id="1fa2f48a-f064-810e-9c54-ed4f49e55ffe" class=""><strong>Request URL</strong></p><p id="1fa2f48a-f064-81b3-9ea7-ff93285f3957" class="">
+</p><p id="1fa2f48a-f064-81a6-81fd-e1238b38173b" class=""><mark class="highlight-teal_background"><strong>POST</strong></mark><strong>/</strong>api/v1/rider-status</p><p id="1fa2f48a-f064-81d8-81bd-e5ddb616e39b" class="">
+</p><p id="1fa2f48a-f064-81dd-96f3-ebbeb04dd3e3" class=""><strong>Request Headers</strong></p><hr id="1fa2f48a-f064-81b8-bcf4-f3d60e4c7270"/><p id="1fa2f48a-f064-8169-8052-cda2fcd122e6" class="">
+</p><table id="1fa2f48a-f064-8114-9264-d4e6abb9c3ca" class="simple-table"><thead class="simple-table-header"><tr id="1fa2f48a-f064-811b-a0c2-d179d4f6b315"><th id="^}vT" class="simple-table-header-color simple-table-header" style="width:189px">Header</th><th id="jvm_" class="simple-table-header-color simple-table-header" style="width:382px">Description</th></tr></thead><tbody><tr id="1fa2f48a-f064-8125-8171-d2aa8a7ad1d5"><td id="^}vT" class="" style="width:189px">Authorization</td><td id="jvm_" class="" style="width:382px">Basic Auth</td></tr></tbody></table><p id="1fb2f48a-f064-80f6-afee-f03fa0ef1af7" class="">
+</p><p id="1fa2f48a-f064-81e4-8fca-c8751af9379e" class=""><strong>Request Body</strong></p><hr id="1fa2f48a-f064-81bc-95c3-e1207ee0b1f6"/><p id="1fa2f48a-f064-813a-a62d-f23177526cbf" class="">
+</p><table id="1fa2f48a-f064-81bb-afdd-ea08d806d577" class="simple-table"><thead class="simple-table-header"><tr id="1fa2f48a-f064-81c4-9549-fd88d24bcb1d"><th id="Lm_z" class="simple-table-header-color simple-table-header"><strong>Parameter</strong></th><th id="{@kP" class="simple-table-header-color simple-table-header" style="width:152.8984375px"><strong>Type</strong></th><th id="&lt;g=I" class="simple-table-header-color simple-table-header"><strong>Description</strong></th><th id="VH@Q" class="simple-table-header-color simple-table-header">Required</th></tr></thead><tbody><tr id="1fa2f48a-f064-81ed-8814-f52ce7edd0b6"><td id="Lm_z" class=""><code>orderId</code> </td><td id="{@kP" class="" style="width:152.8984375px">string</td><td id="&lt;g=I" class="">Unique identifier for the order for which the rider status is being updated.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-81ac-a3b3-c2008f55856e"><td id="Lm_z" class=""><code>status</code></td><td id="{@kP" class="" style="width:152.8984375px">string</td><td id="&lt;g=I" class="">The current status of the rider for the respective order. Allowed values: DELIVERED, AT-STORE, NO-RIDER-FOUND, OUT-FOR-DELIVERY, ASSIGNED, UNASSIGNED, CANCELLED. For example, &quot;DELIVERED&quot; means the order has been delivered.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-8183-92a2-d87b82995350"><td id="Lm_z" class=""><code>riderData</code></td><td id="{@kP" class="" style="width:152.8984375px"><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Rider Data Object</a></td><td id="&lt;g=I" class="">An array containing rider information. Each object includes the rider&#x27;s name and phone number.</td><td id="VH@Q" class="">Yes</td></tr></tbody></table><p id="1fb2f48a-f064-80ba-a848-edb509e034fb" class="">
+</p><p id="1fa2f48a-f064-8191-9d87-ea93438a242e" class=""><strong>Rider Data Object</strong></p><p id="1fb2f48a-f064-806b-ac38-dc888a723b13" class="">
+</p><table id="1fa2f48a-f064-81c3-bc44-fef50ad3576a" class="simple-table"><tbody><tr id="1fa2f48a-f064-8180-b7d1-f1eea62194f0"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-8178-a40e-d4278eba3397"><td id="`jDo" class=""><code>riderName</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The name of the assigned rider. For example, &quot;Ram&quot; is the name of the delivery executive handling the order.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-81a0-b1d7-f560ed995917"><td id="`jDo" class=""><code>riderPhoneNumber</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The phone number of the rider. For example, &quot;9876543210&quot; refers to the contact number of the assigned delivery executive.</td><td id="[az{" class="">Yes</td></tr></tbody></table><p id="1fb2f48a-f064-8004-af9b-d497c79323cb" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Request Body</summary><div class="indented"><p id="1fb2f48a-f064-8030-abbd-f06efceb1b8d" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-8179-ac92-ea9993dc7479" class="code"><code class="language-JSON">{
+    &quot;orderId&quot;: &quot;10454115&quot;,
+    &quot;status&quot;: &quot;OUT-FOR-DELIVERY&quot;,
+    &quot;riderData&quot;: [
+    {
+      &quot;riderName&quot;: &quot;Ram&quot;,
+      &quot;riderPhoneNumber&quot;: &quot;9876543210&quot;
+    }
+  ]
+}</code></pre></div></details><p id="1fb2f48a-f064-80fc-a45a-e88862be2c25" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Response Body</summary><div class="indented"><p id="1fb2f48a-f064-8017-9601-eef8cf097691" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-default_background"> </mark><mark class="highlight-teal_background">200</mark></summary><div class="indented"><p id="1fb2f48a-f064-8058-942c-f1868e7f17a2" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-8177-8591-d216a6fad098" class="code"><code class="language-JSON">{
+    &quot;message&quot;: &quot;Delivery Status updated successfully.&quot;
+}</code></pre></div></details><p id="1fb2f48a-f064-8078-b964-d42465471bfd" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-default_background"> </mark><mark class="highlight-red_background">400</mark></summary><div class="indented"><p id="1fb2f48a-f064-8011-acba-efe690a61816" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-81f9-8f01-f0d58472bb74" class="code"><code class="language-JSON">{
+    &quot;error&quot;: &quot;error message&quot;
+}</code></pre></div></details></div></details></div></details><hr id="1fb2f48a-f064-80a9-92ba-ff98dcd6c06f"/></div></details><p id="1fb2f48a-f064-80a4-9111-e45146bd31ee" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"> Store Management</summary><div class="indented"><hr id="1fa2f48a-f064-8023-96ac-f838e784db99"/><p id="1fa2f48a-f064-8003-83f2-dc12f0232fde" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"> Store Status</summary><div class="indented"><hr id="1fa2f48a-f064-80aa-a2e6-f32a6bae4348"/><p id="1fa2f48a-f064-817f-ac1b-de40867ee2b9" class="">
+</p><p id="1fa2f48a-f064-817f-b531-e2c699a10cfc" class="">API to enable/disable a store on Nutana Systems.</p><p id="1fa2f48a-f064-81d1-8cce-c0d2c6779b7f" class="">
+</p><p id="1fa2f48a-f064-81d3-bda3-e5946d4735f0" class=""><strong>Request URL</strong></p><p id="1fa2f48a-f064-8151-8098-c254a23e9a62" class="">
+</p><p id="1fa2f48a-f064-81a7-96ec-c001eed639ac" class=""><mark class="highlight-teal_background"><strong>POST</strong></mark><strong>/</strong>api/v1/store-status</p><p id="1fa2f48a-f064-8151-8836-d657975fb49e" class="">
+</p><p id="1fa2f48a-f064-816e-873f-fa5082e5619c" class=""><strong>Request Headers</strong></p><hr id="1fa2f48a-f064-8181-9ac7-d32adcf0858c"/><p id="1fa2f48a-f064-8112-8d64-ce86c06cbd42" class="">
+</p><table id="1fa2f48a-f064-81b1-96c1-d417e795ef0e" class="simple-table"><thead class="simple-table-header"><tr id="1fa2f48a-f064-8191-80d8-f7eb0faa4001"><th id="^}vT" class="simple-table-header-color simple-table-header" style="width:189px">Header</th><th id="jvm_" class="simple-table-header-color simple-table-header" style="width:382px">Description</th></tr></thead><tbody><tr id="1fa2f48a-f064-8134-9d1f-e15dc4c55970"><td id="^}vT" class="" style="width:189px">Authorization</td><td id="jvm_" class="" style="width:382px">Basic Auth</td></tr></tbody></table><p id="1fb2f48a-f064-80ff-b345-e1b2517a9a2d" class="">
+</p><p id="1fa2f48a-f064-817e-b908-fff2094fab6a" class=""><strong>Request Body</strong></p><hr id="1fa2f48a-f064-811a-85ef-e75594264da2"/><p id="1fa2f48a-f064-81f6-8b91-dc44e8911bf1" class="">
+</p><table id="1fa2f48a-f064-81d2-9e83-eb2f17ae8ab1" class="simple-table"><thead class="simple-table-header"><tr id="1fa2f48a-f064-814a-bc6a-f8b66e556930"><th id="Lm_z" class="simple-table-header-color simple-table-header"><strong>Parameter</strong></th><th id="{@kP" class="simple-table-header-color simple-table-header"><strong>Type</strong></th><th id="&lt;g=I" class="simple-table-header-color simple-table-header"><strong>Description</strong></th><th id="VH@Q" class="simple-table-header-color simple-table-header">Required</th></tr></thead><tbody><tr id="1fa2f48a-f064-8180-95f9-fca46420ea07"><td id="Lm_z" class=""><code>restId</code></td><td id="{@kP" class="">string</td><td id="&lt;g=I" class="">Unique identifier of the restaurant for which status needs to be updated.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-81aa-903b-e8a9de05f649"><td id="Lm_z" class=""><code>orderingEnabled</code></td><td id="{@kP" class="">boolean</td><td id="&lt;g=I" class="">This indicates the current status of the Restaurant (whether it is accepting new orders or not). For example, true indicates that Restaurant is open for new orders.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-810d-9e7c-e1e1d8e4b470"><td id="Lm_z" class=""><code>nextAvailableAt</code></td><td id="{@kP" class="">string</td><td id="&lt;g=I" class="">Unix timestamp (in seconds) </td><td id="VH@Q" class="">No</td></tr><tr id="1fa2f48a-f064-81b6-a72f-eabe303450f5"><td id="Lm_z" class=""><code>reason</code></td><td id="{@kP" class="">string</td><td id="&lt;g=I" class="">reason for store closure</td><td id="VH@Q" class="">No</td></tr></tbody></table><p id="1fb2f48a-f064-8061-84ef-f63e4af80cf7" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Request Body</summary><div class="indented"><p id="1fb2f48a-f064-80ba-b5b2-e1c854a21ba5" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-8105-915b-ff74a6a3e363" class="code"><code class="language-JSON">{
+    &quot;restId&quot;: &quot;b7hi36eg&quot;,
+    &quot;orderingEnabled&quot;: true
+}</code></pre></div></details><p id="1fb2f48a-f064-80d0-8f3c-d85d243e9b3a" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Response Body</summary><div class="indented"><p id="1fb2f48a-f064-80ae-9759-cee6f703c7b6" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-default_background"> </mark><mark class="highlight-teal_background">200</mark></summary><div class="indented"><p id="1fb2f48a-f064-8084-8afc-cb74cfbe004b" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-8160-bcc6-edbb28a48bee" class="code"><code class="language-JSON">{
+    &quot;message&quot;: &quot;Restaurant status successfully updated.&quot;
+}</code></pre></div></details><p id="1fb2f48a-f064-80bf-a54b-c4a26627f67d" class="">
+</p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-default_background"> </mark><mark class="highlight-red_background">400</mark></summary><div class="indented"><p id="1fb2f48a-f064-8059-b40f-f91e8b2a12d7" class="">
+</p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-81ec-8245-ef3c9f6058f7" class="code"><code class="language-JSON">{
+    &quot;error&quot;: &quot;error message&quot;
+}</code></pre></div></details></div></details></div></details><hr id="1fb2f48a-f064-8063-94dc-d68ffe395a13"/></div></details><p id="1fb2f48a-f064-80bc-b1ff-dc2f423e6afe" class="">
+</p><p id="1fa2f48a-f064-815b-bd5f-d478e7b46648" class="">
+</p><hr id="1fa2f48a-f064-8142-9be4-ff3c386c0a1b"/><div id="1fa2f48a-f064-81f0-a241-dc7528f5f3ec" class="column-list"><div id="1fa2f48a-f064-81ec-a0bb-c77b95ae30e1" style="width:50%" class="column"><p id="1fa2f48a-f064-8118-8679-c15a5739d3ee" class=""><a href="Guides%201fa2f48af064812191d2e2b332e81ebf.html"><img class="icon" src="https://www.notion.so/icons/book_green.svg"/>Guides</a> </p></div><div id="1fa2f48a-f064-812a-ab0c-cef1f415c22f" style="width:50%" class="column"><p id="1fa2f48a-f064-8116-83ed-f7b777de0445" class=""><a href="Guides%201fa2f48af064812191d2e2b332e81ebf/Authentication%201fa2f48af06481f58d66ed3174167be6.html"><img class="icon" src="https://www.notion.so/icons/key_green.svg"/>Authentication</a> </p><p id="1fa2f48a-f064-8143-9c42-dbf5b59a9461" class="">
+</p></div></div><p id="1fa2f48a-f064-811e-b8bc-c5c2a59902e5" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
