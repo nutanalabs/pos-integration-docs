@@ -679,7 +679,7 @@ blockquote {
 .checkbox-off {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
-
+	
 </style></head><body><article id="1fa2f48a-f064-81b7-8f71-f34f45c13e81" class="page mono"><header><img class="page-cover-image" src="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81/POS.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/swap-horizontally_green.svg"/></div><h1 class="page-title">API Documentation</h1><p class="page-description"></p></header><div class="page-body"><nav id="1fa2f48a-f064-815c-87ba-e48dc195e108" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1fa2f48a-f064-81ed-8be8-e327a225c585">Introduction</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1fa2f48a-f064-8157-8ae3-e782fe772df7">Endpoints</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1fa2f48a-f064-8119-a253-f0a180d449f8"> Menu Management</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1fa2f48a-f064-81fe-8302-cbcb6599ec55"> Order Management</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1fa2f48a-f064-818b-9c87-ff1e7ea7aa0a"> Rider Management</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1fa2f48a-f064-8157-9a8a-f0b5c1f6f17b"> Store Management</a></div></nav><p id="1fa2f48a-f064-8158-8c1a-f7af24e26ae4" class="">
 </p><h1 id="1fa2f48a-f064-81ed-8be8-e327a225c585" class="">Introduction</h1><hr id="1fa2f48a-f064-802a-bc79-e88970ea068c"/><p id="1fa2f48a-f064-80a7-8a0d-c073487e2428" class="">
 </p><p id="1fa2f48a-f064-81a0-b4bb-ef9b6b50f057" class="">The Nutana API is organised around REST framework. A REST API (also known as RESTful API) is an application programming interface (API or web API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services.</p><p id="1fa2f48a-f064-810f-927b-f516ea802973" class="">
@@ -688,45 +688,45 @@ blockquote {
 </p><details open=""><summary style="font-weight:600;font-size:1.5em;line-height:1.3;margin:0"> Menu Integration</summary><div class="indented"><hr id="1fa2f48a-f064-80e6-8651-c3e2653ace69"/><p id="1fa2f48a-f064-80a7-9e2b-e80a035fe792" class="">
 </p><p id="1fa2f48a-f064-8108-8142-e15cdf390d1f" class="">API to push the menu to Nutana systems</p><p id="1fb2f48a-f064-8076-b946-c76ec6fc5981" class="">
 </p><p id="1fa2f48a-f064-81c5-ae96-f6f971da7b56" class=""><strong>Request URL</strong></p><p id="1fa2f48a-f064-815f-821a-e0cb89e53bac" class="">
-</p><p id="1fa2f48a-f064-81c3-90dc-c6c1f570210f" class=""><mark class="highlight-teal_background"><strong>POST</strong></mark><strong>/</strong>api/v1/push-menu</p><p id="1fa2f48a-f064-81f2-9388-d75482416a3d" class="">
+</p><p id="1fa2f48a-f064-81c3-90dc-c6c1f570210f" class=""><mark class="highlight-teal_background"><strong>POST</strong></mark><strong>/</strong>api/v1/menu</p><p id="1fa2f48a-f064-81f2-9388-d75482416a3d" class="">
 </p><p id="1fa2f48a-f064-81ae-b22e-c153ddb3252b" class=""><strong>Request Headers</strong></p><hr id="1fa2f48a-f064-8141-81ca-ff8696fe4259"/><p id="1fa2f48a-f064-816e-987a-cc537b4d9232" class="">
-</p><table id="1fa2f48a-f064-8115-9e1b-fc20ecbc65b1" class="simple-table"><thead class="simple-table-header"><tr id="1fa2f48a-f064-816a-b2e8-e6d6b585e3a2"><th id="^}vT" class="simple-table-header-color simple-table-header" style="width:189px">Header</th><th id="jvm_" class="simple-table-header-color simple-table-header" style="width:382px">Description</th></tr></thead><tbody><tr id="1fa2f48a-f064-8130-b6c1-d56ba5119f2e"><td id="^}vT" class="" style="width:189px">Authorization</td><td id="jvm_" class="" style="width:382px">Basic Auth</td></tr></tbody></table><p id="1fb2f48a-f064-808c-83af-dbe6a2719b1e" class="">
+</p><table id="1fa2f48a-f064-8115-9e1b-fc20ecbc65b1" class="simple-table"><thead class="simple-table-header"><tr id="1fa2f48a-f064-816a-b2e8-e6d6b585e3a2"><th id="^}vT" class="simple-table-header-color simple-table-header" style="width:189px">Header</th><th id="jvm_" class="simple-table-header-color simple-table-header" style="width:382px">Description</th></tr></thead><tbody><tr id="1fa2f48a-f064-8130-b6c1-d56ba5119f2e"><td id="^}vT" class="" style="width:189px">key</td><td id="jvm_" class="" style="width:382px">Auth Key</td></tr></tbody></table><p id="1fb2f48a-f064-808c-83af-dbe6a2719b1e" class="">
 </p><p id="1fa2f48a-f064-818f-9df2-e9ebe0142479" class=""><strong>Request Body</strong></p><hr id="1fa2f48a-f064-81c8-adec-f70ebf8fe69b"/><p id="1fa2f48a-f064-8104-b29a-d39d43440456" class="">
-</p><table id="1fa2f48a-f064-81b0-bd41-d8cef00b9ac6" class="simple-table"><thead class="simple-table-header"><tr id="1fa2f48a-f064-81be-9b71-ddf2e3a9e5f2"><th id="Lm_z" class="simple-table-header-color simple-table-header"><strong>Parameter</strong></th><th id="{@kP" class="simple-table-header-color simple-table-header"><strong>Type</strong></th><th id="&lt;g=I" class="simple-table-header-color simple-table-header"><strong>Description</strong></th><th id="VH@Q" class="simple-table-header-color simple-table-header">Required</th></tr></thead><tbody><tr id="1fa2f48a-f064-8141-be9e-f04a613188af"><td id="Lm_z" class=""><code>restaurant</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Restaurant Object</a></td><td id="&lt;g=I" class="">Information about the restaurant, such as id, opening timings.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-8140-ae1f-c92251602a8f"><td id="Lm_z" class=""><code>categories</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Category Object</a></td><td id="&lt;g=I" class="">A collection of menu categories, each containing detailed information about menu items and subcategories</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-8157-bb21-ff34ff4300e2"><td id="Lm_z" class=""><code>timings</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Timing Object</a></td><td id="&lt;g=I" class="">List of timings applicable at either category, restaurant</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-81ef-8ecd-ed2ec03da43b"><td id="Lm_z" class=""><code>taxes</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Tax Object</a></td><td id="&lt;g=I" class="">A detailed list of all taxes that apply to menu items, charges</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-81c7-91c7-da303c7e6a03"><td id="Lm_z" class=""><code>orderBillComponents</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Order Bill Components</a></td><td id="&lt;g=I" class="">Contains a list of charge ids applicable on order. Taxes won&#x27;t be applied directly on the order</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-8157-8743-e7273c8e21f3"><td id="Lm_z" class=""><code>billComponents</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Bill Components Object</a></td><td id="&lt;g=I" class="">Contains a list of charges and taxes</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-8173-8b4e-d3a11acf4892"><td id="Lm_z" class=""><code>variantGroups</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Variant Group Object</a></td><td id="&lt;g=I" class="">A list of variant groups, each representing a set of customisable options (e.g., sizes or flavours) for menu items.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-8113-80c4-fab12746f260"><td id="Lm_z" class=""><code>addOnGroups</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Add On Group Object</a></td><td id="&lt;g=I" class="">A list of add-on groups, each containing options like extra toppings or sides that customers can select when customising menu items.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-81f8-b96b-c691af0511ba"><td id="Lm_z" class=""><code>variants</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Variant Object</a></td><td id="&lt;g=I" class="">A detailed list of individual variants associated with menu items.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-812f-ad85-f1eabe4c9141"><td id="Lm_z" class=""><code>callbackUrl</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">string</a><br/><br/><br/></td><td id="&lt;g=I" class="">Every Menu Sync request consists of a <code>callbackUrl</code> in the payload with a unique <em>request_id</em> of the queued menu processing in it. It is expected that once the asynchronous task completes its processing of the menu request at your end, a callback request is made to the same <code>callbackUrl</code> provided in the menu payload.<br/>Example: https://&lt;host&gt;/callback/&lt;req_id&gt;<br/>Data sent: <br/><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">RequestBody</a></td><td id="VH@Q" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-814a-82cb-dd51e8475633" class="">
-</p><p id="1fa2f48a-f064-8195-bb66-ed44868dd185" class=""><strong>Bill Components Object</strong></p><p id="1fb2f48a-f064-80a3-8092-e55ce5d6d04a" class="">
-</p><table id="1fa2f48a-f064-81b9-b714-ee1877052c06" class="simple-table"><tbody><tr id="1fa2f48a-f064-81fe-8337-ed8c08f8f4db"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-8166-8f90-f19b31a611db"><td id="`jDo" class=""><code>charges</code></td><td id=";tpK" class="">array[Charge]</td><td id="{PtI" class="">A list of additional charges, such as &quot;Packaging Fee (35 rupees)&quot; or &quot;Delivery Charge (50 rupees).”</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8134-904c-ed2999f990ae"><td id="`jDo" class=""><code>taxes</code></td><td id=";tpK" class="">array[Tax]</td><td id="{PtI" class="">A list of taxes</td><td id="[az{" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-81d2-9b12-c99c9b987da8" class="">
-</p><p id="1fa2f48a-f064-8172-89af-c781b7021dca" class=""><strong>Order Bill Components Object</strong></p><p id="1fb2f48a-f064-80a1-887c-e2325b768416" class="">
-</p><table id="1fa2f48a-f064-8128-b052-e9d170595af8" class="simple-table"><tbody><tr id="1fa2f48a-f064-8168-a2c3-dd8cd740d5f7"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="LW^c" class="">Required</td></tr><tr id="1fa2f48a-f064-81f4-9d90-c8d3d2b5ad26"><td id="sTWu" class=""><code>charges</code></td><td id="=Ekd" class="">array[string]</td><td id="rYG_" class="">list of charge identifier </td><td id="LW^c" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-81f1-ae7c-fd5dfab01d7e" class="">
+</p><table id="1fa2f48a-f064-81b0-bd41-d8cef00b9ac6" class="simple-table"><thead class="simple-table-header"><tr id="1fa2f48a-f064-81be-9b71-ddf2e3a9e5f2"><th id="Lm_z" class="simple-table-header-color simple-table-header"><strong>Parameter</strong></th><th id="{@kP" class="simple-table-header-color simple-table-header"><strong>Type</strong></th><th id="&lt;g=I" class="simple-table-header-color simple-table-header"><strong>Description</strong></th><th id="VH@Q" class="simple-table-header-color simple-table-header">Required</th></tr></thead><tbody><tr id="1fa2f48a-f064-8141-be9e-f04a613188af"><td id="Lm_z" class=""><code>restaurant</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Restaurant Object</a></td><td id="&lt;g=I" class="">Information about the restaurant, such as id, opening timings.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-8140-ae1f-c92251602a8f"><td id="Lm_z" class=""><code>categories</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Category Object</a></td><td id="&lt;g=I" class="">A collection of menu categories, each containing detailed information about menu items and subcategories</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-8157-bb21-ff34ff4300e2"><td id="Lm_z" class=""><code>timings</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Timing Object</a></td><td id="&lt;g=I" class="">List of timings applicable at either category, restaurant</td><td id="VH@Q" class=""></td></tr><tr id="1fa2f48a-f064-81c7-91c7-da303c7e6a03"><td id="Lm_z" class=""><code>orderBillComponents</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Order Bill Components</a></td><td id="&lt;g=I" class="">Contains a list of charge ids applicable on order. Taxes won&#x27;t be applied directly on the order</td><td id="VH@Q" class=""></td></tr><tr id="1fa2f48a-f064-8113-80c4-fab12746f260"><td id="Lm_z" class=""><code>addOnGroups</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Add On Group Object</a></td><td id="&lt;g=I" class="">A list of add-on groups, each containing options like extra toppings or sides that customers can select when customising menu items.</td><td id="VH@Q" class=""></td></tr><tr id="1fa2f48a-f064-8173-8b4e-d3a11acf4892"><td id="Lm_z" class=""><code>variantGroups</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Variant Group Object</a></td><td id="&lt;g=I" class="">A list of variant groups, each representing a set of customisable options (e.g., sizes or flavours) for menu items.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-81f8-b96b-c691af0511ba"><td id="Lm_z" class=""><code>variants</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Variant Object</a></td><td id="&lt;g=I" class="">A detailed list of individual variants associated with menu items.</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-8157-8743-e7273c8e21f3"><td id="Lm_z" class=""><code>billComponents</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Bill Components Object</a></td><td id="&lt;g=I" class="">Contains a list of charges and taxes</td><td id="VH@Q" class="">Yes</td></tr><tr id="1fa2f48a-f064-812f-ad85-f1eabe4c9141"><td id="Lm_z" class=""><code>callbackUrl</code></td><td id="{@kP" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">string</a><br/><br/><br/></td><td id="&lt;g=I" class="">Every Menu Sync request consists of a <code>callbackUrl</code> in the payload with a unique <em>request_id</em> of the queued menu processing in it. It is expected that once the asynchronous task completes its processing of the menu request at your end, a callback request is made to the same <code>callbackUrl</code> provided in the menu payload.<br/>Example: https://&lt;host&gt;/callback/&lt;req_id&gt;<br/>Data sent: <br/><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">RequestBody</a></td><td id="VH@Q" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-81f1-ae7c-fd5dfab01d7e" class="">
 </p><p id="1fa2f48a-f064-8177-b08a-d18d6a4d964e" class=""><strong>Restaurant Object</strong></p><p id="1fb2f48a-f064-80e6-b5ab-f1542e2cd4a5" class="">
 </p><table id="1fa2f48a-f064-81b8-bf85-d25629a336f7" class="simple-table"><tbody><tr id="1fa2f48a-f064-814a-8295-e180520e7730"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="LW^c" class="">Required</td></tr><tr id="1fa2f48a-f064-8116-926c-d5573720d4b7"><td id="sTWu" class=""><code>id</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">id of the restaurant</td><td id="LW^c" class="">Yes</td></tr><tr id="1fa2f48a-f064-81de-8041-fb4ebc2f8ad6"><td id="sTWu" class=""><code>minPrepTime</code></td><td id="=Ekd" class="">int</td><td id="rYG_" class="">minimum prep time of the restaurant</td><td id="LW^c" class="">No</td></tr><tr id="1fa2f48a-f064-81a1-b516-d83cf88f9c67"><td id="sTWu" class=""><code>timings</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">id of the timing</td><td id="LW^c" class="">No</td></tr></tbody></table><p id="1fa2f48a-f064-8155-983b-c67a998e8e74" class="">
 </p><p id="1fa2f48a-f064-8167-b7da-f3f9d15f7a20" class=""><strong>Category Object</strong></p><p id="1fb2f48a-f064-8070-ac6f-c0a8ccb60f8f" class="">
-</p><table id="1fa2f48a-f064-817d-bbe8-cd3fc3b94c58" class="simple-table"><tbody><tr id="1fa2f48a-f064-811b-987a-efb31fe2990e"><td id="dWL:" class=""><strong>Parameter</strong></td><td id="W&lt;Ej" class=""><strong>Type</strong></td><td id="pwQk" class=""><strong>Description</strong></td><td id="s}E}" class="">Required</td></tr><tr id="1fa2f48a-f064-81a5-b152-f20ac97d00a2"><td id="dWL:" class=""><code>id</code></td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">A unique identifier for the category.</td><td id="s}E}" class="">Yes</td></tr><tr id="1fa2f48a-f064-81a6-9f90-d97f06ada583"><td id="dWL:" class=""><code>name</code> </td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">The name of the Category.<br/>Ex: “South Indian Meals”, “Beverages” or “Soups” <br/></td><td id="s}E}" class="">Yes</td></tr><tr id="1fa2f48a-f064-8125-b6ee-e9cd79cc6a11"><td id="dWL:" class=""><code>description</code></td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">A brief description of the Category. For example, &quot;A selection of cold and hot drinks, including coffee and tea.”<br/><br/></td><td id="s}E}" class="">Yes</td></tr><tr id="1fa2f48a-f064-8161-9b79-fc1029d5497b"><td id="dWL:" class=""><code>imageUrl</code></td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">The URL of an image representing the category.</td><td id="s}E}" class="">No</td></tr><tr id="1fa2f48a-f064-81e7-8eee-f7c6d1a11f05"><td id="dWL:" class=""><code>sortOrder</code></td><td id="W&lt;Ej" class="">integer</td><td id="pwQk" class="">The order in which categories appear.<br/><br/></td><td id="s}E}" class="">Yes</td></tr><tr id="1fa2f48a-f064-81a1-8084-cd04ce258d5a"><td id="dWL:" class=""><code>items</code></td><td id="W&lt;Ej" class="">array[Item]</td><td id="pwQk" class="">A list of menu items under the category. For example, the <strong>&quot;Beverages&quot;</strong> category could include items like &quot;Latte&quot; or &quot;Iced Tea.&quot;</td><td id="s}E}" class=""><strong>Yes</strong> if there are no subcategories<br/><br/><strong>No</strong> if there are subcategories</td></tr><tr id="1fa2f48a-f064-81c0-a73c-cb037886e627"><td id="dWL:" class=""><code>subcategories</code></td><td id="W&lt;Ej" class="">array[Category]</td><td id="pwQk" class="">A list of subcategories, such as “Hot Beverages” and “Cold Beverages” under the “Beverages” category.</td><td id="s}E}" class=""><strong>Yes</strong> if there are no items<br/><br/><strong>No</strong> if there are items</td></tr><tr id="1fa2f48a-f064-810e-a7d2-c3df8e16b73a"><td id="dWL:" class=""><code>timings</code></td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">Category availability timing id.</td><td id="s}E}" class="">No</td></tr></tbody></table><p id="1fa2f48a-f064-802a-b5c4-ceb88ae0da25" class="">
+</p><table id="1fa2f48a-f064-817d-bbe8-cd3fc3b94c58" class="simple-table"><tbody><tr id="1fa2f48a-f064-811b-987a-efb31fe2990e"><td id="dWL:" class=""><strong>Parameter</strong></td><td id="W&lt;Ej" class=""><strong>Type</strong></td><td id="pwQk" class=""><strong>Description</strong></td><td id="s}E}" class="">Required</td></tr><tr id="1fa2f48a-f064-81a5-b152-f20ac97d00a2"><td id="dWL:" class=""><code>id</code></td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">A unique identifier for the category.</td><td id="s}E}" class="">Yes</td></tr><tr id="1fa2f48a-f064-81a6-9f90-d97f06ada583"><td id="dWL:" class=""><code>name</code> </td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">The name of the Category.<br/>Ex: “South Indian Meals”, “Beverages” or “Soups” <br/></td><td id="s}E}" class="">Yes</td></tr><tr id="1fa2f48a-f064-8125-b6ee-e9cd79cc6a11"><td id="dWL:" class=""><code>description</code></td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">A brief description of the Category. For example, &quot;A selection of cold and hot drinks, including coffee and tea.”<br/><br/></td><td id="s}E}" class=""></td></tr><tr id="1fa2f48a-f064-8161-9b79-fc1029d5497b"><td id="dWL:" class=""><code>imageUrl</code></td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">The URL of an image representing the category.</td><td id="s}E}" class="">No</td></tr><tr id="1fa2f48a-f064-81e7-8eee-f7c6d1a11f05"><td id="dWL:" class=""><code>sortOrder</code></td><td id="W&lt;Ej" class="">integer</td><td id="pwQk" class="">The order in which categories appear.<br/><br/></td><td id="s}E}" class="">Yes</td></tr><tr id="1fa2f48a-f064-81a1-8084-cd04ce258d5a"><td id="dWL:" class=""><code>items</code></td><td id="W&lt;Ej" class="">array[Item]</td><td id="pwQk" class="">A list of menu items under the category. For example, the <strong>&quot;Beverages&quot;</strong> category could include items like &quot;Latte&quot; or &quot;Iced Tea.&quot;</td><td id="s}E}" class=""><strong>Yes</strong> if there are no subcategories<br/><br/><strong>No</strong> if there are subcategories<br/><br/><strong>NOTE</strong>: Items and subcategories should not coexit under a same category</td></tr><tr id="1fa2f48a-f064-81c0-a73c-cb037886e627"><td id="dWL:" class=""><code>subcategories</code></td><td id="W&lt;Ej" class="">array[Category]</td><td id="pwQk" class="">A list of subcategories, such as “Hot Beverages” and “Cold Beverages” under the “Beverages” category.</td><td id="s}E}" class=""><strong>Yes</strong> if there are no items<br/><br/><strong>No</strong> if there are items<br/><br/><strong>NOTE</strong>: Items and subcategories should not coexit under a same category</td></tr><tr id="1fa2f48a-f064-810e-a7d2-c3df8e16b73a"><td id="dWL:" class=""><code>timings</code></td><td id="W&lt;Ej" class="">string</td><td id="pwQk" class="">Category availability timing id.</td><td id="s}E}" class="">No<br/><br/><strong>NOTE</strong>: If left blank, it is assumed to be enabled all day/week</td></tr></tbody></table><p id="1fa2f48a-f064-802a-b5c4-ceb88ae0da25" class="">
 </p><p id="1fa2f48a-f064-81a4-9212-c9a9c696c73e" class=""><strong>Item Object</strong></p><p id="1fb2f48a-f064-800b-973e-d9d50f078672" class="">
-</p><table id="1fa2f48a-f064-81d4-a51c-cb47c3c4a77f" class="simple-table"><tbody><tr id="1fa2f48a-f064-81e6-9071-ccdf512dedcd"><td id="gwAt" class=""><strong>Parameter</strong></td><td id="{l^h" class=""><strong>Type</strong></td><td id="X?eW" class=""><strong>Description</strong></td><td id="tW_&gt;" class="">Required</td></tr><tr id="1fa2f48a-f064-8111-8037-d4705d6b439a"><td id="gwAt" class=""><code>id</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">A unique identifier for the menu item.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-8112-a426-dc2ef1314237"><td id="gwAt" class=""><code>name</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">The name of the menu item, like “Margherita Pizza”</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-81d9-9e83-e4c93645613c"><td id="gwAt" class=""><code>description</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">A detailed description of the item, such as &quot;Classic pizza topped with fresh mozzarella, tomatoes, and basil.”</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-814a-af59-de50d1a01569"><td id="gwAt" class=""><code>imageUrl</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">A link to an image of the item.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-8107-ab83-f17db00ba766"><td id="gwAt" class=""><code>price</code></td><td id="{l^h" class="">float</td><td id="X?eW" class="">The base price of the item, such as 200.50 rupees for a Margherita Pizza.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-81dc-904d-f8e59b3b20bf"><td id="gwAt" class=""><code>markupPrice</code></td><td id="{l^h" class="">float</td><td id="X?eW" class="">An optional higher price</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-818d-8aae-ff7d565dbf44"><td id="gwAt" class=""><code>inStock</code></td><td id="{l^h" class="">boolean</td><td id="X?eW" class="">Indicates whether the item is available. For example, true means it’s in stock.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-818d-9603-c666b1bc3057"><td id="gwAt" class=""><code>recommended</code></td><td id="{l^h" class="">boolean</td><td id="X?eW" class="">Shows whether the item is recommended. For instance, true for the restaurant&#x27;s signature dish.</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-815e-a738-d72bcb8f0c16"><td id="gwAt" class=""><code>isFavorite</code></td><td id="{l^h" class="">boolean</td><td id="X?eW" class="">Indicates whether the item is marked as a favourite by customers. For example, true for a popular burger.</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-81b4-9803-d2babade0fea"><td id="gwAt" class=""><code>foodType</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">Specifies the food type, such as &quot;Veg,&quot; &quot;Non-Veg,&quot; or &quot;Egg.”</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-8182-ae00-f501955c1b38"><td id="gwAt" class=""><code>tags</code></td><td id="{l^h" class="">array[string]</td><td id="X?eW" class="">Keywords associated with the item, like &quot;Spicy,&quot; &quot;Gluten-Free,&quot; or &quot;Vegan.”</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-81b8-be3e-c0661dd02d36"><td id="gwAt" class=""><code>variantGroupIds</code></td><td id="{l^h" class="">array[string]</td><td id="X?eW" class="">Ids that link the item to variant groups. For example, a pizza linked to a &quot;Size&quot; group with variants like Small or Large.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-811c-a088-f3951ee2fb1b"><td id="gwAt" class=""><code>addOnGroupIds</code></td><td id="{l^h" class="">array[string]</td><td id="X?eW" class="">Ids that link the item to add-on groups, such as &quot;Extra Cheese&quot; or &quot;Dips.”</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-8131-8b33-f36eaeb96f65"><td id="gwAt" class=""><code>nutritionalInfo</code></td><td id="{l^h" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Nutritional Info Object</a></td><td id="X?eW" class="">Detailed nutrition details. For example, a sandwich may contain 300 calories, 10g of protein, and 5g of fat.</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-8182-a285-fc4012383e56"><td id="gwAt" class=""><code>billComponents</code></td><td id="{l^h" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Item Bill Components Object</a></td><td id="X?eW" class="">Item-specific billing components, such as an additional &quot;Packing Charge&quot; and taxes</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-814d-aa5d-d8130a3437f2"><td id="gwAt" class=""><code>fulfillmentModes</code></td><td id="{l^h" class="">array[string]</td><td id="X?eW" class="">Indicates supported modes, such as &quot;Delivery,&quot; &quot;Pickup,&quot; or &quot;Dine-In.”</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-815c-a631-da689d1b5242"><td id="gwAt" class=""><code>sortOrder</code></td><td id="{l^h" class="">integer</td><td id="X?eW" class="">Determines the display order. For example, 1 means it’s shown at the top of the category.</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-814c-9c57-c87bf606b2f4"><td id="gwAt" class=""><code>categoryId</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">ID of the Parent subcategory.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-81f0-9255-d8ca7703a2b0"><td id="gwAt" class=""><code>subcategoryId</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">ID of the Parent subcategory.</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-818b-80cd-d26169c29809"><td id="gwAt" class=""><code>ignoreOn</code></td><td id="{l^h" class="">object</td><td id="X?eW" class="">Specifies what to ignore for a food item while billing. (For example, ignore tax)</td><td id="tW_&gt;" class=""></td></tr></tbody></table><p id="1fa2f48a-f064-80a7-9828-c00aa2a909ca" class="">
+</p><table id="1fa2f48a-f064-81d4-a51c-cb47c3c4a77f" class="simple-table"><tbody><tr id="1fa2f48a-f064-81e6-9071-ccdf512dedcd"><td id="gwAt" class=""><strong>Parameter</strong></td><td id="{l^h" class=""><strong>Type</strong></td><td id="X?eW" class=""><strong>Description</strong></td><td id="tW_&gt;" class="">Required</td></tr><tr id="1fa2f48a-f064-8111-8037-d4705d6b439a"><td id="gwAt" class=""><code>id</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">A unique identifier for the menu item.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-8112-a426-dc2ef1314237"><td id="gwAt" class=""><code>name</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">The name of the menu item, like “Margherita Pizza”</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-81d9-9e83-e4c93645613c"><td id="gwAt" class=""><code>description</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">A detailed description of the item, such as &quot;Classic pizza topped with fresh mozzarella, tomatoes, and basil.”</td><td id="tW_&gt;" class=""></td></tr><tr id="1fa2f48a-f064-814a-af59-de50d1a01569"><td id="gwAt" class=""><code>imageUrl</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">A link to an image of the item.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-8107-ab83-f17db00ba766"><td id="gwAt" class=""><code>price</code></td><td id="{l^h" class="">float</td><td id="X?eW" class="">The base price of the item, such as 200.50 rupees for a Margherita Pizza.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-81dc-904d-f8e59b3b20bf"><td id="gwAt" class=""><code>markupPrice</code></td><td id="{l^h" class="">float</td><td id="X?eW" class="">An optional higher price to strike off</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-818d-8aae-ff7d565dbf44"><td id="gwAt" class=""><code>inStock</code></td><td id="{l^h" class="">boolean</td><td id="X?eW" class="">Indicates whether the item is available. For example, true means it’s in stock.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-818d-9603-c666b1bc3057"><td id="gwAt" class=""><code>recommended</code></td><td id="{l^h" class="">boolean</td><td id="X?eW" class="">Shows whether the item is recommended. For instance, true for the restaurant&#x27;s signature dish.</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-815e-a738-d72bcb8f0c16"><td id="gwAt" class=""><code>isFavorite</code></td><td id="{l^h" class="">boolean</td><td id="X?eW" class="">Indicates whether the item is marked as a favourite by customers. For example, true for a popular burger.</td><td id="tW_&gt;" class="">No</td></tr><tr id="1fa2f48a-f064-81b4-9803-d2babade0fea"><td id="gwAt" class=""><code>foodType</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">Specifies the food type<br/><br/><strong>ENUM</strong>: &quot;veg&quot;,&quot;non veg&quot;,&quot;egg”, “vegan”</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-8182-ae00-f501955c1b38"><td id="gwAt" class=""><code>tags</code></td><td id="{l^h" class="">array[string]</td><td id="X?eW" class="">Keywords associated with the item, like &quot;Spicy,&quot; &quot;Gluten-Free,&quot;</td><td id="tW_&gt;" class=""></td></tr><tr id="1fa2f48a-f064-81b8-be3e-c0661dd02d36"><td id="gwAt" class=""><code>variantGroupIds</code></td><td id="{l^h" class="">array[string]</td><td id="X?eW" class="">Ids that link the item to variant groups. For example, a pizza linked to a &quot;Size&quot; group with variants like Small or Large.</td><td id="tW_&gt;" class=""></td></tr><tr id="1fa2f48a-f064-811c-a088-f3951ee2fb1b"><td id="gwAt" class=""><code>addOnGroupIds</code></td><td id="{l^h" class="">array[string]</td><td id="X?eW" class="">Ids that link the item to add-on groups, such as &quot;Extra Cheese&quot; or &quot;Dips.”</td><td id="tW_&gt;" class=""></td></tr><tr id="1fa2f48a-f064-8131-8b33-f36eaeb96f65"><td id="gwAt" class=""><code>nutritionalInfo</code></td><td id="{l^h" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Nutritional Info Object</a></td><td id="X?eW" class="">Detailed nutrition details. For example, a sandwich may contain 300 calories, 10g of protein, and 5g of fat.</td><td id="tW_&gt;" class=""></td></tr><tr id="1fa2f48a-f064-8182-a285-fc4012383e56"><td id="gwAt" class=""><code>billComponents</code></td><td id="{l^h" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Item Bill Components Object</a></td><td id="X?eW" class="">Item-specific billing components, such as an additional &quot;Packing Charge&quot; and taxes</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-814d-aa5d-d8130a3437f2"><td id="gwAt" class=""><code>fulfillmentModes</code></td><td id="{l^h" class="">array[string]</td><td id="X?eW" class="">Indicates supported modes, <strong>ENUM</strong>: &quot;delivery”</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-815c-a631-da689d1b5242"><td id="gwAt" class=""><code>sortOrder</code></td><td id="{l^h" class="">integer</td><td id="X?eW" class="">Determines the display order. For example, 1 means it’s shown at the top of the category.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-814c-9c57-c87bf606b2f4"><td id="gwAt" class=""><code>categoryId</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">ID of the Parent subcategory.</td><td id="tW_&gt;" class="">Yes</td></tr><tr id="1fa2f48a-f064-81f0-9255-d8ca7703a2b0"><td id="gwAt" class=""><code>subcategoryId</code></td><td id="{l^h" class="">string</td><td id="X?eW" class="">ID of the Parent subcategory.</td><td id="tW_&gt;" class=""></td></tr><tr id="1fa2f48a-f064-818b-80cd-d26169c29809"><td id="gwAt" class=""><code>ignoreOn</code></td><td id="{l^h" class="">object</td><td id="X?eW" class="">Specifies what to ignore for a food item while billing. (For example, ignore tax)</td><td id="tW_&gt;" class=""></td></tr></tbody></table><p id="1fa2f48a-f064-80a7-9828-c00aa2a909ca" class="">
 </p><p id="1fa2f48a-f064-815b-b257-cc2c7375511f" class=""><strong>Variant Group Object</strong></p><p id="1fb2f48a-f064-80dd-9a83-fa5f7d42397c" class="">
 </p><table id="1fa2f48a-f064-8125-8bd0-ca5c1c88faba" class="simple-table"><tbody><tr id="1fa2f48a-f064-8181-861c-e41465af4b28"><td id="lxjE" class=""><strong>Parameter</strong></td><td id="[B{U" class="" style="width:140.53125px"><strong>Type</strong></td><td id="SO|Y" class=""><strong>Description</strong></td><td id="oe&lt;t" class="" style="width:161px">Required</td></tr><tr id="1fa2f48a-f064-8193-a54b-d1e1f8c6f403"><td id="lxjE" class=""><code>id</code></td><td id="[B{U" class="" style="width:140.53125px">string</td><td id="SO|Y" class="">A unique identifier for the variant group.</td><td id="oe&lt;t" class="" style="width:161px">Yes</td></tr><tr id="1fa2f48a-f064-8166-a5aa-efebd494da16"><td id="lxjE" class=""><code>name</code></td><td id="[B{U" class="" style="width:140.53125px">string</td><td id="SO|Y" class="">The name of the variant group, such as &quot;Size&quot; or &quot;Crust Type.”</td><td id="oe&lt;t" class="" style="width:161px">Yes</td></tr><tr id="1fa2f48a-f064-8176-94e9-ee51b655fcce"><td id="lxjE" class=""><code>variantIds</code></td><td id="[B{U" class="" style="width:140.53125px">array[string]</td><td id="SO|Y" class="">Ids that link the group to specific variants. For example, a &quot;Size&quot; group may have IDs referencing &quot;Small,&quot; &quot;Medium,&quot; and &quot;Large&quot; variants.</td><td id="oe&lt;t" class="" style="width:161px">Yes</td></tr><tr id="1fa2f48a-f064-8126-bd6b-fdd339d30d3a"><td id="lxjE" class=""><code>sortOrder</code></td><td id="[B{U" class="" style="width:140.53125px">integer</td><td id="SO|Y" class="">Determines the display order. For example, 1 means the variant group appears at the top of the item&#x27;s customisation options.</td><td id="oe&lt;t" class="" style="width:161px">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-8021-aac5-eda45849c0a5" class="">
 </p><p id="1fa2f48a-f064-812d-9827-c69be360b2f5" class=""><strong>Variant Object</strong></p><p id="1fb2f48a-f064-80fa-a92b-e5dfa7fdfb91" class="">
-</p><table id="1fa2f48a-f064-81cc-93be-f616a4191086" class="simple-table"><tbody><tr id="1fa2f48a-f064-81be-9624-c2a222f60903"><td id="[y:o" class=""><strong>Parameter</strong></td><td id="FC~N" class=""><strong>Type</strong></td><td id="UO:U" class=""><strong>Description</strong></td><td id="VTUY" class="">Required</td></tr><tr id="1fa2f48a-f064-8119-9b49-cbebf3f49765"><td id="[y:o" class=""><code>id</code></td><td id="FC~N" class="">string</td><td id="UO:U" class="">A unique identifier for the variant.</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8197-b1ea-d5202a5e2006"><td id="[y:o" class=""><code>name</code></td><td id="FC~N" class="">string</td><td id="UO:U" class="">The name of the variant, such as &quot;Large,&quot; &quot;Thin Crust,&quot; or &quot;Extra Spicy.”</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8149-8577-f734da3cccf7"><td id="[y:o" class=""><code>price</code></td><td id="FC~N" class="">float</td><td id="UO:U" class="">The price of the variant. For instance, 550.25 rupees for a large pizza.</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8157-ad7d-dfc07b5cfaa6"><td id="[y:o" class=""><code>markupPrice</code></td><td id="FC~N" class="">float</td><td id="UO:U" class="">An optional higher price for premium variants. For example, 600.99 rupees for a large pizza with extra cheese.</td><td id="VTUY" class="">No</td></tr><tr id="1fa2f48a-f064-8119-a1bb-eb6ea484b290"><td id="[y:o" class=""><code>inStock</code></td><td id="FC~N" class="">boolean</td><td id="UO:U" class="">Indicates whether the variant is available. For example, true for in-stock items and false for out-of-stock options.</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-812b-835a-d06a42e60ec4"><td id="[y:o" class=""><code>foodType</code></td><td id="FC~N" class="">string</td><td id="UO:U" class="">Specifies the food type, such as &quot;Veg,&quot; &quot;Non-Veg,&quot; or &quot;Egg.&quot; For instance, a variant with a chicken patty would be marked as &quot;Non-Veg.”</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8170-a968-da33951aa17d"><td id="[y:o" class=""><code>addOnGroupIds</code></td><td id="FC~N" class="">array[string]</td><td id="UO:U" class="">Links the variant to specific add-on groups. For example, a &quot;Dips&quot; group for pizza variants.</td><td id="VTUY" class="">No</td></tr><tr id="1fa2f48a-f064-81aa-8d8d-c5311abcf4a6"><td id="[y:o" class=""><code>nutritionalInfo</code></td><td id="FC~N" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Nutritional Info Object</a></td><td id="UO:U" class="">Nutritional details for the variant. For example, a large pizza variant might have 400 calories, 15g of protein, and 10g of fat.</td><td id="VTUY" class="">No</td></tr><tr id="1fa2f48a-f064-81c1-9dac-fcf005d0e6f8"><td id="[y:o" class=""><code>fulfillmentModes</code></td><td id="FC~N" class="">array[string]</td><td id="UO:U" class="">Indicates the delivery or pickup options for the variant. For instance, a variant might only be available for &quot;Dine-In.”</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8122-9ccd-fd47ad2e8b99"><td id="[y:o" class=""><code>variantGroupIds</code></td><td id="FC~N" class="">array[string]</td><td id="UO:U" class="">Links the variant to its parent group. For example, the &quot;Large&quot; variant is part of the &quot;Size&quot; group.</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-81de-8aa9-c28ee6f044f9"><td id="[y:o" class=""><code>billComponents</code></td><td id="FC~N" class="">array[string]</td><td id="UO:U" class="">Billing components for the variant, such as packing charges</td><td id="VTUY" class="">No</td></tr></tbody></table><p id="1fa2f48a-f064-805a-962b-de52d9405d62" class="">
+</p><table id="1fa2f48a-f064-81cc-93be-f616a4191086" class="simple-table"><tbody><tr id="1fa2f48a-f064-81be-9624-c2a222f60903"><td id="[y:o" class=""><strong>Parameter</strong></td><td id="FC~N" class=""><strong>Type</strong></td><td id="UO:U" class=""><strong>Description</strong></td><td id="VTUY" class="">Required</td></tr><tr id="1fa2f48a-f064-8119-9b49-cbebf3f49765"><td id="[y:o" class=""><code>id</code></td><td id="FC~N" class="">string</td><td id="UO:U" class="">A unique identifier for the variant.</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8197-b1ea-d5202a5e2006"><td id="[y:o" class=""><code>name</code></td><td id="FC~N" class="">string</td><td id="UO:U" class="">The name of the variant, such as &quot;Large,&quot; &quot;Thin Crust,&quot; or &quot;Extra Spicy.”</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8149-8577-f734da3cccf7"><td id="[y:o" class=""><code>price</code></td><td id="FC~N" class="">float</td><td id="UO:U" class="">The price of the variant. For instance, 550.25 rupees for a large pizza.</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8157-ad7d-dfc07b5cfaa6"><td id="[y:o" class=""><code>markupPrice</code></td><td id="FC~N" class="">float</td><td id="UO:U" class="">An optional higher price for premium variants. For example, 600.99 rupees for a large pizza with extra cheese.</td><td id="VTUY" class="">No</td></tr><tr id="1fa2f48a-f064-8119-a1bb-eb6ea484b290"><td id="[y:o" class=""><code>inStock</code></td><td id="FC~N" class="">boolean</td><td id="UO:U" class="">Indicates whether the variant is available. For example, true for in-stock items and false for out-of-stock options.</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-812b-835a-d06a42e60ec4"><td id="[y:o" class=""><code>foodType</code></td><td id="FC~N" class="">string</td><td id="UO:U" class="">Specifies the food type<br/><br/><strong>ENUM</strong>: &quot;veg&quot;,&quot;non veg&quot;,&quot;egg”, “vegan”</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8170-a968-da33951aa17d"><td id="[y:o" class=""><code>addOnGroupIds</code></td><td id="FC~N" class="">array[string]</td><td id="UO:U" class="">Links the variant to specific add-on groups. For example, a &quot;Dips&quot; group for pizza variants.</td><td id="VTUY" class="">No</td></tr><tr id="1fa2f48a-f064-81aa-8d8d-c5311abcf4a6"><td id="[y:o" class=""><code>nutritionalInfo</code></td><td id="FC~N" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Nutritional Info Object</a></td><td id="UO:U" class="">Nutritional details for the variant. For example, a large pizza variant might have 400 calories, 15g of protein, and 10g of fat.</td><td id="VTUY" class="">No</td></tr><tr id="1fa2f48a-f064-81c1-9dac-fcf005d0e6f8"><td id="[y:o" class=""><code>fulfillmentModes</code></td><td id="FC~N" class="">array[string]</td><td id="UO:U" class="">Indicates the delivery or pickup options for the variant.<br/><br/><strong>ENUM</strong>: delivery</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-8122-9ccd-fd47ad2e8b99"><td id="[y:o" class=""><code>variantGroupIds</code></td><td id="FC~N" class="">array[string]</td><td id="UO:U" class="">Links the variant to its parent group. For example, the &quot;Large&quot; variant is part of the &quot;Size&quot; group.</td><td id="VTUY" class="">Yes</td></tr><tr id="1fa2f48a-f064-81de-8aa9-c28ee6f044f9"><td id="[y:o" class=""><code>billComponents</code></td><td id="FC~N" class="">Item Bill Components Object</td><td id="UO:U" class="">Billing components for the variant, such as packing charges</td><td id="VTUY" class="">No</td></tr><tr id="2012f48a-f064-80e2-b607-cf470f9d49b1"><td id="[y:o" class=""><code>sortOrder</code></td><td id="FC~N" class="">integer</td><td id="UO:U" class="">Determines the display order.</td><td id="VTUY" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-805a-962b-de52d9405d62" class="">
 </p><p id="1fa2f48a-f064-8158-8ef9-cf7deb47624b" class=""><strong>Add On Group Object</strong></p><p id="1fb2f48a-f064-80cf-aa8f-c9a323e9ee6d" class="">
-</p><table id="1fa2f48a-f064-811b-89c0-ca71fba7cbd8" class="simple-table"><tbody><tr id="1fa2f48a-f064-8130-941f-c87642696c7d"><td id="OpKY" class=""><strong>Parameter</strong></td><td id="EM:Z" class=""><strong>Type</strong></td><td id="V=OP" class=""><strong>Description</strong></td><td id="NcQ_" class="" style="width:137px">Required</td></tr><tr id="1fa2f48a-f064-8113-b287-c6f00782ea85"><td id="OpKY" class=""><code>id</code></td><td id="EM:Z" class="">string</td><td id="V=OP" class="">A unique identifier for the add-on group.</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr><tr id="1fa2f48a-f064-810e-b8a8-db03a58f8a7c"><td id="OpKY" class=""><code>name</code></td><td id="EM:Z" class="">string</td><td id="V=OP" class="">The name of the add-on group, such as &quot;Dips,&quot; &quot;Extra Toppings,&quot; or &quot;Drinks.”</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr><tr id="1fa2f48a-f064-817a-9758-fdeba80dc6a0"><td id="OpKY" class=""><code>minimumNeeded</code></td><td id="EM:Z" class="">integer</td><td id="V=OP" class="">The minimum number of selections required. For example, a &quot;Toppings&quot; group might require at least 1 selection.</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr><tr id="1fa2f48a-f064-814f-b431-d28654aa86db"><td id="OpKY" class=""><code>maximumAllowed</code></td><td id="EM:Z" class="">integer</td><td id="V=OP" class="">The maximum number of selections allowed. For instance, the &quot;Dips&quot; group might allow up to 3 selections.</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr><tr id="1fa2f48a-f064-8108-8f16-e5c59e78c9f6"><td id="OpKY" class=""><code>addOns</code></td><td id="EM:Z" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Add On Object</a></td><td id="V=OP" class="">A list of available add-ons. For example, a &quot;Toppings&quot; group might include &quot;Mushrooms,&quot; &quot;Olives,&quot; and &quot;Jalapeños.”</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-8091-a8cd-ccc9970dc8d3" class="">
+</p><table id="1fa2f48a-f064-811b-89c0-ca71fba7cbd8" class="simple-table"><tbody><tr id="1fa2f48a-f064-8130-941f-c87642696c7d"><td id="OpKY" class=""><strong>Parameter</strong></td><td id="EM:Z" class=""><strong>Type</strong></td><td id="V=OP" class=""><strong>Description</strong></td><td id="NcQ_" class="" style="width:137px">Required</td></tr><tr id="1fa2f48a-f064-8113-b287-c6f00782ea85"><td id="OpKY" class=""><code>id</code></td><td id="EM:Z" class="">string</td><td id="V=OP" class="">A unique identifier for the add-on group.</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr><tr id="1fa2f48a-f064-810e-b8a8-db03a58f8a7c"><td id="OpKY" class=""><code>name</code></td><td id="EM:Z" class="">string</td><td id="V=OP" class="">The name of the add-on group, such as &quot;Dips,&quot; &quot;Extra Toppings,&quot; or &quot;Drinks.”</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr><tr id="1fa2f48a-f064-817a-9758-fdeba80dc6a0"><td id="OpKY" class=""><code>minimumNeeded</code></td><td id="EM:Z" class="">integer</td><td id="V=OP" class="">The minimum number of selections required. For example, a &quot;Toppings&quot; group might require at least 1 selection.</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr><tr id="1fa2f48a-f064-814f-b431-d28654aa86db"><td id="OpKY" class=""><code>maximumAllowed</code></td><td id="EM:Z" class="">integer</td><td id="V=OP" class="">The maximum number of selections allowed. For instance, the &quot;Dips&quot; group might allow up to 3 selections.</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr><tr id="1fa2f48a-f064-8108-8f16-e5c59e78c9f6"><td id="OpKY" class=""><code>addOns</code></td><td id="EM:Z" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Add On Object</a></td><td id="V=OP" class="">A list of available add-ons. For example, a &quot;Toppings&quot; group might include &quot;Mushrooms,&quot; &quot;Olives,&quot; and &quot;Jalapeños.”</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr><tr id="2012f48a-f064-80fb-8a06-cf9c8c95a8f1"><td id="OpKY" class=""><code>sortOrder</code></td><td id="EM:Z" class="">integer</td><td id="V=OP" class="">Determines the display order.</td><td id="NcQ_" class="" style="width:137px">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-8091-a8cd-ccc9970dc8d3" class="">
 </p><p id="1fa2f48a-f064-8123-b31f-c93838a7ad9b" class=""><strong>Add On Object</strong></p><p id="1fb2f48a-f064-80b9-a648-df7bb46ecd8c" class="">
-</p><table id="1fa2f48a-f064-813f-80d0-d216ec8a0fff" class="simple-table"><tbody><tr id="1fa2f48a-f064-811a-9638-e38a60dab887"><td id="SZd@" class=""><strong>Parameter</strong></td><td id="{vRv" class=""><strong>Type</strong></td><td id="qoNi" class=""><strong>Description</strong></td><td id="dU^{" class="">Required</td></tr><tr id="1fa2f48a-f064-8172-a259-e752db5eacf9"><td id="SZd@" class=""><code>id</code></td><td id="{vRv" class="">string</td><td id="qoNi" class="">A unique identifier for the add-on.</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8199-b8d9-ccda6524ab7b"><td id="SZd@" class=""><code>name</code></td><td id="{vRv" class="">string</td><td id="qoNi" class="">The name of the add-on, such as &quot;Extra Cheese,&quot; &quot;BBQ Sauce,&quot; or &quot;Garlic Bread.”</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8198-8f24-dcdb1572a8f2"><td id="SZd@" class=""><code>price</code></td><td id="{vRv" class="">float</td><td id="qoNi" class="">The price of the add-on. For example, 20 rupees for &quot;Extra Cheese.”</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8132-8fb2-c50a57f0ba6c"><td id="SZd@" class=""><code>inStock</code></td><td id="{vRv" class="">boolean</td><td id="qoNi" class="">Indicates whether the add-on is available. For instance, true means it’s in stock.</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8140-88a8-cb06fdefe418"><td id="SZd@" class=""><code>foodType</code></td><td id="{vRv" class="">string</td><td id="qoNi" class="">Specifies the type of food, such as &quot;Veg,&quot; &quot;Non-Veg,&quot; or &quot;Egg.&quot; For example, a bacon add-on would be marked as &quot;Non-Veg.”</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-815e-baaf-cf0313009a38"><td id="SZd@" class=""><code>nutritionalInfo</code></td><td id="{vRv" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Nutritional Info Object</a></td><td id="qoNi" class="">Detailed nutritional information. For example, &quot;Extra Cheese&quot; might have 100 calories and 8g of fat.</td><td id="dU^{" class=""></td></tr><tr id="1fa2f48a-f064-8107-b2d6-ecffd0fbf24a"><td id="SZd@" class=""><code>fulfillmentModes</code></td><td id="{vRv" class="">array[string]</td><td id="qoNi" class="">Indicates how the add-on can be ordered. For example, a beverage add-on might be limited to &quot;Dine-In&quot; and &quot;Pickup.”</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-813f-bc11-d0f5ccf1302c"><td id="SZd@" class=""><code>sortOrder</code></td><td id="{vRv" class="">integer</td><td id="qoNi" class="">Determines the display order. For instance, 1 means the add-on appears at the top of the options list.</td><td id="dU^{" class=""></td></tr></tbody></table><p id="1fa2f48a-f064-8011-b151-f5470313d2cb" class="">
+</p><table id="1fa2f48a-f064-813f-80d0-d216ec8a0fff" class="simple-table"><tbody><tr id="1fa2f48a-f064-811a-9638-e38a60dab887"><td id="SZd@" class=""><strong>Parameter</strong></td><td id="{vRv" class=""><strong>Type</strong></td><td id="qoNi" class=""><strong>Description</strong></td><td id="dU^{" class="">Required</td></tr><tr id="1fa2f48a-f064-8172-a259-e752db5eacf9"><td id="SZd@" class=""><code>id</code></td><td id="{vRv" class="">string</td><td id="qoNi" class="">A unique identifier for the add-on.</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8199-b8d9-ccda6524ab7b"><td id="SZd@" class=""><code>name</code></td><td id="{vRv" class="">string</td><td id="qoNi" class="">The name of the add-on, such as &quot;Extra Cheese,&quot; &quot;BBQ Sauce,&quot; or &quot;Garlic Bread.”</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8198-8f24-dcdb1572a8f2"><td id="SZd@" class=""><code>price</code></td><td id="{vRv" class="">float</td><td id="qoNi" class="">The price of the add-on. For example, 20 rupees for &quot;Extra Cheese.”</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8132-8fb2-c50a57f0ba6c"><td id="SZd@" class=""><code>inStock</code></td><td id="{vRv" class="">boolean</td><td id="qoNi" class="">Indicates whether the add-on is available. For instance, true means it’s in stock.</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8140-88a8-cb06fdefe418"><td id="SZd@" class=""><code>foodType</code></td><td id="{vRv" class="">string</td><td id="qoNi" class="">Specifies the type of food, such as &quot;Veg,&quot; &quot;Non-Veg,&quot; or &quot;Egg.&quot; For example, a bacon add-on would be marked as &quot;Non-Veg.”</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-815e-baaf-cf0313009a38"><td id="SZd@" class=""><code>nutritionalInfo</code></td><td id="{vRv" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Nutritional Info Object</a></td><td id="qoNi" class="">Detailed nutritional information. For example, &quot;Extra Cheese&quot; might have 100 calories and 8g of fat.</td><td id="dU^{" class=""></td></tr><tr id="1fa2f48a-f064-8107-b2d6-ecffd0fbf24a"><td id="SZd@" class=""><code>fulfillmentModes</code></td><td id="{vRv" class="">array[string]</td><td id="qoNi" class="">Indicates how the add-on can be ordered. For example, a beverage add-on might be limited to &quot;Dine-In&quot; and &quot;Pickup.”</td><td id="dU^{" class="">Yes</td></tr><tr id="1fa2f48a-f064-813f-bc11-d0f5ccf1302c"><td id="SZd@" class=""><code>sortOrder</code></td><td id="{vRv" class="">integer</td><td id="qoNi" class="">Determines the display order. For instance, 1 means the add-on appears at the top of the options list.</td><td id="dU^{" class="">Yes</td></tr><tr id="2012f48a-f064-808f-b7ce-c7cad67f9be9"><td id="SZd@" class="">imageUrl</td><td id="{vRv" class="">string</td><td id="qoNi" class="">image url</td><td id="dU^{" class=""></td></tr></tbody></table><p id="1fa2f48a-f064-8011-b151-f5470313d2cb" class="">
 </p><p id="1fa2f48a-f064-81db-8519-ed4474edd634" class=""><strong>Item Bill Components Object</strong></p><p id="1fb2f48a-f064-80b8-827a-c79564569c30" class="">
 </p><table id="1fa2f48a-f064-81fe-94f1-ff3218b58952" class="simple-table"><tbody><tr id="1fa2f48a-f064-8112-9c3c-d2739d22355d"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class="" style="width:147.53125px"><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="" style="width:161px">Required</td></tr><tr id="1fa2f48a-f064-81d5-8ef4-c1e81a58b42e"><td id="`jDo" class=""><code>charges</code></td><td id=";tpK" class="" style="width:147.53125px">array[string]</td><td id="{PtI" class="">List of charge identifiers applicable to the item</td><td id="[az{" class="" style="width:161px">Yes</td></tr><tr id="1fa2f48a-f064-81e7-a6f8-f0be1beb7749"><td id="`jDo" class=""><code>taxes</code></td><td id=";tpK" class="" style="width:147.53125px">array[string]</td><td id="{PtI" class="">A list of taxes identifiers</td><td id="[az{" class="" style="width:161px">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-8008-9e0f-f74e4d660d1f" class="">
 </p><p id="1fa2f48a-f064-81cd-8167-c9f87490881f" class=""><strong>Nutritional Info Object</strong></p><p id="1fb2f48a-f064-802c-bea6-cceaefc93eef" class="">
-</p><table id="1fa2f48a-f064-81d6-972b-c8eb9f8b4e67" class="simple-table"><tbody><tr id="1fa2f48a-f064-8110-a8f3-fe15efe7706e"><td id="bSEX" class=""><strong>Parameter</strong></td><td id="wf\;" class=""><strong>Type</strong></td><td id="Jkn&lt;" class=""><strong>Description</strong></td><td id="XBEY" class="" style="width:120px">Required</td></tr><tr id="1fa2f48a-f064-81a3-a184-f5e779d2a8b5"><td id="bSEX" class=""><code>carbohydrate</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The carbohydrate content in the food. For example, 30g of carbohydrates in a serving of pasta.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-811e-aa09-ce68476c2aac"><td id="bSEX" class=""><code>fiber</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The dietary fiber content. For instance, 5g of fiber in a salad bowl.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81e1-b072-db13c4f29d6a"><td id="bSEX" class=""><code>protein</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The protein content in the food item. For example, 20g of protein in a chicken breast.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81b1-bc5c-da193df2cc08"><td id="bSEX" class=""><code>calories</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The total caloric value. For instance, 400 kcal for a slice of pizza.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81e4-bae9-c2c10532b3ba"><td id="bSEX" class=""><code>sodium</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The sodium content. For example, 200mg in a bowl of soup.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-817f-865d-e8075d2a45d9"><td id="bSEX" class=""><code>cholesterol</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The cholesterol content. For example, 50mg in a cheese sandwich.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-8149-9bd1-c87b9f601e8f"><td id="bSEX" class=""><code>foodAmount</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Amount of food. Merchant needs to provide these information in g, kg, ml or l.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-8197-a73b-d31551208a07"><td id="bSEX" class=""><code>minerals</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Information about mineral content, like 50mg of calcium or 20mg of iron.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81d0-93d2-d960e8ce9356"><td id="bSEX" class=""><code>totalSugar</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The total sugar content, such as 10g in a cookie.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81b6-a766-ffa2cf439c80"><td id="bSEX" class=""><code>addedSugar</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The additional sugar added during preparation. For instance, 5g in a soft drink.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-812c-b518-e22e7670590f"><td id="bSEX" class=""><code>totalFat</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The total fat content, such as 15g in a burger.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81eb-a303-e11e66b98f7b"><td id="bSEX" class=""><code>saturatedFat</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The saturated fat content. For instance, 5g in a buttery croissant.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-810e-bbd9-c11ae365c5f1"><td id="bSEX" class=""><code>transFat</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The trans fat content. For example, 1g in deep-fried snacks.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-812d-b2f2-d8392dc2e3d1"><td id="bSEX" class=""><code>vitamins</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Information about vitamins, like Vitamin C (20mg) or Vitamin D (5mg).</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81cf-b29e-ea6e5a3225b6"><td id="bSEX" class=""><code>servingInfo</code></td><td id="wf\;" class="">string</td><td id="Jkn&lt;" class="">Additional serving information, such as &quot;1 cup&quot; or &quot;2 pieces.”</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81b5-a3ce-f4bacb4e71e3"><td id="bSEX" class=""><code>additiveMap</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Details about additives, such as “Contains artificial sweeteners”<strong>.</strong></td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81f7-9c4b-c93da70b9527"><td id="bSEX" class=""><code>allergens</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Information about allergens. For example, &quot;Contains peanuts.”</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81d0-b295-cad313b42608"><td id="bSEX" class=""><code>additionalInfo</code> </td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Any other relevant nutritional details, like &quot;Gluten-free&quot; or &quot;Low sodium.”</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-815a-b507-fd3178a1b889"><td id="bSEX" class=""><code>salt</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The salt content in the item. For instance, <strong>1.5g</strong> of salt in chips.</td><td id="XBEY" class="" style="width:120px">No</td></tr></tbody></table><p id="1fa2f48a-f064-8048-99d1-f6feca6da379" class="">
+</p><table id="1fa2f48a-f064-81d6-972b-c8eb9f8b4e67" class="simple-table"><tbody><tr id="1fa2f48a-f064-8110-a8f3-fe15efe7706e"><td id="bSEX" class=""><strong>Parameter</strong></td><td id="wf\;" class=""><strong>Type</strong></td><td id="Jkn&lt;" class=""><strong>Description</strong></td><td id="XBEY" class="" style="width:120px">Required</td></tr><tr id="1fa2f48a-f064-81a3-a184-f5e779d2a8b5"><td id="bSEX" class=""><code>carbohydrate</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The carbohydrate content in the food. For example, 30g of carbohydrates in a serving of pasta.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-811e-aa09-ce68476c2aac"><td id="bSEX" class=""><code>fiber</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The dietary fiber content. For instance, 5g of fiber in a salad bowl.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81e1-b072-db13c4f29d6a"><td id="bSEX" class=""><code>protein</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The protein content in the food item. For example, 20g of protein in a chicken breast.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81b1-bc5c-da193df2cc08"><td id="bSEX" class=""><code>calorie</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The total caloric value. For instance, 400 kcal for a slice of pizza.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81e4-bae9-c2c10532b3ba"><td id="bSEX" class=""><code>sodium</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The sodium content. For example, 200mg in a bowl of soup.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-817f-865d-e8075d2a45d9"><td id="bSEX" class=""><code>cholesterol</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The cholesterol content. For example, 50mg in a cheese sandwich.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-8149-9bd1-c87b9f601e8f"><td id="bSEX" class=""><code>foodAmount</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Amount of food. Merchant needs to provide these information in g, kg, ml or l.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-8197-a73b-d31551208a07"><td id="bSEX" class=""><code>minerals</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Information about mineral content, like 50mg of calcium or 20mg of iron.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81d0-93d2-d960e8ce9356"><td id="bSEX" class=""><code>totalSugar</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The total sugar content, such as 10g in a cookie.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81b6-a766-ffa2cf439c80"><td id="bSEX" class=""><code>addedSugar</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The additional sugar added during preparation. For instance, 5g in a soft drink.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-812c-b518-e22e7670590f"><td id="bSEX" class=""><code>totalFat</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The total fat content, such as 15g in a burger.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81eb-a303-e11e66b98f7b"><td id="bSEX" class=""><code>saturatedFat</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The saturated fat content. For instance, 5g in a buttery croissant.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-810e-bbd9-c11ae365c5f1"><td id="bSEX" class=""><code>transFat</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The trans fat content. For example, 1g in deep-fried snacks.</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-812d-b2f2-d8392dc2e3d1"><td id="bSEX" class=""><code>vitamins</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Information about vitamins, like Vitamin C (20mg) or Vitamin D (5mg).</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81cf-b29e-ea6e5a3225b6"><td id="bSEX" class=""><code>servingInfo</code></td><td id="wf\;" class="">string</td><td id="Jkn&lt;" class="">Additional serving information, such as &quot;1 cup&quot; or &quot;2 pieces.”</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81b5-a3ce-f4bacb4e71e3"><td id="bSEX" class=""><code>additiveMap</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Details about additives, such as “Contains artificial sweeteners”<strong>.</strong></td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81f7-9c4b-c93da70b9527"><td id="bSEX" class=""><code>allergens</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Information about allergens. For example, &quot;Contains peanuts.”</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-81d0-b295-cad313b42608"><td id="bSEX" class=""><code>additionalInfo</code> </td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">Any other relevant nutritional details, like &quot;Gluten-free&quot; or &quot;Low sodium.”</td><td id="XBEY" class="" style="width:120px">No</td></tr><tr id="1fa2f48a-f064-815a-b507-fd3178a1b889"><td id="bSEX" class=""><code>salt</code></td><td id="wf\;" class="">object</td><td id="Jkn&lt;" class="">The salt content in the item. For instance, <strong>1.5g</strong> of salt in chips.</td><td id="XBEY" class="" style="width:120px">No</td></tr></tbody></table><p id="1fa2f48a-f064-8048-99d1-f6feca6da379" class="">
 </p><p id="1fa2f48a-f064-8136-acfa-e16e9f5aa00e" class=""><strong>Nutritional Value Object</strong></p><p id="1fb2f48a-f064-80e6-9288-f4ff67030ae7" class="">
-</p><table id="1fa2f48a-f064-8123-9707-c0f80c61b123" class="simple-table"><tbody><tr id="1fa2f48a-f064-8118-8592-fc2dcfb2cfc8"><td id="EiZe" class=""><strong>Parameter</strong></td><td id="vc\?" class=""><strong>Type</strong></td><td id="}w{=" class=""><strong>Description</strong></td><td id="SmjD" class="">Required</td></tr><tr id="1fa2f48a-f064-8155-a1ce-d749c535e8b9"><td id="EiZe" class=""><code>value</code></td><td id="vc\?" class="">float</td><td id="}w{=" class="">The numerical value of the nutrient. For instance, 200 for calories.</td><td id="SmjD" class="">No</td></tr><tr id="1fa2f48a-f064-8160-91ec-d8b574f630ee"><td id="EiZe" class=""><code>unit</code></td><td id="vc\?" class="">string</td><td id="}w{=" class="">The unit of measurement, such as g (grams), mg (milligrams), or kcal (kilocalories).</td><td id="SmjD" class="">No</td></tr><tr id="1fa2f48a-f064-81cc-a135-d0619b302a2e"><td id="EiZe" class=""><code>name</code></td><td id="vc\?" class="">string</td><td id="}w{=" class="">The name of the nutrient, such as &quot;Protein&quot; or &quot;Vitamin A.”</td><td id="SmjD" class="">No</td></tr></tbody></table><p id="1fa2f48a-f064-80ee-84b9-e62deef12ac0" class="">
+</p><table id="1fa2f48a-f064-8123-9707-c0f80c61b123" class="simple-table"><tbody><tr id="1fa2f48a-f064-8118-8592-fc2dcfb2cfc8"><td id="EiZe" class=""><strong>Parameter</strong></td><td id="vc\?" class=""><strong>Type</strong></td><td id="}w{=" class=""><strong>Description</strong></td><td id="SmjD" class="">Required</td></tr><tr id="1fa2f48a-f064-8155-a1ce-d749c535e8b9"><td id="EiZe" class=""><code>value</code></td><td id="vc\?" class="">float</td><td id="}w{=" class="">The numerical value of the nutrient. For instance, 200 for calories.</td><td id="SmjD" class="">No</td></tr><tr id="1fa2f48a-f064-8160-91ec-d8b574f630ee"><td id="EiZe" class=""><code>unit</code></td><td id="vc\?" class="">string</td><td id="}w{=" class="">The unit of measurement, such as g (grams), mg (milligrams), or kcal (kilocalories).</td><td id="SmjD" class="">No</td></tr><tr id="1fa2f48a-f064-81cc-a135-d0619b302a2e"><td id="EiZe" class=""><code>name</code></td><td id="vc\?" class="">string</td><td id="}w{=" class="">The name of the nutrient, such as &quot;Protein&quot; or &quot;Vitamin A.”</td><td id="SmjD" class="">No</td></tr></tbody></table><p id="2012f48a-f064-80d2-b9b4-eb199d6dd1d6" class="">
+</p><p id="1fa2f48a-f064-8195-bb66-ed44868dd185" class=""><strong>Bill Components Object</strong></p><p id="1fb2f48a-f064-80a3-8092-e55ce5d6d04a" class="">
+</p><table id="1fa2f48a-f064-81b9-b714-ee1877052c06" class="simple-table"><tbody><tr id="1fa2f48a-f064-81fe-8337-ed8c08f8f4db"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-8166-8f90-f19b31a611db"><td id="`jDo" class=""><code>charges</code></td><td id=";tpK" class="">array[Charge]</td><td id="{PtI" class="">A list of additional charges, such as &quot;Packaging Fee (35 rupees)&quot;</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8134-904c-ed2999f990ae"><td id="`jDo" class=""><code>taxes</code></td><td id=";tpK" class="">array[Tax]</td><td id="{PtI" class="">A list of taxes</td><td id="[az{" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-81d2-9b12-c99c9b987da8" class="">
+</p><p id="1fa2f48a-f064-8172-89af-c781b7021dca" class=""><strong>Order Bill Components Object</strong></p><p id="1fb2f48a-f064-80a1-887c-e2325b768416" class="">
+</p><table id="1fa2f48a-f064-8128-b052-e9d170595af8" class="simple-table"><tbody><tr id="1fa2f48a-f064-8168-a2c3-dd8cd740d5f7"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="LW^c" class="">Required</td></tr><tr id="1fa2f48a-f064-81f4-9d90-c8d3d2b5ad26"><td id="sTWu" class=""><code>charges</code></td><td id="=Ekd" class="">array[string]</td><td id="rYG_" class="">list of charge identifier </td><td id="LW^c" class="">Yes</td></tr></tbody></table><p id="2012f48a-f064-8023-ba4c-ff68981de7bb" class="">
 </p><p id="1fa2f48a-f064-81ad-bc7a-d9fffbb6d524" class=""><strong>Charge Object</strong></p><p id="1fb2f48a-f064-80f7-9657-cccb1712753b" class="">
-</p><table id="1fa2f48a-f064-811b-ac69-f844955591b2" class="simple-table"><tbody><tr id="1fa2f48a-f064-81a3-8ed5-dfebf3b6f8b3"><td id="}n]k" class=""><strong>Parameter</strong></td><td id="DICH" class=""><strong>Type</strong></td><td id="&lt;lTU" class=""><strong>Description</strong></td><td id="zi&gt;\" class="">Required</td></tr><tr id="1fa2f48a-f064-8167-b429-faf19e407f2b"><td id="}n]k" class=""><code>id</code></td><td id="DICH" class="">string</td><td id="&lt;lTU" class="">A unique identifier for the charge.</td><td id="zi&gt;\" class="">Yes</td></tr><tr id="1fa2f48a-f064-818e-b30b-cb0ba2bce159"><td id="}n]k" class=""><code>name</code></td><td id="DICH" class="">string</td><td id="&lt;lTU" class="">The name of the charge, such as &quot;Delivery Fee&quot; or &quot;Convenience Charge.”</td><td id="zi&gt;\" class="">Yes</td></tr><tr id="1fa2f48a-f064-811e-88b3-d2140e6875f6"><td id="}n]k" class=""><code>description</code></td><td id="DICH" class="">string</td><td id="&lt;lTU" class="">Additional details about the charge.</td><td id="zi&gt;\" class=""></td></tr><tr id="1fa2f48a-f064-81c4-8bf7-dcafe21dc780"><td id="}n]k" class=""><code>value</code></td><td id="DICH" class="">float</td><td id="&lt;lTU" class="">The value of the charge.</td><td id="zi&gt;\" class="">Yes</td></tr><tr id="1fa2f48a-f064-8156-af2f-c2f9c453ce4a"><td id="}n]k" class=""><code>type</code></td><td id="DICH" class="">string</td><td id="&lt;lTU" class="">The type of charge, such as &quot;Fixed&quot; (e.g., 20 rupees per order) or &quot;Percentage&quot; (e.g., 5% of the order total).</td><td id="zi&gt;\" class=""></td></tr><tr id="1fa2f48a-f064-8109-af35-df93e82fea23"><td id="}n]k" class=""><code>fulfillmentModes</code></td><td id="DICH" class="">array[string]</td><td id="&lt;lTU" class="">Specifies where the charge applies. For example, a &quot;Delivery Fee&quot; might only apply to &quot;Delivery&quot; orders.</td><td id="zi&gt;\" class="">Yes</td></tr><tr id="1fa2f48a-f064-8107-bb95-cb293f51b1e7"><td id="}n]k" class=""><code>taxes</code></td><td id="DICH" class="">array[string]</td><td id="&lt;lTU" class="">Links the charge to applicable tax IDs. For example, a &quot;Service Charge&quot; might have &quot;TAX002&quot; applied.</td><td id="zi&gt;\" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-80d2-8d70-d62e87bb5945" class="">
+</p><table id="1fa2f48a-f064-811b-ac69-f844955591b2" class="simple-table"><tbody><tr id="1fa2f48a-f064-81a3-8ed5-dfebf3b6f8b3"><td id="}n]k" class=""><strong>Parameter</strong></td><td id="DICH" class=""><strong>Type</strong></td><td id="&lt;lTU" class=""><strong>Description</strong></td><td id="zi&gt;\" class="">Required</td></tr><tr id="1fa2f48a-f064-8167-b429-faf19e407f2b"><td id="}n]k" class=""><code>id</code></td><td id="DICH" class="">string</td><td id="&lt;lTU" class="">A unique identifier for the charge.</td><td id="zi&gt;\" class="">Yes</td></tr><tr id="1fa2f48a-f064-818e-b30b-cb0ba2bce159"><td id="}n]k" class=""><code>name</code></td><td id="DICH" class="">string</td><td id="&lt;lTU" class="">The name of the charge, such as &quot;Delivery Fee&quot; or &quot;Convenience Charge.”</td><td id="zi&gt;\" class="">Yes</td></tr><tr id="1fa2f48a-f064-811e-88b3-d2140e6875f6"><td id="}n]k" class=""><code>description</code></td><td id="DICH" class="">string</td><td id="&lt;lTU" class="">Additional details about the charge.</td><td id="zi&gt;\" class=""></td></tr><tr id="1fa2f48a-f064-81c4-8bf7-dcafe21dc780"><td id="}n]k" class=""><code>value</code></td><td id="DICH" class="">float</td><td id="&lt;lTU" class="">The value of the charge.</td><td id="zi&gt;\" class="">Yes</td></tr><tr id="1fa2f48a-f064-8156-af2f-c2f9c453ce4a"><td id="}n]k" class=""><code>type</code></td><td id="DICH" class="">string</td><td id="&lt;lTU" class="">The type of charge, such as &quot;Fixed&quot; (e.g., 20 rupees per order) or &quot;Percentage&quot; (e.g., 5% of the order total).<br/><br/><strong>ENUM</strong>: “FIXED”, “PERCENTAGE”</td><td id="zi&gt;\" class=""></td></tr><tr id="1fa2f48a-f064-8109-af35-df93e82fea23"><td id="}n]k" class=""><code>fulfillmentModes</code></td><td id="DICH" class="">array[string]</td><td id="&lt;lTU" class="">Specifies where the charge applies. <br/><br/><strong>ENUM</strong>: Delivery</td><td id="zi&gt;\" class="">Yes</td></tr><tr id="1fa2f48a-f064-8107-bb95-cb293f51b1e7"><td id="}n]k" class=""><code>taxes</code></td><td id="DICH" class="">array[string]</td><td id="&lt;lTU" class="">Links the charge to applicable tax IDs. For example, a &quot;Service Charge&quot; might have &quot;TAX002&quot; applied.</td><td id="zi&gt;\" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-80d2-8d70-d62e87bb5945" class="">
 </p><p id="1fa2f48a-f064-818f-a9d9-c12f7d2c6989" class=""><strong>Tax Object</strong></p><p id="1fb2f48a-f064-80af-b3bd-e954764065e6" class="">
 </p><table id="1fa2f48a-f064-8116-86c8-ccab171261d1" class="simple-table"><tbody><tr id="1fa2f48a-f064-8196-bc95-fd664c1edabc"><td id="GK`&gt;" class=""><strong>Parameter</strong></td><td id="[p:;" class="" style="width:139.734375px"><strong>Type</strong></td><td id="]UMs" class=""><strong>Description</strong></td><td id="PR=x" class="">Required</td></tr><tr id="1fa2f48a-f064-8135-9788-c2160da8e822"><td id="GK`&gt;" class=""><code>id</code></td><td id="[p:;" class="" style="width:139.734375px">string</td><td id="]UMs" class="">A unique identifier for the tax.</td><td id="PR=x" class="">Yes</td></tr><tr id="1fa2f48a-f064-815b-a80a-cfc751f9d54e"><td id="GK`&gt;" class=""><code>name</code></td><td id="[p:;" class="" style="width:139.734375px">string</td><td id="]UMs" class="">The name of the tax, such as &quot;CGST&quot; or &quot;SGST.”</td><td id="PR=x" class=""></td></tr><tr id="1fa2f48a-f064-8132-89e3-d39370196f05"><td id="GK`&gt;" class=""><code>description</code></td><td id="[p:;" class="" style="width:139.734375px">string</td><td id="]UMs" class="">Additional details about the tax. For example, &quot;Applies to all food items.”</td><td id="PR=x" class="">Yes</td></tr><tr id="1fa2f48a-f064-81db-9109-c8257d9690aa"><td id="GK`&gt;" class=""><code>value</code></td><td id="[p:;" class="" style="width:139.734375px">float</td><td id="]UMs" class="">The tax rate. For instance, 2.5% for CGST.</td><td id="PR=x" class="">Yes</td></tr><tr id="1fa2f48a-f064-8109-83c3-d158464c05db"><td id="GK`&gt;" class=""><code>fulfillmentModes</code></td><td id="[p:;" class="" style="width:139.734375px">array[string]</td><td id="]UMs" class="">Specifies where the tax is applicable. For example, a &quot;Luxury Tax&quot; might only apply to &quot;Dine-In&quot; orders.</td><td id="PR=x" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-8023-a850-edcaeef6b64b" class="">
 </p><p id="1fa2f48a-f064-8119-bcfc-e0e09b849b35" class=""><strong>Timing Object</strong></p><p id="1fb2f48a-f064-806f-a7cb-c2c8a58dcabc" class="">
 </p><table id="1fa2f48a-f064-8194-8c31-d0f352e0c75b" class="simple-table"><tbody><tr id="1fa2f48a-f064-81e8-a3cc-d2fcfda769e0"><td id="xEhl" class=""><strong>Parameter</strong></td><td id="GWhv" class=""><strong>Type</strong></td><td id="bWA\" class=""><strong>Description</strong></td><td id="K=~e" class="" style="width:157px">Required</td></tr><tr id="1fa2f48a-f064-81c3-819b-f4bebce432a2"><td id="xEhl" class=""><code>id</code></td><td id="GWhv" class="">string</td><td id="bWA\" class="">A unique identifier for the timing.</td><td id="K=~e" class="" style="width:157px">Yes</td></tr><tr id="1fa2f48a-f064-815d-8d56-e07330dc1531"><td id="xEhl" class=""><code>days</code></td><td id="GWhv" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Day Object</a></td><td id="bWA\" class="">A list of day-wise availability. For example, the restaurant might offer &quot;Breakfast: Mon-Fri&quot; and &quot;Dinner: Sat-Sun.”</td><td id="K=~e" class="" style="width:157px">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-80e4-ab4c-c0821ad1e365" class="">
 </p><p id="1fa2f48a-f064-8155-9326-d925f61d06c9" class=""><strong>Day Object</strong></p><p id="1fb2f48a-f064-80fc-9400-eb6b0e372a3c" class="">
-</p><table id="1fa2f48a-f064-819d-b8d4-e7b19a70b89d" class="simple-table"><tbody><tr id="1fa2f48a-f064-8173-a485-ef046e25fd81"><td id="iy}y" class=""><strong>Parameter</strong></td><td id="?biY" class=""><strong>Type</strong></td><td id="vsfC" class=""><strong>Description</strong></td><td id="s=;~" class="">Required</td></tr><tr id="1fa2f48a-f064-8171-822c-e98762997612"><td id="iy}y" class=""><code>day</code></td><td id="?biY" class="">string</td><td id="vsfC" class="">The day of the week. For instance, &quot;Monday&quot;, &quot;Tuesday&quot;, etc.</td><td id="s=;~" class="">Yes</td></tr><tr id="1fa2f48a-f064-81ca-af48-d7e219e5ab2f"><td id="iy}y" class=""><code>slots</code></td><td id="?biY" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Slot Object</a></td><td id="vsfC" class="">A list of time slots for the day. For example, breakfast on Monday might have a time slot of &quot;08:00 AM - 11:00 AM.”</td><td id="s=;~" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-8095-96a1-f8025be12b7c" class="">
+</p><table id="1fa2f48a-f064-819d-b8d4-e7b19a70b89d" class="simple-table"><tbody><tr id="1fa2f48a-f064-8173-a485-ef046e25fd81"><td id="iy}y" class=""><strong>Parameter</strong></td><td id="?biY" class=""><strong>Type</strong></td><td id="vsfC" class=""><strong>Description</strong></td><td id="s=;~" class="">Required</td></tr><tr id="1fa2f48a-f064-8171-822c-e98762997612"><td id="iy}y" class=""><code>day</code></td><td id="?biY" class="">string</td><td id="vsfC" class="">The day of the week. For instance, &quot;Monday&quot;, &quot;Tuesday&quot;, etc.</td><td id="s=;~" class="">Yes</td></tr><tr id="1fa2f48a-f064-81ca-af48-d7e219e5ab2f"><td id="iy}y" class=""><code>slots</code></td><td id="?biY" class=""><a href="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81.html">Slot Object</a></td><td id="vsfC" class="">A list of time slots for the day. For example, breakfast on Monday might have a time slot of &quot;08:00 - 11:00”</td><td id="s=;~" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-8095-96a1-f8025be12b7c" class="">
 </p><p id="1fa2f48a-f064-812a-8afd-da36d2735deb" class=""><strong>Slot Object</strong></p><p id="1fb2f48a-f064-80cb-a801-ebe2da7f2697" class="">
-</p><table id="1fa2f48a-f064-81cc-8b6f-efc8720837ff" class="simple-table"><tbody><tr id="1fa2f48a-f064-813b-9b2a-e8a4d047ea34"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="Favt" class="">Required</td></tr><tr id="1fa2f48a-f064-8174-8739-e923b24afd29"><td id="sTWu" class=""><code>startTime</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">The starting time for the slot in HH:MM format. For example, &quot;09:00&quot; for breakfast service.</td><td id="Favt" class="">Yes</td></tr><tr id="1fa2f48a-f064-8148-ae2d-db6a30f9de4c"><td id="sTWu" class=""><code>endTime</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">The ending time for the slot in HH:MM format. For example, &quot;11:30&quot; when breakfast ends.</td><td id="Favt" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-80dc-84b1-e78681fb7c30" class="">
+</p><table id="1fa2f48a-f064-81cc-8b6f-efc8720837ff" class="simple-table"><tbody><tr id="1fa2f48a-f064-813b-9b2a-e8a4d047ea34"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="Favt" class="">Required</td></tr><tr id="1fa2f48a-f064-8174-8739-e923b24afd29"><td id="sTWu" class=""><code>startTime</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">The starting time for the slot in HH:MM format. For example, &quot;09:00&quot; for breakfast service.<br/><br/><strong>NOTE</strong>: use 24hr formate</td><td id="Favt" class="">Yes</td></tr><tr id="1fa2f48a-f064-8148-ae2d-db6a30f9de4c"><td id="sTWu" class=""><code>endTime</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">The ending time for the slot in HH:MM format. For example, &quot;11:30&quot; when breakfast ends.<br/><br/><strong>NOTE</strong>: use 24hr formate</td><td id="Favt" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-80dc-84b1-e78681fb7c30" class="">
 </p><p id="1fa2f48a-f064-8129-84a2-c7dfc63e534c" class=""><strong>Allergen Info Object</strong></p><p id="1fb2f48a-f064-807b-b5a1-d002686ef261" class="">
 </p><table id="1fa2f48a-f064-8158-8802-f489a0aaafd2" class="simple-table"><tbody><tr id="1fa2f48a-f064-81da-87b0-d6aef1184e8d"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="twrU" class="">Required</td></tr><tr id="1fa2f48a-f064-8153-9feb-ef4d541950af"><td id="sTWu" class=""><code>allergen</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">The name of the allergen. For example, &quot;Peanuts&quot;, &quot;Gluten&quot;, or &quot;Dairy.”</td><td id="twrU" class=""></td></tr><tr id="1fa2f48a-f064-81ae-b653-c417f330dc2e"><td id="sTWu" class=""><code>allergenDesc</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">A detailed description of the allergen. For instance, &quot;Contains peanuts as an ingredient in the sauce.”</td><td id="twrU" class=""></td></tr></tbody></table><p id="1fa2f48a-f064-80ca-815b-c175f8fd70b1" class="">
 </p><p id="1fa2f48a-f064-8156-8186-fb3617393a1a" class=""><strong>Additional Info Object</strong></p><p id="1fb2f48a-f064-8075-959a-d55c0a39dcba" class="">
@@ -739,196 +739,144 @@ blockquote {
 </p><table id="1fa2f48a-f064-8164-aad7-f75e61e7067d" class="simple-table"><tbody><tr id="1fa2f48a-f064-8131-b523-ff6d2de7d2e1"><td id="sTWu" class=""><strong>Parameter</strong></td><td id="=Ekd" class=""><strong>Type</strong></td><td id="rYG_" class=""><strong>Description</strong></td><td id="U^N@" class="">Required</td></tr><tr id="1fa2f48a-f064-816a-81f8-f624a5156c40"><td id="sTWu" class=""><code>resourceId</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">Id of resource failed</td><td id="U^N@" class="">Yes</td></tr><tr id="1fa2f48a-f064-8143-89e8-e8c9fa1ffbea"><td id="sTWu" class=""><code>type</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">Resource Type<br/><br/><strong>Allowed Value:</strong><br/>category<br/>subcategory<br/>item<br/>variantGroup<br/>addonGroup<br/>variant<br/>addon<br/>tax<br/>charge<br/></td><td id="U^N@" class="">Yes</td></tr><tr id="1fa2f48a-f064-8124-869e-ec64fabe0058"><td id="sTWu" class=""><code>reason</code></td><td id="=Ekd" class="">string</td><td id="rYG_" class="">The reason why it failed</td><td id="U^N@" class="">Yes</td></tr></tbody></table><hr id="1fa2f48a-f064-8139-9288-e17bb822cf5a"/><p id="1fa2f48a-f064-8155-a90f-f504ea14ed15" class="">
 </p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Request Body</summary><div class="indented"><p id="1fb2f48a-f064-80a1-8267-e760d460cc95" class="">
 </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-811e-a7bf-fb1ed7a9ce42" class="code"><code class="language-JSON">{
-    &quot;bill_components&quot;: {
-        &quot;charges&quot;: [
-            {
-                &quot;description&quot;: &quot;&quot;,
-                &quot;fulfillment_modes&quot;: [
-                    &quot;delivery&quot;
-                ],
-                &quot;ref_id&quot;: &quot;7795&quot;,
-                &quot;taxes&quot;: [
-                    &quot;12764&quot;
-                ],
-                &quot;title&quot;: &quot;Packing Charge&quot;,
-                &quot;type&quot;: &quot;FIXED&quot;,
-                &quot;value&quot;: 20
-            },
-            {
-                &quot;description&quot;: &quot;&quot;,
-                &quot;ref_id&quot;: &quot;7796&quot;,
-                &quot;taxes&quot;: [
-                    &quot;12763&quot;
-                ],
-                &quot;title&quot;: &quot;Delivery Charge&quot;,
-                &quot;type&quot;: &quot;FIXED&quot;,
-                &quot;value&quot;: 30
-            }
-        ],
-        &quot;taxes&quot;: [
-            {
-                &quot;description&quot;: &quot;&quot;,
-                &quot;ref_id&quot;: &quot;12761&quot;,
-                &quot;title&quot;: &quot;CGST&quot;,
-                &quot;value&quot;: 2.5
-            },
-            {
-                &quot;description&quot;: &quot;&quot;,
-                &quot;ref_id&quot;: &quot;12762&quot;,
-                &quot;title&quot;: &quot;SGST&quot;,
-                &quot;value&quot;: 2.5
-            },
-            {
-                &quot;description&quot;: &quot;&quot;,
-                &quot;ref_id&quot;: &quot;12763&quot;,
-                &quot;title&quot;: &quot;Delivery Charge Tax&quot;,
-                &quot;value&quot;: 18
-            },
-            {
-                &quot;description&quot;: &quot;&quot;,
-                &quot;ref_id&quot;: &quot;12764&quot;,
-                &quot;title&quot;: &quot;Packing Charge&quot;,
-                &quot;value&quot;: 5
-            },
-            {
-                &quot;description&quot;: &quot;&quot;,
-                &quot;ref_id&quot;: &quot;12814&quot;,
-                &quot;title&quot;: &quot;SGST&quot;,
-                &quot;value&quot;: 2.5
-            },
-            {
-                &quot;description&quot;: &quot;&quot;,
-                &quot;ref_id&quot;: &quot;12815&quot;,
-                &quot;title&quot;: &quot;CGST&quot;,
-                &quot;value&quot;: 2.5
-            }
-        ]
+    &quot;restaurant&quot;: {
+        &quot;id&quot;: &quot;53349&quot;
     },
-    &quot;callback_url&quot;: &quot;https://staging.nutanat.com/ext/api/v1/generic/menu/callback/c746a5cbeae74287b5b959b68a5f4d5d/&quot;,
-    &quot;location&quot;: {
-        &quot;min_delivery_time&quot;: &quot;00:45&quot;,
-        &quot;min_pickup_time&quot;: &quot;00:45&quot;,
-        &quot;ref_id&quot;: &quot;53350&quot;,
-        &quot;timings&quot;: &quot;&quot;
-    },
-    &quot;menu&quot;: {
-        &quot;categories&quot;: [
-            {
-                &quot;description&quot;: &quot;&quot;,
-                &quot;image_url&quot;: &quot;http://s3-ap-southeast-1.amazonaws.com/staging.nutana.com/media/bizmedia/2025/05/17/V6TEp-312afac1-4ef4-47a2-b586-ca858f586392.jpg&quot;,
-                &quot;items&quot;: [],
-                &quot;ref_id&quot;: &quot;139690&quot;,
-                &quot;sort_order&quot;: 2,
-                &quot;subcategories&quot;: [
-                    {
-                        &quot;description&quot;: &quot;&quot;,
-                        &quot;image_url&quot;: &quot;http://s3-ap-southeast-1.amazonaws.com/staging.nutana.com/media/bizmedia/2025/05/17/NOrCxdmq-17ac9a76-39dc-4948-ba0a-18c501d6521d.jpg&quot;,
-                        &quot;items&quot;: [
-                            {
-                                &quot;add_on_groups&quot;: [
-                                    {
-                                        &quot;addons&quot;: [
-                                            {
-                                                &quot;food_type&quot;: 1,
-                                                &quot;image_url&quot;: &quot;&quot;,
-                                                &quot;in_stock&quot;: true,
-                                                &quot;merchant_ref_id&quot;: &quot;1571&quot;,
-                                                &quot;nutritional_info&quot;: {},
-                                                &quot;price&quot;: 30,
-                                                &quot;ref_id&quot;: &quot;1595195&quot;,
-                                                &quot;sort_order&quot;: 1,
-                                                &quot;title&quot;: &quot;Crunchy Onion&quot;,
-                                                &quot;translations&quot;: []
-                                            }
-                                        ],
-                                        &quot;maximum_allowed&quot;: 11,
-                                        &quot;minimum_needed&quot;: 0,
-                                        &quot;ref_id&quot;: &quot;440073&quot;,
-                                        &quot;sort_order&quot;: 3,
-                                        &quot;title&quot;: &quot;Veg Toppings ( Giant Slice)&quot;,
-                                        &quot;translations&quot;: []
-                                    }
-                                ],
-                                &quot;bill_components&quot;: {
-                                    &quot;charges&quot;: [
-                                        &quot;7795&quot;
-                                    ],
-                                    &quot;taxes&quot;: [
-                                        &quot;12761&quot;,
-                                        &quot;12762&quot;,
-                                        &quot;12814&quot;,
-                                        &quot;12815&quot;
-                                    ]
+    &quot;categories&quot;: [
+        {
+            &quot;id&quot;: &quot;139714&quot;,
+            &quot;name&quot;: &quot;Best in Pizza&quot;,
+            &quot;description&quot;: &quot;Best in Pizza&quot;,
+            &quot;imageUrl&quot;: &quot;http://image.jpg&quot;,
+            &quot;sortOrder&quot;: 7,
+            &quot;items&quot;: [],
+            &quot;subcategories&quot;: [
+                {
+                    &quot;id&quot;: &quot;139716&quot;,
+                    &quot;name&quot;: &quot;New Pizza&quot;,
+                    &quot;description&quot;: &quot;New Pizzas everyday&quot;,
+                    &quot;imageUrl&quot;: &quot;http://image.jpg&quot;,
+                    &quot;sortOrder&quot;: 1,
+                    &quot;items&quot;: [
+                        {
+                            &quot;id&quot;: &quot;701172&quot;,
+                            &quot;name&quot;: &quot;Paneer Pizza&quot;,
+                            &quot;description&quot;: &quot;spicy panner pizza&quot;,
+                            &quot;imageUrl&quot;: &quot;http://img.jpg&quot;,
+                            &quot;price&quot;: 139,
+                            &quot;markupPrice&quot;: 199.9,
+                            &quot;inStock&quot;: true,
+                            &quot;recommended&quot;: false,
+                            &quot;foodType&quot;: &quot;non veg&quot;,
+                            &quot;tags&quot;: [
+                                &quot;spicy&quot;
+                            ],
+                            &quot;variantGroupIds&quot;: [
+                                &quot;440072&quot;
+                            ],
+                            &quot;addonGroupIds&quot;: [
+                                &quot;440084&quot;
+                            ],
+                            &quot;nutritionalInfo&quot;: {
+                                &quot;carbohydrate&quot;: {
+                                    &quot;unit&quot;: &quot;mg/g&quot;,
+                                    &quot;value&quot;: 1.1
                                 },
-                                &quot;canonical_id&quot;: &quot;1141515&quot;,
-                                &quot;category_ref_id&quot;: &quot;139690&quot;,
-                                &quot;description&quot;: &quot;Golden Corn , Jalapeno , Red Paprika \u0026 Pinapple Nutritional Information As Per 100 Gms (calories 309.9 Kacl , Fat 16.1 , Cholesterol 10 , Carbohydrate 31.9 , Sugar 5.27 , Protien 9.35 )&quot;,
-                                &quot;discounts&quot;: [],
-                                &quot;food_type&quot;: 1,
-                                &quot;fulfillment_modes&quot;: [],
-                                &quot;image_url&quot;: &quot;&quot;,
-                                &quot;in_stock&quot;: true,
-                                &quot;merchant_ref_id&quot;: &quot;147732&quot;,
-                                &quot;nutritional_info&quot;: {},
-                                &quot;price&quot;: 0,
-                                &quot;recommended&quot;: false,
-                                &quot;ref_id&quot;: &quot;7011646&quot;,
-                                &quot;sort_order&quot;: 218,
-                                &quot;sub_category_ref_id&quot;: &quot;139701&quot;,
-                                &quot;tags&quot;: [
-                                    &quot;info-services&quot;
+                                &quot;fiber&quot;: {
+                                    &quot;unit&quot;: &quot;mg&quot;,
+                                    &quot;value&quot;: 60.0
+                                },
+                                &quot;fat&quot;: {
+                                    &quot;unit&quot;: &quot;mg&quot;,
+                                    &quot;value&quot;: 30.0
+                                },
+                                &quot;protein&quot;: {
+                                    &quot;unit&quot;: &quot;mg&quot;,
+                                    &quot;value&quot;: 10.0
+                                },
+                                &quot;calorie&quot;: {
+                                    &quot;unit&quot;: &quot;kcal&quot;,
+                                    &quot;value&quot;: 1.1
+                                }
+                            },
+                            &quot;billComponents&quot;: {
+                                &quot;charges&quot;: [
+                                    &quot;7795&quot;
                                 ],
-                                &quot;title&quot;: &quot;Sweet Heat Pizza&quot;,
-                                &quot;translations&quot;: [],
-                                &quot;variant_groups&quot;: [
-                                    {
-                                        &quot;ref_id&quot;: &quot;440051&quot;,
-                                        &quot;sort_order&quot;: 0,
-                                        &quot;title&quot;: &quot;Variation&quot;,
-                                        &quot;translations&quot;: [],
-                                        &quot;variants&quot;: [
-                                            {
-                                                &quot;food_type&quot;: 1,
-                                                &quot;image_url&quot;: &quot;&quot;,
-                                                &quot;in_stock&quot;: true,
-                                                &quot;merchant_ref_id&quot;: &quot;170635&quot;,
-                                                &quot;nutritional_info&quot;: {},
-                                                &quot;price&quot;: 889,
-                                                &quot;ref_id&quot;: &quot;1595446&quot;,
-                                                &quot;sort_order&quot;: 205,
-                                                &quot;title&quot;: &quot;Large (8 Slices, 31.7 Cm, Serves 4)&quot;
-                                            }
-                                        ]
-                                    }
+                                &quot;taxIds&quot;: [
+                                    &quot;12761&quot;,
+                                    &quot;12762&quot;,
+                                    &quot;12814&quot;,
+                                    &quot;12815&quot;
                                 ]
+                            },
+                            &quot;fulfillmentModes&quot;: [
+                                &quot;delivery&quot;
+                            ],
+                            &quot;sortOrder&quot;: 5,
+                            &quot;categoryId&quot;: &quot;139714&quot;,
+                            &quot;subcategoryId&quot;: &quot;139716&quot;,
+                            &quot;ignoreOn&quot;: {
+                                &quot;tax&quot;: false
                             }
+                        }
+                    ]
+                }
+            ],
+            &quot;timings&quot;: &quot;58681&quot;
+        },
+        {
+            &quot;id&quot;: &quot;134715&quot;,
+            &quot;name&quot;: &quot;All New&quot;,
+            &quot;imageUrl&quot;: &quot;http://image.jpg&quot;,
+            &quot;sortOrder&quot;: 1,
+            &quot;items&quot;: [
+                {
+                    &quot;id&quot;: &quot;7021727&quot;,
+                    &quot;name&quot;: &quot;Chicke  tikka&quot;,
+                    &quot;description&quot;: &quot;Delicious chicken tikka&quot;,
+                    &quot;imageUrl&quot;: &quot;http://image.jpg&quot;,
+                    &quot;price&quot;: 139,
+                    &quot;inStock&quot;: true,
+                    &quot;recommended&quot;: false,
+                    &quot;foodType&quot;: &quot;non veg&quot;,
+                    &quot;tags&quot;: [
+                        &quot;info-services&quot;
+                    ],
+                    &quot;variantGroupIds&quot;: [],
+                    &quot;addonGroupIds&quot;: [],
+                    &quot;nutritionalInfo&quot;: {},
+                    &quot;billComponents&quot;: {
+                        &quot;charges&quot;: [
+                            &quot;7795&quot;
                         ],
-                        &quot;ref_id&quot;: &quot;139701&quot;,
-                        &quot;sort_order&quot;: 3,
-                        &quot;title&quot;: &quot;Exotic( Veg Pizza )&quot;,
-                        &quot;translations&quot;: []
-                    }
-                ],
-                &quot;timings&quot;: &quot;58719&quot;,
-                &quot;title&quot;: &quot;Veg Pizzas&quot;,
-                &quot;translations&quot;: []
-            }
-        ]
-    },
-    &quot;order_bill_components&quot;: {
-        &quot;charges&quot;: [
-            &quot;7796&quot;
-        ]
-    },
+                        &quot;taxIds&quot;: [
+                            &quot;12761&quot;,
+                            &quot;12762&quot;,
+                            &quot;12814&quot;,
+                            &quot;12815&quot;
+                        ]
+                    },
+                    &quot;fulfillmentModes&quot;: [
+                        &quot;delivery&quot;
+                    ],
+                    &quot;sortOrder&quot;: 35,
+                    &quot;categoryId&quot;: &quot;134715&quot;,
+                    &quot;subcategoryId&quot;: &quot;132716&quot;
+                }
+            ]
+        }
+    ],
     &quot;timings&quot;: [
         {
+            &quot;id&quot;: &quot;58681&quot;,
             &quot;days&quot;: [
                 {
                     &quot;day&quot;: &quot;Monday&quot;,
                     &quot;slots&quot;: [
                         {
-                            &quot;end_time&quot;: &quot;16:00&quot;,
-                            &quot;start_time&quot;: &quot;11:30&quot;
+                            &quot;startTime&quot;: &quot;06:00&quot;,
+                            &quot;endTime&quot;: &quot;11:00&quot;
                         }
                     ]
                 },
@@ -936,8 +884,8 @@ blockquote {
                     &quot;day&quot;: &quot;Tuesday&quot;,
                     &quot;slots&quot;: [
                         {
-                            &quot;end_time&quot;: &quot;16:00&quot;,
-                            &quot;start_time&quot;: &quot;11:30&quot;
+                            &quot;startTime&quot;: &quot;06:00&quot;,
+                            &quot;endTime&quot;: &quot;11:00&quot;
                         }
                     ]
                 },
@@ -945,8 +893,8 @@ blockquote {
                     &quot;day&quot;: &quot;Wednesday&quot;,
                     &quot;slots&quot;: [
                         {
-                            &quot;end_time&quot;: &quot;16:00&quot;,
-                            &quot;start_time&quot;: &quot;11:30&quot;
+                            &quot;startTime&quot;: &quot;06:00&quot;,
+                            &quot;endTime&quot;: &quot;11:00&quot;
                         }
                     ]
                 },
@@ -954,8 +902,8 @@ blockquote {
                     &quot;day&quot;: &quot;Thursday&quot;,
                     &quot;slots&quot;: [
                         {
-                            &quot;end_time&quot;: &quot;16:00&quot;,
-                            &quot;start_time&quot;: &quot;11:30&quot;
+                            &quot;startTime&quot;: &quot;06:00&quot;,
+                            &quot;endTime&quot;: &quot;11:00&quot;
                         }
                     ]
                 },
@@ -963,8 +911,8 @@ blockquote {
                     &quot;day&quot;: &quot;Friday&quot;,
                     &quot;slots&quot;: [
                         {
-                            &quot;end_time&quot;: &quot;16:00&quot;,
-                            &quot;start_time&quot;: &quot;11:30&quot;
+                            &quot;startTime&quot;: &quot;06:00&quot;,
+                            &quot;endTime&quot;: &quot;11:00&quot;
                         }
                     ]
                 },
@@ -972,8 +920,8 @@ blockquote {
                     &quot;day&quot;: &quot;Saturday&quot;,
                     &quot;slots&quot;: [
                         {
-                            &quot;end_time&quot;: &quot;16:30&quot;,
-                            &quot;start_time&quot;: &quot;12:00&quot;
+                            &quot;startTime&quot;: &quot;06:00&quot;,
+                            &quot;endTime&quot;: &quot;11:00&quot;
                         }
                     ]
                 },
@@ -981,17 +929,272 @@ blockquote {
                     &quot;day&quot;: &quot;Sunday&quot;,
                     &quot;slots&quot;: [
                         {
-                            &quot;end_time&quot;: &quot;16:30&quot;,
-                            &quot;start_time&quot;: &quot;12:00&quot;
+                            &quot;startTime&quot;: &quot;06:00&quot;,
+                            &quot;endTime&quot;: &quot;11:00&quot;
                         }
                     ]
                 }
-            ],
-            &quot;ref_id&quot;: &quot;58719&quot;,
-            &quot;title&quot;: &quot;Lunch&quot;
+            ]
+        },
+        {
+            &quot;id&quot;: &quot;58719&quot;,
+            &quot;days&quot;: [
+                {
+                    &quot;day&quot;: &quot;Wednesday&quot;,
+                    &quot;slots&quot;: [
+                        {
+                            &quot;startTime&quot;: &quot;11:30&quot;,
+                            &quot;endTime&quot;: &quot;16:00&quot;
+                        }
+                    ]
+                }
+            ]
         }
-    ]
-}</code></pre></div></details><hr id="1fa2f48a-f064-8069-bd0e-dcae19c4777c"/><p id="1fa2f48a-f064-809b-933f-e5ef140c3520" class="">
+    ],
+    &quot;orderBillComponents&quot;: {
+        &quot;charges&quot;: [
+            {
+                &quot;id&quot;: &quot;7796&quot;,
+                &quot;name&quot;: &quot;Order level Charge&quot;,
+                &quot;description&quot;: &quot;&quot;,
+                &quot;value&quot;: 30,
+                &quot;type&quot;: &quot;FIXED&quot;,
+                &quot;taxes&quot;: [
+                    &quot;12763&quot;
+                ]
+            }
+        ]
+    },
+    &quot;addonGroups&quot;: [
+        {
+            &quot;id&quot;: &quot;440084&quot;,
+            &quot;name&quot;: &quot;Amazing Desserts&quot;,
+            &quot;minimumNeeded&quot;: 0,
+            &quot;maximumAllowed&quot;: 10,
+            &quot;sortOrder&quot;: 3,
+            &quot;addOns&quot;: [
+                {
+                    &quot;id&quot;: &quot;1595275&quot;,
+                    &quot;name&quot;: &quot;Chocolate&quot;,
+                    &quot;price&quot;: 139,
+                    &quot;inStock&quot;: true,
+                    &quot;foodType&quot;: &quot;veg&quot;,
+                    &quot;sortOrder&quot;: 1,
+                    &quot;imageUrl&quot;: &quot;http://image.jpg&quot;
+                },
+                {
+                    &quot;id&quot;: &quot;1295275&quot;,
+                    &quot;name&quot;: &quot;Chicken Sausage&quot;,
+                    &quot;price&quot;: 39,
+                    &quot;inStock&quot;: true,
+                    &quot;foodType&quot;: &quot;non Veg&quot;,
+                    &quot;nutritionalInfo&quot;: {},
+                    &quot;sortOrder&quot;: 2,
+                    &quot;imageUrl&quot;: &quot;http://image.jpg&quot;
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: &quot;450102&quot;,
+            &quot;name&quot;: &quot;Toppings&quot;,
+            &quot;minimumNeeded&quot;: 0,
+            &quot;maximumAllowed&quot;: 1,
+            &quot;sortOrder&quot;: 1,
+            &quot;addOns&quot;: [
+                {
+                    &quot;id&quot;: &quot;1535340&quot;,
+                    &quot;name&quot;: &quot;Chicken &quot;,
+                    &quot;price&quot;: 0,
+                    &quot;inStock&quot;: true,
+                    &quot;foodType&quot;: &quot;veg&quot;,
+                    &quot;sortOrder&quot;: 146,
+                    &quot;imageUrl&quot;: &quot;&quot;
+                }
+            ]
+        },
+        {
+            &quot;id&quot;: &quot;460102&quot;,
+            &quot;name&quot;: &quot;Choose One Cheese Burst Flavor (r)&quot;,
+            &quot;minimumNeeded&quot;: 0,
+            &quot;maximumAllowed&quot;: 1,
+            &quot;sortOrder&quot;: 1,
+            &quot;addOns&quot;: [
+                {
+                    &quot;id&quot;: &quot;1565340&quot;,
+                    &quot;name&quot;: &quot;Cheesy Cheese Burst&quot;,
+                    &quot;price&quot;: 0,
+                    &quot;inStock&quot;: true,
+                    &quot;foodType&quot;: &quot;veg&quot;,
+                    &quot;sortOrder&quot;: 246,
+                    &quot;imageUrl&quot;: &quot;&quot;
+                }
+            ]
+        }
+    ],
+    &quot;variantGroups&quot;: [
+        {
+            &quot;id&quot;: &quot;440072&quot;,
+            &quot;name&quot;: &quot;Base&quot;,
+            &quot;variantIds&quot;: [
+                &quot;1595518&quot;,
+                &quot;1695518&quot;
+            ],
+            &quot;sortOrder&quot;: 1
+        },
+        {
+            &quot;id&quot;: &quot;470072&quot;,
+            &quot;name&quot;: &quot;Size&quot;,
+            &quot;variantIds&quot;: [
+                &quot;1395518&quot;,
+                &quot;1495518&quot;
+            ],
+            &quot;sortOrder&quot;: 0
+        },
+        {
+            &quot;id&quot;: &quot;570072&quot;,
+            &quot;name&quot;: &quot;Size&quot;,
+            &quot;variantIds&quot;: [
+                &quot;2495518&quot;
+            ],
+            &quot;sortOrder&quot;: 0
+        }
+    ],
+    &quot;variants&quot;: [
+        {
+            &quot;id&quot;: &quot;1595518&quot;,
+            &quot;name&quot;: &quot;crust&quot;,
+            &quot;price&quot;: 429,
+            &quot;inStock&quot;: true,
+            &quot;foodType&quot;: &quot;veg&quot;,
+            &quot;variantGroupIds&quot;: [
+                &quot;470072&quot;
+            ],
+            &quot;addonGroupIds&quot;: [],
+            &quot;billComponents&quot;: {
+                &quot;charges&quot;: [&quot;779123&quot;]
+            },
+            &quot;sortOrder&quot;: 0
+        },
+        {
+            &quot;id&quot;: &quot;1395518&quot;,
+            &quot;name&quot;: &quot;Regular&quot;,
+            &quot;price&quot;: 429,
+            &quot;inStock&quot;: true,
+            &quot;foodType&quot;: &quot;veg&quot;,
+            &quot;addonGroupIds&quot;: [
+                &quot;460102&quot;
+            ],
+            &quot;sortOrder&quot;: 0
+        },
+        {
+            &quot;id&quot;: &quot;1495518&quot;,
+            &quot;name&quot;: &quot;Large&quot;,
+            &quot;price&quot;: 529,
+            &quot;inStock&quot;: true,
+            &quot;foodType&quot;: &quot;veg&quot;,
+            &quot;sortOrder&quot;: 1,
+            &quot;addonGroupIds&quot;: [
+                &quot;450102&quot;
+            ]
+        },
+        {
+            &quot;id&quot;: &quot;1695518&quot;,
+            &quot;name&quot;: &quot;pan&quot;,
+            &quot;price&quot;: 129,
+            &quot;inStock&quot;: true,
+            &quot;foodType&quot;: &quot;veg&quot;,
+            &quot;nutritionalInfo&quot;: {},
+            &quot;variantGroupIds&quot;: [
+                &quot;570072&quot;
+            ],
+            &quot;sortOrder&quot;: 1,
+            &quot;addonGroupIds&quot;: null
+        },
+        {
+            &quot;id&quot;: &quot;2495518&quot;,
+            &quot;name&quot;: &quot;Large&quot;,
+            &quot;price&quot;: 729,
+            &quot;inStock&quot;: true,
+            &quot;foodType&quot;: &quot;veg&quot;,
+            &quot;addonGroupIds&quot;: null,
+            &quot;sortOrder&quot;: 0
+        }
+    ],
+    &quot;billComponents&quot;: {
+        &quot;charges&quot;: [
+            {
+                &quot;id&quot;: &quot;7795&quot;,
+                &quot;name&quot;: &quot;Packing Charge&quot;,
+                &quot;description&quot;: &quot;&quot;,
+                &quot;value&quot;: 20,
+                &quot;type&quot;: &quot;FIXED&quot;,
+                &quot;fulfillmentModes&quot;: [
+                    &quot;delivery&quot;
+                ],
+                &quot;taxes&quot;: [
+                    &quot;12764&quot;
+                ]
+            },
+            {
+                &quot;id&quot;: &quot;7796&quot;,
+                &quot;name&quot;: &quot;Handling Charge&quot;,
+                &quot;description&quot;: &quot;&quot;,
+                &quot;value&quot;: 30,
+                &quot;type&quot;: &quot;FIXED&quot;,
+                &quot;fulfillmentModes&quot;: null,
+                &quot;taxes&quot;: [
+                    &quot;12763&quot;
+                ]
+            }
+        ],
+        &quot;taxes&quot;: [
+            {
+                &quot;id&quot;: &quot;12761&quot;,
+                &quot;name&quot;: &quot;CGST&quot;,
+                &quot;description&quot;: &quot;&quot;,
+                &quot;value&quot;: 2.5,
+                &quot;fulfillmentModes&quot;: null
+            },
+            {
+                &quot;id&quot;: &quot;12762&quot;,
+                &quot;name&quot;: &quot;SGST&quot;,
+                &quot;description&quot;: &quot;&quot;,
+                &quot;value&quot;: 2.5,
+                &quot;fulfillmentModes&quot;: null
+            },
+            {
+                &quot;id&quot;: &quot;12763&quot;,
+                &quot;name&quot;: &quot;Delivery Charge Tax&quot;,
+                &quot;description&quot;: &quot;&quot;,
+                &quot;value&quot;: 18,
+                &quot;fulfillmentModes&quot;: null
+            },
+            {
+                &quot;id&quot;: &quot;12764&quot;,
+                &quot;name&quot;: &quot;Packing Charge&quot;,
+                &quot;description&quot;: &quot;&quot;,
+                &quot;value&quot;: 5,
+                &quot;fulfillmentModes&quot;: null
+            },
+            {
+                &quot;id&quot;: &quot;12814&quot;,
+                &quot;name&quot;: &quot;SGST&quot;,
+                &quot;description&quot;: &quot;&quot;,
+                &quot;value&quot;: 2.5,
+                &quot;fulfillmentModes&quot;: null
+            },
+            {
+                &quot;id&quot;: &quot;12815&quot;,
+                &quot;name&quot;: &quot;CGST&quot;,
+                &quot;description&quot;: &quot;&quot;,
+                &quot;value&quot;: 2.5,
+                &quot;fulfillmentModes&quot;: null
+            }
+        ]
+    },
+    &quot;callbackUrl&quot;: &quot;https://host.com/request-id&quot;
+}
+  </code></pre></div></details><hr id="1fa2f48a-f064-8069-bd0e-dcae19c4777c"/><p id="1fa2f48a-f064-809b-933f-e5ef140c3520" class="">
 </p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Response Body</summary><div class="indented"><hr id="1fa2f48a-f064-80b7-80f2-c27f7d4462ea"/><p id="1fa2f48a-f064-8090-850e-d9d029977398" class="">
 </p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-default_background"> </mark><mark class="highlight-teal_background">200</mark></summary><div class="indented"><p id="1fb2f48a-f064-80db-ac44-dac0976939b1" class="">
 </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-814f-ad8b-d72eccc6af75" class="code"><code class="language-JSON">{
