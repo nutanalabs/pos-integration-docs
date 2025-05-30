@@ -679,7 +679,7 @@ blockquote {
 .checkbox-off {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
-
+	
 </style></head><body><article id="1fa2f48a-f064-81b7-8f71-f34f45c13e81" class="page mono"><header><img class="page-cover-image" src="API%20Documentation%201fa2f48af06481b78f71f34f45c13e81/POS.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/swap-horizontally_green.svg"/></div><h1 class="page-title">API Documentation</h1><p class="page-description"></p></header><div class="page-body"><nav id="1fa2f48a-f064-815c-87ba-e48dc195e108" class="block-color-gray table_of_contents"><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1fa2f48a-f064-81ed-8be8-e327a225c585">Introduction</a></div><div class="table_of_contents-item table_of_contents-indent-0"><a class="table_of_contents-link" href="#1fa2f48a-f064-8157-8ae3-e782fe772df7">Endpoints</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1fa2f48a-f064-8119-a253-f0a180d449f8"> Menu Management</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1fa2f48a-f064-81fe-8302-cbcb6599ec55"> Order Management</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1fa2f48a-f064-818b-9c87-ff1e7ea7aa0a"> Rider Management</a></div><div class="table_of_contents-item table_of_contents-indent-1"><a class="table_of_contents-link" href="#1fa2f48a-f064-8157-9a8a-f0b5c1f6f17b"> Store Management</a></div></nav><p id="1fa2f48a-f064-8158-8c1a-f7af24e26ae4" class="">
 </p><h1 id="1fa2f48a-f064-81ed-8be8-e327a225c585" class="">Introduction</h1><hr id="1fa2f48a-f064-802a-bc79-e88970ea068c"/><p id="1fa2f48a-f064-80a7-8a0d-c073487e2428" class="">
 </p><p id="1fa2f48a-f064-81a0-b4bb-ef9b6b50f057" class="">The Nutana API is organised around REST framework. A REST API (also known as RESTful API) is an application programming interface (API or web API) that conforms to the constraints of REST architectural style and allows for interaction with RESTful web services.</p><p id="1fa2f48a-f064-810f-927b-f516ea802973" class="">
@@ -1217,14 +1217,18 @@ blockquote {
 </p><table id="1fa2f48a-f064-81a3-8f75-c940837e50d5" class="simple-table"><tbody><tr id="1fa2f48a-f064-8147-90c9-cc6012e4e4b8"><td id="r{vN" class=""><strong>Parameter</strong></td><td id="CzhF" class="" style="width:145.5390625px"><strong>Type</strong></td><td id="nnGj" class=""><strong>Description</strong></td><td id="]V~h" class="">Required</td></tr><tr id="1fa2f48a-f064-81c2-8f1a-c3b738f84af2"><td id="r{vN" class=""><code>restId</code></td><td id="CzhF" class="" style="width:145.5390625px">string</td><td id="nnGj" class="">The unique identifier for the restaurant.</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-8163-ba03-da9384a7ed2c"><td id="r{vN" class=""><code>addOns</code> </td><td id="CzhF" class="" style="width:145.5390625px">array[string]</td><td id="nnGj" class="">List of add-on identifiers whose stock status needs to be updated.</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-81a5-9d5a-e61a9e0fa147"><td id="r{vN" class=""><code>inStock</code></td><td id="CzhF" class="" style="width:145.5390625px">boolean</td><td id="nnGj" class="">Indicates the availability status. Example: true means available, false means out of stock. Applies to all specified items, variants, and add-ons.</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-81ff-9788-e01b6979ff4d"><td id="r{vN" class=""><code>items</code></td><td id="CzhF" class="" style="width:145.5390625px">array[string]</td><td id="nnGj" class="">List of menu item identifiers whose stock status is changing.</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-81df-b338-dc7988c91915"><td id="r{vN" class=""><code>variants</code></td><td id="CzhF" class="" style="width:145.5390625px">array[string]</td><td id="nnGj" class="">List of variant identifiers whose stock status needs an update.</td><td id="]V~h" class="">Yes</td></tr><tr id="1fa2f48a-f064-817e-bb28-f183b71437b3"><td id="r{vN" class=""><code>nextAvailableAt</code></td><td id="CzhF" class="" style="width:145.5390625px">integer</td><td id="nnGj" class="">A timestamp for when the out-of-stock food items will be restocked.</td><td id="]V~h" class=""></td></tr></tbody></table><hr id="1fa2f48a-f064-8045-bd0d-fd190932684d"/><p id="1fa2f48a-f064-8049-ab63-c5ba9d558639" class="">
 </p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Request Body</summary><div class="indented"><p id="1fb2f48a-f064-8006-8a0e-c5fbd3c56dcf" class="">
 </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-81fc-90ff-feb3623c0615" class="code"><code class="language-JSON">{
-    &quot;restID&quot;: &quot;b7hi36eg&quot;,
-    &quot;inStock&quot;: false,
-    &quot;itemID&quot;: [
-        &quot;10454115&quot;
+    &quot;restId&quot;: &quot;53349&quot;,
+    &quot;addOns&quot;: [
+        &quot;1595275&quot;
     ],
-    &quot;type&quot;: &quot;item&quot;,
-    &quot;autoTurnOnTime&quot;: &quot;custom&quot;,
-    &quot;customTurnOnTime&quot;: &quot;2020-02-24 18:00&quot;
+    &quot;inStock&quot;: false,
+    &quot;items&quot;: [
+        &quot;701172&quot;
+    ],
+    &quot;variants&quot;: [
+        &quot;1595518&quot;
+    ],
+    &quot;nextAvailableAt&quot;: 1717209600
 }</code></pre></div></details><hr id="1fa2f48a-f064-80ba-8d35-d14d5c62db55"/><p id="1fa2f48a-f064-805c-a30d-e568142ddf31" class="">
 </p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Response Body</summary><div class="indented"><p id="1fb2f48a-f064-80d1-ac00-fd1ca0150971" class="">
 </p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"><mark class="highlight-default_background"> </mark><mark class="highlight-teal_background">200</mark></summary><div class="indented"><p id="1fb2f48a-f064-8012-8014-c6f2f5aa2044" class="">
@@ -1260,7 +1264,7 @@ blockquote {
 </p><p id="1fa2f48a-f064-81d2-9a4e-de55dce56fdd" class=""><strong>Taxes Object</strong></p><p id="1fb2f48a-f064-8081-9335-e284044460bd" class="">
 </p><table id="1fa2f48a-f064-81c3-839c-eff6ea67a7df" class="simple-table"><tbody><tr id="1fa2f48a-f064-8119-8de5-e589e18a18cd"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-81fa-85a0-f4987bbab0ba"><td id="`jDo" class=""><code>title</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The name of the tax. For example, &quot;SGST&quot;.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8125-9895-c051db18f9eb"><td id="`jDo" class=""><code>value</code></td><td id=";tpK" class="">float</td><td id="{PtI" class="">The tax amount. For example, 25.00 rupees.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-819f-a78a-ea44bd70e9d2"><td id="`jDo" class=""><code>percentage</code> </td><td id=";tpK" class="">float</td><td id="{PtI" class="">The tax percentage. For example, 2.50.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-811e-8c48-c74f7f135b6f"><td id="`jDo" class=""><code>liabilityOn</code></td><td id=";tpK" class="">string</td><td id="{PtI" class=""><code>restaurant</code> or <code>aggregator</code></td><td id="[az{" class="">Yes</td></tr></tbody></table><p id="1fb2f48a-f064-8082-b591-e6d71d91b714" class="">
 </p><p id="1fa2f48a-f064-81bf-91bf-e929f4ee3e55" class=""><strong>Charges Object</strong></p><p id="1fb2f48a-f064-80a5-a99e-f07baaf7271a" class="">
-</p><table id="1fa2f48a-f064-8186-b9f6-c4862f582aa4" class="simple-table"><tbody><tr id="1fa2f48a-f064-814b-bdb3-cb6672ff414c"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-81aa-bfb5-efb10077eb8c"><td id="`jDo" class=""><code>title</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The name of the charge. For example, &quot;Delivery Charge&quot;.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8166-94d5-c34eb0964691"><td id="`jDo" class=""><code>value</code> </td><td id=";tpK" class="">float</td><td id="{PtI" class="">The amount of the charge. For example, 30.00 rupees. </td><td id="[az{" class="">Yes</td></tr><tr id="2032f48a-f064-8008-82f0-efc7ae892dda"><td id="`jDo" class=""><code>liabilityOn</code></td><td id=";tpK" class="">string</td><td id="{PtI" class=""><code>restaurant</code> or <code>aggregator</code></td><td id="[az{" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-809b-a987-d4a855be977a" class="">
+</p><table id="1fa2f48a-f064-8186-b9f6-c4862f582aa4" class="simple-table"><tbody><tr id="1fa2f48a-f064-814b-bdb3-cb6672ff414c"><td id="`jDo" class=""><strong>Parameter</strong></td><td id=";tpK" class=""><strong>Type</strong></td><td id="{PtI" class=""><strong>Description</strong></td><td id="[az{" class="">Required</td></tr><tr id="1fa2f48a-f064-81aa-bfb5-efb10077eb8c"><td id="`jDo" class=""><code>title</code></td><td id=";tpK" class="">string</td><td id="{PtI" class="">The name of the charge. For example, &quot;Delivery Charge&quot;.</td><td id="[az{" class="">Yes</td></tr><tr id="1fa2f48a-f064-8166-94d5-c34eb0964691"><td id="`jDo" class=""><code>value</code> </td><td id=";tpK" class="">float</td><td id="{PtI" class="">The amount of the charge. For example, 30.00 rupees. </td><td id="[az{" class="">Yes</td></tr><tr id="2032f48a-f064-8008-82f0-efc7ae892dda"><td id="`jDo" class=""><code>liability_on</code></td><td id=";tpK" class="">string</td><td id="{PtI" class=""><code>restaurant</code> or <code>aggregator</code></td><td id="[az{" class="">Yes</td></tr></tbody></table><p id="1fa2f48a-f064-809b-a987-d4a855be977a" class="">
 </p><details open=""><summary style="font-weight:600;font-size:1.25em;line-height:1.3;margin:0"> Sample Request Body</summary><div class="indented"><p id="1fb2f48a-f064-8063-90b3-fc9e3f719731" class="">
 </p><script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js" integrity="sha512-7Z9J3l1+EYfeaPKcGXu3MS/7T+w19WtKQY/n+xzmw4hZhJ9tyYmcUS+4QqAlzhicE5LAfMQSF3iFTK9bQdTxXg==" crossorigin="anonymous" referrerPolicy="no-referrer"></script><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" integrity="sha512-tN7Ec6zAFaVSG3TpNAKtk4DOHNpSwKHxxrsiw4GHKESGPs5njn/0sMCUMl2svV4wo4BK/rCP7juYz+zx+l6oeQ==" crossorigin="anonymous" referrerPolicy="no-referrer"/><pre id="1fa2f48a-f064-8112-8119-d4897f015993" class="code"><code class="language-JSON">{
   &quot;orderInfo&quot;: {
@@ -1296,20 +1300,20 @@ blockquote {
           &quot;title&quot;: &quot;SGST&quot;,
           &quot;value&quot;: 12.5,
           &quot;percentage&quot;: 2.5,
-          &quot;liabilityOn&quot;: &quot;restaurant&quot;
+          &quot;liability_on&quot;: &quot;restaurant&quot;
         },
         {
           &quot;title&quot;: &quot;CGST&quot;,
           &quot;value&quot;: 12.5,
           &quot;percentage&quot;: 2.5,
-          &quot;liabilityOn&quot;: &quot;restaurant&quot;
+          &quot;liability_on&quot;: &quot;restaurant&quot;
         }
       ],
       &quot;charges&quot;: [
         {
           &quot;title&quot;: &quot;Packing Charge&quot;,
           &quot;value&quot;: 10.0,
-          &quot;liabilityOn&quot;: &quot;restaurant&quot;
+          &quot;liability_on&quot;: &quot;restaurant&quot;
         }
       ],
       &quot;variants&quot;: [
