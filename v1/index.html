@@ -48,24 +48,24 @@ h3 {
 }
 
 .page-title {
-	font-size: 2.5rem;
+	font-size: 2rem;
 	font-weight: 700;
 	margin-top: 0;
 	margin-bottom: 0.75em;
 }
 
 h1 {
-	font-size: 1.875rem;
+	font-size: 1.5rem;
 	margin-top: 1.875rem;
 }
 
 h2 {
-	font-size: 1.5rem;
+	font-size: 1.25rem;
 	margin-top: 1.5rem;
 }
 
 h3 {
-	font-size: 1.25rem;
+	font-size: 1.1rem;
 	margin-top: 1.25rem;
 }
 
@@ -356,7 +356,7 @@ img.icon {
 }
 
 .page-header-icon {
-	font-size: 3rem;
+	font-size: 2.25rem;
 	margin-bottom: 1rem;
 }
 
@@ -686,6 +686,46 @@ blockquote.quote-large {
 	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
 }
 	
+
+/* Shared Ownly footer (dark, same on every page) */
+.ow-footer{background:#262626;color:#F7F5ED;font-family:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;margin-top:64px;padding:72px 24px 40px;text-align:left}
+.ow-footer *{box-sizing:border-box}
+.ow-footer-in{max-width:1408px;margin:0 auto}
+.ow-footer a{color:inherit;text-decoration:none}
+.ow-footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:64px}
+.ow-brand{display:flex;align-items:center;gap:12px;font-size:40px;font-weight:700;letter-spacing:-.03em;color:#fff}
+.ow-brand img{width:48px;height:48px;border-radius:12px}
+.ow-footer .ow-about{margin:32px 0 48px;font-size:19px;line-height:1.7;color:#E2DED0;max-width:420px}
+.ow-footer h2,.ow-footer h3{margin:0;font-weight:600;color:#fff}
+.ow-footer h2{font-size:26px;padding-bottom:10px;position:relative;margin-bottom:28px}
+.ow-footer h2::after{content:"";position:absolute;left:0;bottom:0;width:46px;height:4px;border-radius:2px;background:#DF4F86}
+.ow-footer h3{font-size:20px;margin-bottom:16px}
+.ow-social,.ow-stores{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:48px}
+.ow-social a{width:56px;height:56px;border-radius:14px;background:#3a3a3a;display:grid;place-items:center;color:#F7F5ED}
+.ow-social a:hover{background:#4a4a4a}
+.ow-social svg{width:24px;height:24px;fill:currentColor}
+.ow-stores a{display:flex;align-items:center;gap:10px;height:56px;padding:0 14px;border:1px solid #fff;border-radius:6px;background:#000;color:#fff}
+.ow-stores svg{width:28px;height:28px;fill:currentColor}
+.ow-stores small{display:block;font-size:11px;line-height:1.1;letter-spacing:.04em}
+.ow-stores b{display:block;font-size:20px;line-height:1.1;font-weight:500}
+.ow-addr{display:flex;gap:18px;align-items:flex-start}
+.ow-pin{flex:none;width:56px;height:56px;border-radius:14px;background:#2f3140;display:grid;place-items:center}
+.ow-pin svg{width:22px;height:22px;stroke:#7FA6FF;fill:none;stroke-width:2}
+.ow-addr strong{display:block;font-size:22px;font-weight:600;line-height:1.5;margin-bottom:8px}
+.ow-addr .ow-cin{font-size:14px;color:#BDB4B6;margin-bottom:16px}
+.ow-addr p{margin:0 0 6px;font-size:16px;color:#E2DED0}
+.ow-addr p.ow-last{color:#fff;margin-top:14px}
+.ow-links{list-style:none;margin:0;padding:0}
+.ow-links li{margin-bottom:26px;font-size:18px;color:#E2DED0}
+.ow-links a:hover{color:#fff;text-decoration:underline}
+.ow-bottom{margin-top:56px;padding-top:40px;border-top:1px solid #2D2D74;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:#9a9494;font-size:15px}
+.ow-bottom .ow-copy{font-size:20px}
+.ow-bottom .ow-copy b{color:#fff}
+.ow-bottom .ow-ver{margin-top:6px;font-size:14px}
+.ow-bottom .ow-ver a{color:#EB95B6;text-decoration:underline}
+.ow-status{display:inline-flex;align-items:center;gap:8px;margin-left:36px;color:#4ADE80;font-size:17px}
+.ow-status::before{content:"";width:8px;height:8px;border-radius:50%;background:#4ADE80}
+@media(max-width:900px){.ow-footer{padding:48px 20px 32px}.ow-footer-grid{grid-template-columns:1fr;gap:48px}.ow-status{margin-left:16px}}
 </style></head><body><div style="white-space:normal;font:500 14px/1.4 -apple-system,BlinkMacSystemFont,sans-serif;background:#F8DCE7;color:#131212;padding:12px 16px;border-radius:12px;margin-bottom:24px">You are reading v1 of the Ownly POS integration docs. <a href="../" style="color:#A5034C;font-weight:600">Open the latest version (v2)</a></div><article id="1fa2f48a-f064-80c1-abb7-e6f5c820ba46" class="page mono"><header><img class="page-cover-image" src="../Restaurant%20Menu%20&amp;%20Order%20Management%20Integration%201fa2f48af06480c1abb7e6f5c820ba46/POS.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="https://www.notion.so/icons/dining_green.svg"/></div><h1 class="page-title">Restaurant Menu &amp; Order Management Integration</h1><p class="page-description"></p></header><div class="page-body"><p id="1fb2f48a-f064-80f7-b632-d68c4c2d58eb" class="">
 </p><p id="1fa2f48a-f064-81b5-8b5d-eb17684695e3" class="">There are 2 section in this document, one is the Guide section that will help you understand the functionalities and second is the API documentation that will help you understand about the API contracts.</p><p id="1fb2f48a-f064-807f-9552-d387dd80322d" class="">
 </p><p id="1fa2f48a-f064-8116-a97e-f4b973179802" class="">
@@ -694,4 +734,43 @@ blockquote.quote-large {
 </p></div></div><p id="1fa2f48a-f064-8171-848d-c1fa0f838b82" class="">
 </p><p id="1fa2f48a-f064-8148-bf54-f89cf8e4328c" class="">
 </p><p id="1fa2f48a-f064-81dd-8f19-f6a91b940af3" class="">
-</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span><footer class="ow-footer"><div class="ow-footer-in">
+<div class="ow-footer-grid">
+<div>
+<a class="ow-brand" href="https://ownly.food"><img src="../logo.png" alt="">ownly</a>
+<p class="ow-about">Bringing delicious food to your doorstep with care and convenience. Experience the best of Indian cuisine with Ownly - your trusted food delivery partner.</p>
+<h3>Follow Us</h3>
+<div class="ow-social">
+<a href="https://www.instagram.com/ownlyfoodapp/" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zM17.3 5.5a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zM7.5 2h9A5.5 5.5 0 0122 7.5v9a5.5 5.5 0 01-5.5 5.5h-9A5.5 5.5 0 012 16.5v-9A5.5 5.5 0 017.5 2zm0 1.8A3.7 3.7 0 003.8 7.5v9a3.7 3.7 0 003.7 3.7h9a3.7 3.7 0 003.7-3.7v-9a3.7 3.7 0 00-3.7-3.7z"/></svg></a>
+<a href="https://www.linkedin.com/company/ownlyfoodapp/posts/" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M3 9h4v12H3zM5 3a2.2 2.2 0 110 4.4A2.2 2.2 0 015 3zm5 6h3.8v1.7c.6-1 1.9-2 3.9-2 4 0 4.6 2.6 4.6 6V21h-4v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg></a>
+<a href="https://x.com/ownlyfoodapp" aria-label="X"><svg viewBox="0 0 24 24"><path d="M22 5.9c-.7.3-1.5.6-2.4.7.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 00-7 3.7A11.6 11.6 0 013 4.700a4.100 4.100 0 001.300 5.500c-.7 0-1.300-.2-1.900-.5 0 2 1.400 3.700 3.300 4.100-.6.2-1.200.2-1.900.1.500 1.600 2 2.800 3.800 2.900A8.300 8.300 0 012 18.500 11.600 11.600 0 008.300 20.300c7.500 0 11.700-6.300 11.700-11.700v-.5c.8-.6 1.500-1.300 2-2.200z"/></svg></a>
+<a href="https://www.reddit.com/r/ownlyfoodapp/?captcha=1" aria-label="Reddit"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm5.600 11.100c.1.300.1.600.1.900 0 2.800-3.100 5-6.900 5s-6.900-2.200-6.900-5c0-.3 0-.6.100-.9A1.700 1.700 0 016.500 10c.5 0 .9.200 1.200.5 1.100-.8 2.600-1.300 4.200-1.300l.8-3.700 2.600.6a1.200 1.200 0 11-.1.800l-1.900-.4-.6 2.700c1.600.1 3 .6 4 1.300.3-.3.700-.5 1.200-.5a1.700 1.700 0 01.9 3.100zM9 12.500a1.100 1.100 0 100 2.200 1.100 1.100 0 000-2.200zm6 0a1.100 1.100 0 100 2.200 1.100 1.100 0 000-2.200zm-5.500 3.900c.7.700 1.600 1 2.500 1s1.800-.3 2.500-1l-.5-.5c-.6.500-1.200.8-2 .8s-1.400-.3-2-.8z"/></svg></a>
+<a href="https://www.facebook.com/ownlyfoodapp" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-1.600 19.900v-7H7.900V12h2.500V9.800c0-2.500 1.500-3.900 3.800-3.900 1.100 0 2.200.2 2.200.2v2.500h-1.300c-1.200 0-1.600.8-1.600 1.600V12h2.800l-.4 2.900h-2.300v7A10 10 0 0012 2z"/></svg></a>
+</div>
+<h3>Download the App</h3>
+<div class="ow-stores">
+<a href="https://play.google.com/store/apps/details?id=com.ownly.customer&hl=en_IN" aria-label="Get it on Google Play"><svg viewBox="0 0 24 24"><path fill="#34A853" d="M3.600 2.200l10 9.800-10 9.800a1.500 1.500 0 01-.6-1.200V3.400c0-.5.200-.9.600-1.200z"/><path fill="#FBBC04" d="M17 8.700l-3.400 3.300 3.400 3.300 3.800-2.200c1-.6 1-1.900 0-2.500z"/><path fill="#EA4335" d="M3.600 21.800l10-9.800 3.400 3.300-11.700 6.700c-.6.300-1.200.2-1.700-.2z"/><path fill="#4285F4" d="M3.600 2.200c.5-.4 1.100-.5 1.700-.2L17 8.700 13.600 12z"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></a>
+<a href="https://apps.apple.com/in/app/ownly-food-delivery-app/id6747476494" aria-label="Download on the App Store"><svg viewBox="0 0 24 24"><path d="M16.400 12.600c0-2.400 2-3.500 2.100-3.600-1.200-1.700-3-1.900-3.600-2-1.500-.2-3 .9-3.800.9s-2-.9-3.300-.9c-1.700 0-3.200 1-4.100 2.500-1.800 3-.5 7.500 1.200 10 .8 1.200 1.800 2.600 3.100 2.500 1.200 0 1.700-.8 3.200-.8s1.900.8 3.200.8c1.300 0 2.200-1.200 3-2.400.9-1.400 1.300-2.700 1.300-2.800 0 0-2.500-1-2.300-3.900zM14 5.400c.7-.8 1.100-1.900 1-3-1 0-2.100.7-2.800 1.500-.6.700-1.200 1.800-1 2.900 1.100.1 2.100-.6 2.800-1.400z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+</div>
+</div>
+<div>
+<h2>Our Address</h2>
+<div class="ow-addr"><span class="ow-pin"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.100-7-11a7 7 0 0114 0c0 4.900-7 11-7 11z"/><circle cx="12" cy="10" r="2.500"/></svg></span>
+<div><strong>CTRLX TECHNOLOGIES PRIVATE LIMITED</strong><div class="ow-cin">CIN: U47912TS2025PTC198828</div>
+<p>3rd Floor, Sai Prithvi, Arcade</p><p>Megha Hills, Madhapur</p><p>Hyderabad, Shaikpet</p><p class="ow-last">Telangana, India - 500081</p></div></div>
+</div>
+<div>
+<h2>Support</h2>
+<ul class="ow-links">
+<li><a href="https://ownly.food/contact">Contact Us</a></li>
+<li><a href="https://ownly.food/terms">Customer Terms &amp; Conditions</a></li>
+<li><a href="https://ownly.food/restaurant-terms">Restaurant Terms &amp; Conditions</a></li>
+<li><a href="https://ownly.food/privacy-policy">Privacy Policy</a></li>
+<li><a href="https://ownly.food/terms#refund">Refund and Cancellation Policy</a></li>
+<li><a href="https://ownly.food/terms#redressal">Grievance Redressal</a></li>
+</ul>
+</div>
+</div>
+<div class="ow-bottom"><div><div class="ow-copy">&copy; 2026 <b>ownly.food</b> All rights reserved.</div><div class="ow-ver">docs.ownly.food &middot; Restaurant menu and order management integration &middot; v1</div></div>
+<div>Made with <span style="color:#ef4444">&#10084;</span> in India <span class="ow-status">Service Active</span></div></div>
+</div></footer></body></html>

@@ -93,10 +93,10 @@ html:not(.js) .view{display:block;margin-bottom:96px}
 @media (prefers-reduced-motion:reduce){.view.on{animation:none}html{scroll-behavior:auto}*{transition:none!important}}
 
 /* type */
-.h-xl{font-size:clamp(40px,5.6vw,68px);line-height:1;letter-spacing:-.045em;font-weight:700;max-width:18ch}
-.h-l{font-size:clamp(28px,3vw,40px);line-height:1.08;letter-spacing:-.035em;margin:88px 0 20px}
-.h-m{font-size:22px;letter-spacing:-.02em;margin:48px 0 8px}
-.lead{font-size:20px;line-height:1.5;color:var(--fg-2);max-width:56ch;margin-top:28px}
+.h-xl{font-size:clamp(32px,4vw,48px);line-height:1;letter-spacing:-.045em;font-weight:700;max-width:18ch}
+.h-l{font-size:clamp(24px,2.3vw,30px);line-height:1.08;letter-spacing:-.035em;margin:88px 0 20px}
+.h-m{font-size:19px;letter-spacing:-.02em;margin:48px 0 8px}
+.lead{font-size:17px;line-height:1.5;color:var(--fg-2);max-width:56ch;margin-top:28px}
 .prose{max-width:68ch}
 .prose p+p,.prose p+ul,.prose ul+p{margin-top:14px}
 .prose ul,.note-list{padding-left:20px;display:grid;gap:6px}
@@ -115,7 +115,7 @@ p code,li code,td code,.lead code,.callout code{font-weight:500;overflow-wrap:an
 .door{display:flex;flex-direction:column;justify-content:space-between;min-height:210px;padding:32px;border-radius:28px;text-decoration:none;background:var(--surface);color:var(--fg);transition:transform .2s,background .2s}
 .door:hover{transform:translateY(-4px)}
 .door.main{background:var(--field);color:var(--field-fg)}
-.door h2{font-size:36px;letter-spacing:-.035em;line-height:1}
+.door h2{font-size:28px;letter-spacing:-.035em;line-height:1}
 .door p{margin-top:12px;max-width:36ch}
 .door span{font-weight:600;margin-top:32px}
 .steps-list{list-style:none;padding:0;display:grid;gap:8px;margin-top:8px;counter-reset:s}
@@ -140,7 +140,7 @@ p code,li code,td code,.lead code,.callout code{font-weight:500;overflow-wrap:an
 .step[data-alt]{margin-top:6px}
 .alt-note{font-size:13px;font-weight:600;color:var(--fg-2);padding:10px 4px 0}
 .detail{margin-top:20px;background:var(--bg);border-radius:20px;padding:24px;display:grid;gap:12px}
-.detail h3{font-size:22px;letter-spacing:-.02em}
+.detail h3{font-size:19px;letter-spacing:-.02em}
 .flow{display:flex;gap:10px;align-items:center;flex-wrap:wrap;font-weight:500;font-size:15px}
 .sim-ctl{display:flex;gap:10px;margin-top:16px;flex-wrap:wrap}
 .chip{display:inline-block;border-radius:999px;padding:3px 12px;font-size:13px;font-weight:600;background:var(--surface-2);color:var(--fg);white-space:nowrap}
@@ -162,7 +162,7 @@ p code,li code,td code,.lead code,.callout code{font-weight:500;overflow-wrap:an
 /* guides */
 .g{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,6fr);gap:48px;align-items:start;margin-top:96px}
 .g.first{margin-top:48px}
-.g h2{font-size:clamp(28px,3vw,40px);letter-spacing:-.035em;line-height:1.05;margin-bottom:16px}
+.g h2{font-size:clamp(24px,2.3vw,30px);letter-spacing:-.035em;line-height:1.05;margin-bottom:16px}
 .cards{display:grid;gap:12px}
 .who-card{border-radius:24px;padding:28px;background:var(--surface);display:grid;gap:14px;align-content:start}
 .who-card.own{background:var(--own-soft);color:var(--fg)}
@@ -177,7 +177,7 @@ p code,li code,td code,.lead code,.callout code{font-weight:500;overflow-wrap:an
 .callout p+p,.callout p+ul,.callout ul+p{margin-top:10px}
 .callout ul{padding-left:20px;display:grid;gap:4px;margin-top:8px}
 .callout.pos{background:var(--pos-soft)}
-.two{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px;align-items:start}
+.two{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;align-items:start}
 .three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
 
 /* api */
@@ -215,8 +215,6 @@ td.pill{white-space:nowrap}
 .entry:first-child{background:var(--accent-soft)}
 .entry .src{font-size:13px;color:var(--fg-2);margin-top:6px;display:block}
 
-footer{max-width:1440px;margin:0 auto;padding-bottom:48px;color:var(--fg-2);font-size:14px}
-footer .big{font-size:clamp(64px,17vw,260px);line-height:.85;letter-spacing:-.06em;font-weight:700;color:var(--field);margin-bottom:24px;user-select:none}
 
 @media (max-width:1180px){.shell{grid-template-columns:var(--side) minmax(0,1fr)}.toc{display:none}}
 @media (max-width:860px){
@@ -286,8 +284,71 @@ td.d a:hover{text-decoration-thickness:2px}
 .ver .menu a:hover{background:var(--bg)}
 .ver .menu a span{font-weight:500;font-size:13px;color:var(--fg-2)}
 .ver .menu a[aria-current]{color:var(--link)}
-footer a{color:var(--link)}
 
+
+/* Shared Ownly footer (dark, same on every page) */
+.ow-footer{background:#262626;color:#F7F5ED;font-family:"Geist",ui-sans-serif,system-ui,-apple-system,"Segoe UI",Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;margin-top:64px;padding:72px 24px 40px;text-align:left}
+.ow-footer *{box-sizing:border-box}
+.ow-footer-in{max-width:1408px;margin:0 auto}
+.ow-footer a{color:inherit;text-decoration:none}
+.ow-footer-grid{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:64px}
+.ow-brand{display:flex;align-items:center;gap:12px;font-size:40px;font-weight:700;letter-spacing:-.03em;color:#fff}
+.ow-brand img{width:48px;height:48px;border-radius:12px}
+.ow-footer .ow-about{margin:32px 0 48px;font-size:19px;line-height:1.7;color:#E2DED0;max-width:420px}
+.ow-footer h2,.ow-footer h3{margin:0;font-weight:600;color:#fff}
+.ow-footer h2{font-size:26px;padding-bottom:10px;position:relative;margin-bottom:28px}
+.ow-footer h2::after{content:"";position:absolute;left:0;bottom:0;width:46px;height:4px;border-radius:2px;background:#DF4F86}
+.ow-footer h3{font-size:20px;margin-bottom:16px}
+.ow-social,.ow-stores{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:48px}
+.ow-social a{width:56px;height:56px;border-radius:14px;background:#3a3a3a;display:grid;place-items:center;color:#F7F5ED}
+.ow-social a:hover{background:#4a4a4a}
+.ow-social svg{width:24px;height:24px;fill:currentColor}
+.ow-stores a{display:flex;align-items:center;gap:10px;height:56px;padding:0 14px;border:1px solid #fff;border-radius:6px;background:#000;color:#fff}
+.ow-stores svg{width:28px;height:28px;fill:currentColor}
+.ow-stores small{display:block;font-size:11px;line-height:1.1;letter-spacing:.04em}
+.ow-stores b{display:block;font-size:20px;line-height:1.1;font-weight:500}
+.ow-addr{display:flex;gap:18px;align-items:flex-start}
+.ow-pin{flex:none;width:56px;height:56px;border-radius:14px;background:#2f3140;display:grid;place-items:center}
+.ow-pin svg{width:22px;height:22px;stroke:#7FA6FF;fill:none;stroke-width:2}
+.ow-addr strong{display:block;font-size:22px;font-weight:600;line-height:1.5;margin-bottom:8px}
+.ow-addr .ow-cin{font-size:14px;color:#BDB4B6;margin-bottom:16px}
+.ow-addr p{margin:0 0 6px;font-size:16px;color:#E2DED0}
+.ow-addr p.ow-last{color:#fff;margin-top:14px}
+.ow-links{list-style:none;margin:0;padding:0}
+.ow-links li{margin-bottom:26px;font-size:18px;color:#E2DED0}
+.ow-links a:hover{color:#fff;text-decoration:underline}
+.ow-bottom{margin-top:56px;padding-top:40px;border-top:1px solid #2D2D74;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;color:#9a9494;font-size:15px}
+.ow-bottom .ow-copy{font-size:20px}
+.ow-bottom .ow-copy b{color:#fff}
+.ow-bottom .ow-ver{margin-top:6px;font-size:14px}
+.ow-bottom .ow-ver a{color:#EB95B6;text-decoration:underline}
+.ow-status{display:inline-flex;align-items:center;gap:8px;margin-left:36px;color:#4ADE80;font-size:17px}
+.ow-status::before{content:"";width:8px;height:8px;border-radius:50%;background:#4ADE80}
+@media(max-width:900px){.ow-footer{padding:48px 20px 32px}.ow-footer-grid{grid-template-columns:1fr;gap:48px}.ow-status{margin-left:16px}}
+.ow-footer{margin-left:-16px;margin-right:-16px;margin-bottom:0}
+
+/* collapsible endpoint sections */
+details.acc.sub{margin:8px 0 0 24px;border:0;border-left:3px solid var(--field);border-radius:0 14px 14px 0;background:var(--surface)}
+details.acc.sub:last-child{border-bottom:0}
+details.acc.sub>summary{padding:12px 16px}
+details.acc.sub>summary::after{content:"+";width:auto;height:auto;border:0;transform:none;font-size:22px;font-weight:500;line-height:1;margin-right:2px;color:var(--accent)}
+details.acc.sub[open]>summary::after{content:"\2212";transform:none}
+details.acc.sub>summary .h-m{margin:0;font-size:16px;font-weight:600;letter-spacing:-.01em}
+details.acc.sub>.acc-body{padding:0 16px 16px}
+details.acc.sub>.acc-body>.tbl:first-child{margin-top:0}
+details.acc.sub .tbl{background:var(--bg)}
+details.acc{margin:0;border-top:1px solid var(--surface-2)}
+details.acc:last-of-type{border-bottom:1px solid var(--surface-2)}
+details.acc>summary{list-style:none;cursor:pointer;display:flex;align-items:center;justify-content:space-between;gap:16px;padding:20px 4px}
+details.acc>summary::-webkit-details-marker{display:none}
+details.acc>summary .h-l{margin:0}
+details.acc>summary::after{content:"";flex:none;width:10px;height:10px;border-right:2px solid var(--fg);border-bottom:2px solid var(--fg);transform:rotate(45deg);transition:transform .15s;margin-right:6px}
+details.acc[open]>summary::after{transform:rotate(-135deg)}
+details.acc>summary:hover .h-l{color:var(--link)}
+details.acc>.acc-body{padding:4px 0 32px}
+.acc-tools{display:flex;gap:8px;margin:40px 0 16px}
+.acc-tools button{font:inherit;font-size:13px;font-weight:600;padding:6px 12px;border:0;border-radius:999px;background:var(--surface);color:var(--fg);cursor:pointer}
+.acc-tools button:hover{background:var(--surface-2)}
 </style>
 </head>
 <body>
@@ -1043,18 +1104,85 @@ footer a{color:var(--link)}
   </main>
   <aside class="toc" id="toc" aria-label="On this page"></aside>
 </div>
-<footer><div class="big" aria-hidden="true">Ownly</div>docs.ownly.food · Restaurant menu and order management integration · v2 · <a href="v1/">View v1</a></footer>
+<footer class="ow-footer"><div class="ow-footer-in">
+<div class="ow-footer-grid">
+<div>
+<a class="ow-brand" href="https://ownly.food"><img src="logo.png" alt="">ownly</a>
+<p class="ow-about">Bringing delicious food to your doorstep with care and convenience. Experience the best of Indian cuisine with Ownly - your trusted food delivery partner.</p>
+<h3>Follow Us</h3>
+<div class="ow-social">
+<a href="https://www.instagram.com/ownlyfoodapp/" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 7a5 5 0 100 10 5 5 0 000-10zm0 8.2a3.2 3.2 0 110-6.4 3.2 3.2 0 010 6.4zM17.3 5.5a1.2 1.2 0 100 2.4 1.2 1.2 0 000-2.4zM7.5 2h9A5.5 5.5 0 0122 7.5v9a5.5 5.5 0 01-5.5 5.5h-9A5.5 5.5 0 012 16.5v-9A5.5 5.5 0 017.5 2zm0 1.8A3.7 3.7 0 003.8 7.5v9a3.7 3.7 0 003.7 3.7h9a3.7 3.7 0 003.7-3.7v-9a3.7 3.7 0 00-3.7-3.7z"/></svg></a>
+<a href="https://www.linkedin.com/company/ownlyfoodapp/posts/" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M3 9h4v12H3zM5 3a2.2 2.2 0 110 4.4A2.2 2.2 0 015 3zm5 6h3.8v1.7c.6-1 1.9-2 3.9-2 4 0 4.6 2.6 4.6 6V21h-4v-5.4c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21h-4z"/></svg></a>
+<a href="https://x.com/ownlyfoodapp" aria-label="X"><svg viewBox="0 0 24 24"><path d="M22 5.9c-.7.3-1.5.6-2.4.7.9-.5 1.5-1.3 1.8-2.3-.8.5-1.7.8-2.6 1a4.1 4.1 0 00-7 3.7A11.6 11.6 0 013 4.700a4.100 4.100 0 001.300 5.500c-.7 0-1.300-.2-1.900-.5 0 2 1.400 3.700 3.300 4.100-.6.2-1.200.2-1.900.1.500 1.600 2 2.800 3.800 2.900A8.300 8.300 0 012 18.500 11.600 11.600 0 008.300 20.300c7.500 0 11.700-6.300 11.700-11.700v-.5c.8-.6 1.500-1.300 2-2.200z"/></svg></a>
+<a href="https://www.reddit.com/r/ownlyfoodapp/?captcha=1" aria-label="Reddit"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm5.600 11.100c.1.300.1.600.1.900 0 2.800-3.100 5-6.900 5s-6.900-2.200-6.900-5c0-.3 0-.6.100-.9A1.700 1.700 0 016.500 10c.5 0 .9.200 1.200.5 1.100-.8 2.600-1.300 4.200-1.300l.8-3.700 2.600.6a1.200 1.200 0 11-.1.800l-1.900-.4-.6 2.700c1.600.1 3 .6 4 1.300.3-.3.700-.5 1.200-.5a1.700 1.700 0 01.9 3.100zM9 12.500a1.100 1.100 0 100 2.200 1.100 1.100 0 000-2.200zm6 0a1.100 1.100 0 100 2.200 1.100 1.100 0 000-2.200zm-5.500 3.900c.7.700 1.600 1 2.500 1s1.800-.3 2.500-1l-.5-.5c-.6.500-1.200.8-2 .8s-1.400-.3-2-.8z"/></svg></a>
+<a href="https://www.facebook.com/ownlyfoodapp" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-1.600 19.900v-7H7.900V12h2.500V9.800c0-2.500 1.500-3.900 3.800-3.900 1.100 0 2.200.2 2.200.2v2.500h-1.300c-1.200 0-1.600.8-1.600 1.600V12h2.800l-.4 2.900h-2.300v7A10 10 0 0012 2z"/></svg></a>
+</div>
+<h3>Download the App</h3>
+<div class="ow-stores">
+<a href="https://play.google.com/store/apps/details?id=com.ownly.customer&hl=en_IN" aria-label="Get it on Google Play"><svg viewBox="0 0 24 24"><path fill="#34A853" d="M3.600 2.200l10 9.800-10 9.800a1.500 1.500 0 01-.6-1.200V3.400c0-.5.200-.9.600-1.200z"/><path fill="#FBBC04" d="M17 8.700l-3.400 3.300 3.400 3.300 3.800-2.200c1-.6 1-1.900 0-2.500z"/><path fill="#EA4335" d="M3.600 21.800l10-9.800 3.400 3.300-11.700 6.700c-.6.300-1.200.2-1.700-.2z"/><path fill="#4285F4" d="M3.600 2.200c.5-.4 1.100-.5 1.700-.2L17 8.700 13.600 12z"/></svg><span><small>GET IT ON</small><b>Google Play</b></span></a>
+<a href="https://apps.apple.com/in/app/ownly-food-delivery-app/id6747476494" aria-label="Download on the App Store"><svg viewBox="0 0 24 24"><path d="M16.400 12.600c0-2.400 2-3.500 2.100-3.600-1.200-1.700-3-1.900-3.600-2-1.500-.2-3 .9-3.800.9s-2-.9-3.300-.9c-1.700 0-3.200 1-4.100 2.500-1.800 3-.5 7.500 1.200 10 .8 1.200 1.800 2.600 3.100 2.500 1.200 0 1.700-.8 3.200-.8s1.900.8 3.200.8c1.300 0 2.200-1.200 3-2.400.9-1.400 1.300-2.700 1.300-2.800 0 0-2.500-1-2.300-3.900zM14 5.400c.7-.8 1.100-1.900 1-3-1 0-2.100.7-2.800 1.500-.6.700-1.200 1.800-1 2.900 1.100.1 2.100-.6 2.800-1.400z"/></svg><span><small>Download on the</small><b>App Store</b></span></a>
+</div>
+</div>
+<div>
+<h2>Our Address</h2>
+<div class="ow-addr"><span class="ow-pin"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.100-7-11a7 7 0 0114 0c0 4.900-7 11-7 11z"/><circle cx="12" cy="10" r="2.500"/></svg></span>
+<div><strong>CTRLX TECHNOLOGIES PRIVATE LIMITED</strong><div class="ow-cin">CIN: U47912TS2025PTC198828</div>
+<p>3rd Floor, Sai Prithvi, Arcade</p><p>Megha Hills, Madhapur</p><p>Hyderabad, Shaikpet</p><p class="ow-last">Telangana, India - 500081</p></div></div>
+</div>
+<div>
+<h2>Support</h2>
+<ul class="ow-links">
+<li><a href="https://ownly.food/contact">Contact Us</a></li>
+<li><a href="https://ownly.food/terms">Customer Terms &amp; Conditions</a></li>
+<li><a href="https://ownly.food/restaurant-terms">Restaurant Terms &amp; Conditions</a></li>
+<li><a href="https://ownly.food/privacy-policy">Privacy Policy</a></li>
+<li><a href="https://ownly.food/terms#refund">Refund and Cancellation Policy</a></li>
+<li><a href="https://ownly.food/terms#redressal">Grievance Redressal</a></li>
+</ul>
+</div>
+</div>
+<div class="ow-bottom"><div><div class="ow-copy">&copy; 2026 <b>ownly.food</b> All rights reserved.</div><div class="ow-ver">docs.ownly.food &middot; Restaurant menu and order management integration &middot; v2</div></div>
+<div>Made with <span style="color:#ef4444">&#10084;</span> in India <span class="ow-status">Service Active</span></div></div>
+</div></footer>
 <script>
 document.documentElement.classList.add('js');
 const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
 const store={get(k){try{return localStorage.getItem(k)}catch(e){return null}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+
+/* collapsible sections: each h2 in an endpoint view becomes a dropdown, closed by default */
+const ACC=['menu-push','inventory','order-relay','order-status','call-masking','rider-status','store-status'];
+ACC.forEach(id=>{
+  const v=document.getElementById('v-'+id);if(!v)return;
+  const first=v.querySelector('h2.h-l[id]');if(!first)return;
+  const tools=document.createElement('div');tools.className='acc-tools';
+  tools.innerHTML='<button type="button" data-acc="open">Expand all</button><button type="button" data-acc="close">Collapse all</button>';
+  first.parentNode.insertBefore(tools,first);
+  [...v.querySelectorAll(':scope > h2.h-l[id]')].forEach(h=>{
+    const d=document.createElement('details');d.className='acc';
+    const sm=document.createElement('summary');
+    const body=document.createElement('div');body.className='acc-body';
+    h.parentNode.insertBefore(d,h);
+    let n=h.nextSibling;
+    sm.appendChild(h);d.appendChild(sm);d.appendChild(body);
+    while(n&&!(n.nodeType===1&&n.matches('h2.h-l[id]'))){const nx=n.nextSibling;body.appendChild(n);n=nx}
+    [...body.querySelectorAll(':scope > h3.h-m[id]')].forEach(h3=>{
+      const sd=document.createElement('details');sd.className='acc sub';
+      const ss=document.createElement('summary'),sb=document.createElement('div');sb.className='acc-body';
+      body.insertBefore(sd,h3);
+      let m=h3.nextSibling;ss.appendChild(h3);sd.appendChild(ss);sd.appendChild(sb);
+      while(m&&!(m.nodeType===1&&m.matches('h3.h-m[id]'))){const mx=m.nextSibling;sb.appendChild(m);m=mx}
+    });
+  });
+  tools.addEventListener('click',e=>{const b=e.target.closest('[data-acc]');if(!b)return;v.querySelectorAll('details.acc').forEach(d=>d.open=b.dataset.acc==='open')});
+});
+function openAcc(el){let d=el&&el.closest&&el.closest('details.acc');while(d){d.open=true;d=d.parentElement.closest('details.acc')}}
 
 /* routing: one view per hash, anchors inside a view scroll to it */
 const views=$$('.view'),navs=$$('[data-nav]');
 const ids=views.map(v=>v.id.slice(2));
 function route(){
   let h=location.hash.slice(1)||'overview';
-  const sub=document.getElementById(h);
+  const sub=document.getElementById(h);openAcc(sub);
   if(!ids.includes(h)){const host=sub&&sub.closest('.view');h=host?host.id.slice(2):'overview'}
   views.forEach(v=>v.classList.toggle('on',v.id==='v-'+h));
   navs.forEach(a=>a.getAttribute('href')==='#'+h?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current'));
